@@ -551,7 +551,7 @@ pages["dive-sites-es.html"] = ("dive-sites.html",
     hero(f"{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp",
          '<a href="index-es.html">Inicio</a> / Puntos de Inmersi&oacute;n',
          "D&oacute;nde Bucear&aacute;s",
-         "La costa Amed&ndash;Tulamben es una hilera de inmersiones desde costa de primer nivel, un pecio de la Segunda Guerra Mundial, bah&iacute;as de coral, paredes y arrecifes artificiales, todo entrando por playas de arena negra de un mismo tramo de costa. Son los sitios donde buceamos a diario, que conocemos palmo a palmo y que ayudamos a cuidar.")
+         "Una sola costa volc&aacute;nica, llena de inmersiones desde orilla de primer nivel: un pecio de la II Guerra Mundial, bah&iacute;as de coral, paredes y muck sobre arena negra. Los sitios que buceamos a diario y ayudamos a cuidar.")
     + facts([("13", "puntos con nombre en la costa"), ("Desde costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("Abr&ndash;Nov", "mejor visibilidad"), ("25 min", "en coche hasta el Liberty")])
     + f"""
 <section class="page-section map-fold">
