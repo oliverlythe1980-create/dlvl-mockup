@@ -261,7 +261,7 @@ def booking(price, sub, options, wa_text, trust):
     <ul class="booking-options">
 {opts}
     </ul>
-    <a class="pill-btn pill-btn--whatsapp" href="{WA}?text={wa_text}">Book via WhatsApp</a>
+    <a class="pill-btn" href="plan-your-trip.html">Tailor your trip &rarr;</a>
     <p class="booking-note">No deposit needed to ask: tell us your dates and we&rsquo;ll confirm availability.</p>
     <ul class="booking-trust">
 {ticks}

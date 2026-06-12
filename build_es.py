@@ -262,7 +262,7 @@ def booking(price, sub, options, wa_text, trust):
     <ul class="booking-options">
 {opts}
     </ul>
-    <a class="pill-btn pill-btn--whatsapp" href="{WA}?text={wa_text}">Reserva por WhatsApp</a>
+    <a class="pill-btn" href="plan-your-trip-es.html">Crea tu viaje &rarr;</a>
     <p class="booking-note">Preguntar no cuesta nada: dinos tus fechas y te confirmamos disponibilidad.</p>
     <ul class="booking-trust">
 {ticks}
