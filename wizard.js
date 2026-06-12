@@ -48,7 +48,7 @@
     note_est: 'Es una estimación para orientarte; lo confirmamos todo por WhatsApp antes de reservar nada.',
     note_dm: 'Cuota anual de PADI y Crew Pack no incluidos. Alojamiento de larga estancia: pregúntanos.',
     note_funacc: '¿Alojamiento para varios días? Pregúntanos tarifas de habitación.',
-    dates: 'Tus fechas (opcional)', dates_ph: 'p. ej. 12–18 de agosto',
+    dates: 'Tus fechas (opcional)', arr: 'Llegada', dep: 'Salida',
     send: 'Enviar mi plan por WhatsApp',
     wa_hi: 'Hola! He montado mi plan en la web:', wa_dates: 'Fechas',
     l_dsd1: 'Bautizo de buceo · 1 inmersión', l_dsd2: 'Bautizo de buceo · 2 inmersiones',
@@ -91,7 +91,7 @@
     note_est: 'This is an estimate to get you oriented; we confirm everything on WhatsApp before you book a thing.',
     note_dm: "PADI's annual fee and Crew Pack not included. Long-stay accommodation: ask us.",
     note_funacc: 'Accommodation for several days? Ask us for room rates.',
-    dates: 'Your dates (optional)', dates_ph: 'e.g. 12–18 August',
+    dates: 'Your dates (optional)', arr: 'Arrival', dep: 'Departure',
     send: 'Send my plan on WhatsApp',
     wa_hi: 'Hi! I built my plan on the website:', wa_dates: 'Dates',
     l_dsd1: 'Discover Scuba · 1 dive', l_dsd2: 'Discover Scuba · 2 dives',
@@ -106,6 +106,8 @@
   const idr = (n) => 'IDR ' + n.toLocaleString('de-DE');
   const eur = (n) => '€' + Math.round(n / RATE);
   const st = { history: [] };
+  const today = () => new Date().toISOString().slice(0, 10);
+  const fmtDate = (iso) => new Date(iso + 'T12:00:00').toLocaleDateString(ES ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
   function opts(list) {
     return '<div class="wiz-grid">' + list.map((o) =>
@@ -208,12 +210,20 @@
         <p class="wiz-eur">${T.eur} ${eur(total)} · ${T.taxes}</p>
       </div>
       <p class="wiz-note">${note}</p>
-      <div class="form-field"><label for="wiz-dates">${T.dates}</label>
-        <input id="wiz-dates" type="text" placeholder="${T.dates_ph}"></div>
+      <p class="wiz-dates-label">${T.dates}</p>
+      <div class="wiz-dates">
+        <div class="form-field"><label for="wiz-from">${T.arr}</label><input id="wiz-from" type="date" min="${today()}"></div>
+        <div class="form-field"><label for="wiz-to">${T.dep}</label><input id="wiz-to" type="date" min="${today()}"></div>
+      </div>
       <a class="pill-btn pill-btn--whatsapp wiz-send" href="#" target="_blank" rel="noopener">${T.send}</a>
       <button type="button" class="wiz-restart">${T.start}</button>`;
+    const fromEl = document.getElementById('wiz-from');
+    const toEl = document.getElementById('wiz-to');
+    fromEl.addEventListener('change', () => { toEl.min = fromEl.value || today(); if (toEl.value && toEl.value < fromEl.value) toEl.value = fromEl.value; });
     el.querySelector('.wiz-send').addEventListener('click', (e) => {
-      const dates = (document.getElementById('wiz-dates').value || '').trim();
+      let dates = '';
+      if (fromEl.value && toEl.value) dates = fmtDate(fromEl.value) + ' – ' + fmtDate(toEl.value);
+      else if (fromEl.value) dates = fmtDate(fromEl.value);
       const msg = [T.wa_hi]
         .concat(lines.filter(([, v]) => v || true).map(([l, v]) => `· ${l}${v ? ' — ' + idr(v) : ''}`))
         .concat(people > 1 ? [`· ${T.l_people(people)}`] : [])
