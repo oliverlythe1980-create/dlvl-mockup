@@ -214,30 +214,37 @@ function dlvlToast(msg) {
 })();
 
 
-// ── Coast map: hover tooltips on dive-site pins ──
+// ── Coast map: postcard preview anchored beside the hovered pin ──
 (function () {
   const map = document.querySelector('.coast-map');
   if (!map) return;
-  const tip = document.createElement('div');
-  tip.className = 'map-tip';
-  map.appendChild(tip);
+  const card = document.createElement('div');
+  card.className = 'map-card';
+  map.appendChild(card);
+
   map.querySelectorAll('a[data-name]').forEach((a) => {
     a.addEventListener('mouseenter', () => {
-      tip.innerHTML = '<strong>' + a.dataset.name + '</strong>' +
-                      '<span>' + a.dataset.meta + '</span>' +
-                      '<em>' + a.dataset.desc + '</em>';
-      tip.classList.add('map-tip--show');
-    });
-    a.addEventListener('mousemove', (e) => {
+      const img = a.dataset.img ? '<img src="' + a.dataset.img + '" alt="">' : '';
+      card.innerHTML = img +
+        '<div class="map-card-b">' +
+        '<strong>' + a.dataset.name + '</strong>' +
+        '<span>' + a.dataset.meta + '</span>' +
+        '<em>' + a.dataset.desc + '</em>' +
+        '</div>';
+      card.classList.add('map-card--show');
       const r = map.getBoundingClientRect();
-      let x = e.clientX - r.left + 16;
-      let y = e.clientY - r.top + 16;
-      if (x > r.width - 250) x -= 270;
-      if (y > r.height - 120) y -= 130;
-      tip.style.left = x + 'px';
-      tip.style.top = y + 'px';
+      const c = a.querySelector('circle');
+      const px = parseFloat(c.getAttribute('cx')) / 1000 * r.width;
+      const py = parseFloat(c.getAttribute('cy')) / 660 * r.height;
+      const w = card.offsetWidth;
+      const h = card.offsetHeight;
+      let left = px + 22;
+      if (left + w > r.width - 8) left = px - w - 22;
+      let top = Math.max(8, Math.min(py - h / 2, r.height - h - 8));
+      card.style.left = left + 'px';
+      card.style.top = top + 'px';
     });
-    a.addEventListener('mouseleave', () => tip.classList.remove('map-tip--show'));
+    a.addEventListener('mouseleave', () => card.classList.remove('map-card--show'));
   });
 })();
 

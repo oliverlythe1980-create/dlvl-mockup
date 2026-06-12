@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=2">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 
@@ -124,7 +124,7 @@ FOOT = """
   </div>
 </footer>
 
-<script src="script.js?v=2" defer></script>
+<script src="script.js?v=3" defer></script>
 </body>
 </html>
 """.replace("WPURL", WP).replace("WAURL", WA)
@@ -138,51 +138,52 @@ def coast_map(lang):
     pins = [
         (1,  "boga",           232,  62, T("Boga Wreck &middot; Kubu", "Pecio Boga &middot; Kubu"), "r",
               "16&ndash;40 m &middot; " + T("Wreck &middot; Advanced", "Pecio &middot; Avanzado"),
-              T("Purpose-sunk in 2012; statues and a sunken car on deck.", "Hundido a prop&oacute;sito en 2012; estatuas y un coche en cubierta.")),
+              T("Purpose-sunk in 2012; statues and a sunken car on deck.", "Hundido a prop&oacute;sito en 2012; estatuas y un coche en cubierta."), ""),
         (2,  "liberty",        300, 128, T("USAT Liberty Wreck", "Pecio del USAT Liberty"), "r",
               "5&ndash;30 m &middot; " + T("Wreck &middot; All levels", "Pecio &middot; Todos los niveles"),
-              T("120 m WWII wreck; bumpheads at dawn.", "Pecio de 120 m de la II GM; cabezones al amanecer.")),
+              T("120 m WWII wreck; bumpheads at dawn.", "Pecio de 120 m de la II GM; cabezones al amanecer."), "2022/09/Advanced_open_water.webp"),
         (3,  "coral-garden",   334, 176, "Coral Garden", "r",
               "2&ndash;12 m &middot; " + T("Reef &middot; All levels", "Arrecife &middot; Todos los niveles"),
-              T("Statues and soft coral; long, easy dives.", "Estatuas y coral blando; inmersiones largas y f&aacute;ciles.")),
+              T("Statues and soft coral; long, easy dives.", "Estatuas y coral blando; inmersiones largas y f&aacute;ciles."), "2022/09/Nitrox.webp"),
         (4,  "coral-garden",   366, 224, "Drop-Off", "r",
               "10&ndash;40 m &middot; " + T("Wall &middot; Advanced", "Pared &middot; Avanzado"),
-              T("Volcanic wall, giant gorgonians.", "Pared volc&aacute;nica, gorgonias gigantes.")),
+              T("Volcanic wall, giant gorgonians.", "Pared volc&aacute;nica, gorgonias gigantes."), "2022/09/Advanced_open_water.webp"),
         (5,  "batu-kelebit",   416, 264, "Batu Kelebit", "r",
               "15&ndash;40 m &middot; " + T("Ridges &middot; Advanced", "Crestas &middot; Avanzado"),
-              T("Deep ridges with real pelagic chances.", "Crestas profundas con opciones pel&aacute;gicas de verdad.")),
+              T("Deep ridges with real pelagic chances.", "Crestas profundas con opciones pel&aacute;gicas de verdad."), ""),
         (6,  "seraya",         478, 306, "Seraya Secrets", "r",
               "5&ndash;20 m &middot; Muck &middot; " + T("All levels", "Todos los niveles"),
-              T("Frogfish, harlequin shrimp: macro heaven.", "Peces sapo, gambas arlequ&iacute;n: para&iacute;so macro.")),
+              T("Frogfish, harlequin shrimp: macro heaven.", "Peces sapo, gambas arlequ&iacute;n: para&iacute;so macro."), "2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp"),
         (7,  "jemeluk",        622, 396, T("Jemeluk Bay", "Bah\u00eda de Jemeluk"), "r",
               "3&ndash;25 m &middot; " + T("Reef &middot; All levels", "Arrecife &middot; Todos los niveles"),
-              T("Our house reef and training bay.", "Nuestro arrecife de casa y bah&iacute;a de pr&aacute;cticas.")),
+              T("Our house reef and training bay.", "Nuestro arrecife de casa y bah&iacute;a de pr&aacute;cticas."), "2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp"),
         (8,  "pyramids",       672, 436, T("The Pyramids", "Las Pir\u00e1mides"), "r",
               "5&ndash;22 m &middot; " + T("Artificial reef &middot; All levels", "Arrecife artificial &middot; Todos los niveles"),
-              T("Glassfish swarms; our navigation classroom.", "Enjambres de peces cristal; nuestra aula de navegaci&oacute;n.")),
+              T("Glassfish swarms; our navigation classroom.", "Enjambres de peces cristal; nuestra aula de navegaci&oacute;n."), "2022/09/DiveMasterw.webp"),
         (9,  "pyramids",       744, 498, T("Melasti Reef", "Arrecife de Melasti"), "r",
               "4&ndash;20 m &middot; " + T("Reef &middot; All levels", "Arrecife &middot; Todos los niveles"),
-              T("Resident turtles, 500 m from our door.", "Tortugas residentes, a 500 m de la puerta.")),
+              T("Resident turtles, 500 m from our door.", "Tortugas residentes, a 500 m de la puerta."), "2022/09/Rescue_diver-1.webp"),
         (10, "bunutan",        788, 530, "Bunutan", "r",
               "10&ndash;30 m &middot; " + T("Point &middot; All levels", "Punta &middot; Todos los niveles"),
-              T("Garden eels and a gentle drift.", "Anguilas jard&iacute;n y una deriva suave.")),
+              T("Garden eels and a gentle drift.", "Anguilas jard&iacute;n y una deriva suave."), ""),
         (11, "lipah",          826, 556, T("Lipah Bay", "Bah\u00eda de Lipah"), "r",
               "3&ndash;20 m &middot; " + T("Bay &middot; All levels", "Bah&iacute;a &middot; Todos los niveles"),
-              T("Coral bommies; easy diving and snorkelling.", "Bommies de coral; buceo f&aacute;cil y esn&oacute;rquel.")),
+              T("Coral bommies; easy diving and snorkelling.", "Bommies de coral; buceo f&aacute;cil y esn&oacute;rquel."), ""),
         (12, "japanese-wreck", 862, 584, T("Japanese Wreck", "Pecio Japon\u00e9s"), "l",
               "2&ndash;12 m &middot; " + T("Wreck &middot; All levels", "Pecio &middot; Todos los niveles"),
-              T("Soft-coral-covered and snorkelable.", "Forrado de coral blando, visible con esn&oacute;rquel.")),
+              T("Soft-coral-covered and snorkelable.", "Forrado de coral blando, visible con esn&oacute;rquel."), "2022/09/Open_water_padi.webp"),
         (13, "gili-selang",    946, 636, "Gili Selang", "l",
               "5&ndash;30 m &middot; " + T("Currents &middot; Advanced only", "Corrientes &middot; Solo avanzados"),
-              T("Pristine coral at Bali&rsquo;s eastern tip. Ask us.", "Coral intacto en la punta este de Bali. Preg&uacute;ntanos.")),
+              T("Pristine coral at Bali&rsquo;s eastern tip. Ask us.", "Coral intacto en la punta este de Bali. Preg&uacute;ntanos."), ""),
     ]
     pin_html = ""
-    for n, anchor, x, y, label, side, meta, desc in pins:
+    for n, anchor, x, y, label, side, meta, desc, img in pins:
         lx = x + 22 if side == "r" else x - 22
         ta = "start" if side == "r" else "end"
         plain = label.replace("&middot;", "\u00b7")
+        imgattr = f' data-img="{WP}/{img}"' if img else ""
         pin_html += f"""
-      <a href="{guide}#{anchor}" data-name="{plain}" data-meta="{meta}" data-desc="{desc}">
+      <a href="{guide}#{anchor}" data-name="{plain}" data-meta="{meta}" data-desc="{desc}"{imgattr}>
         <circle class="pin-c" cx="{x}" cy="{y}" r="12" fill="#91131b" stroke="#c9a227" stroke-width="1.5"/>
         <text x="{x}" y="{y + 4}" text-anchor="middle" style="font: 700 11px Inter, sans-serif; fill: #fff;">{n}</text>
         <text x="{lx}" y="{y + 4}" text-anchor="{ta}" style="font: 600 12px Inter, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; fill: #2a1d18;">{label}</text>
