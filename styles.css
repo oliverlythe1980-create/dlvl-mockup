@@ -1513,6 +1513,8 @@ a:hover { color: var(--crimson); }
 .wiz-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-bottom: 1.3rem; }
 .wiz-dates .form-field { margin-bottom: 0; }
 .wiz-dates input[type="date"] { font-family: var(--font-sans); color: var(--text); }
+.wiz-err input { border-color: var(--crimson); box-shadow: 0 0 0 3px rgba(145, 19, 27, 0.12); }
+.wiz-req { font-size: 0.78rem; color: var(--crimson); margin: -0.6rem 0 1rem; }
 .wiz-card .pill-btn { width: 100%; }
 @media (max-width: 560px) { .wiz-grid { grid-template-columns: 1fr; } }
 

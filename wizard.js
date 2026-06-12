@@ -55,6 +55,9 @@
     note_dm: 'Cuota anual de PADI y Crew Pack no incluidos. Alojamiento de larga estancia: pregúntanos.',
     note_funacc: '¿Alojamiento para varios días? Pregúntanos tarifas de habitación.',
     dates: 'Tus fechas (opcional)', arr: 'Llegada', dep: 'Salida',
+    contact: 'Tus datos', fname: 'Nombre', femail: 'Email',
+    req: 'Dinos tu nombre y un email para saber quién escribe.',
+    wa_name: 'Nombre', wa_email: 'Email',
     send: 'Enviar mi plan por WhatsApp',
     wa_hi: 'Hola! He montado mi plan en la web:', wa_dates: 'Fechas',
     l_dsd1: 'Bautizo de buceo · 1 inmersión', l_dsd2: 'Bautizo de buceo · 2 inmersiones',
@@ -104,6 +107,9 @@
     note_dm: "PADI's annual fee and Crew Pack not included. Long-stay accommodation: ask us.",
     note_funacc: 'Accommodation for several days? Ask us for room rates.',
     dates: 'Your dates (optional)', arr: 'Arrival', dep: 'Departure',
+    contact: 'Your details', fname: 'Name', femail: 'Email',
+    req: 'Add your name and an email so we know who is writing.',
+    wa_name: 'Name', wa_email: 'Email',
     send: 'Send my plan on WhatsApp',
     wa_hi: 'Hi! I built my plan on the website:', wa_dates: 'Dates',
     l_dsd1: 'Discover Scuba · 1 dive', l_dsd2: 'Discover Scuba · 2 dives',
@@ -241,6 +247,12 @@
         <div class="form-field"><label for="wiz-from">${T.arr}</label><input id="wiz-from" type="date" min="${today()}"></div>
         <div class="form-field"><label for="wiz-to">${T.dep}</label><input id="wiz-to" type="date" min="${today()}"></div>
       </div>
+      <p class="wiz-dates-label">${T.contact}</p>
+      <div class="wiz-dates">
+        <div class="form-field" id="wf-name"><label for="wiz-name">${T.fname}</label><input id="wiz-name" type="text" autocomplete="name"></div>
+        <div class="form-field" id="wf-email"><label for="wiz-email">${T.femail}</label><input id="wiz-email" type="email" autocomplete="email"></div>
+      </div>
+      <p class="wiz-req" hidden>${T.req}</p>
       <a class="pill-btn pill-btn--whatsapp wiz-send" href="#" target="_blank" rel="noopener">${T.send}</a>
       <button type="button" class="wiz-restart">${T.start}</button>
       </div>`;
@@ -248,10 +260,21 @@
     const toEl = document.getElementById('wiz-to');
     fromEl.addEventListener('change', () => { toEl.min = fromEl.value || today(); if (toEl.value && toEl.value < fromEl.value) toEl.value = fromEl.value; });
     el.querySelector('.wiz-send').addEventListener('click', (e) => {
+      const name = document.getElementById('wiz-name').value.trim();
+      const email = document.getElementById('wiz-email').value.trim();
+      const reqEl = el.querySelector('.wiz-req');
+      document.getElementById('wf-name').classList.toggle('wiz-err', !name);
+      document.getElementById('wf-email').classList.toggle('wiz-err', !email.includes('@'));
+      if (!name || !email.includes('@')) {
+        e.preventDefault();
+        reqEl.hidden = false;
+        return;
+      }
+      reqEl.hidden = true;
       let dates = '';
       if (fromEl.value && toEl.value) dates = fmtDate(fromEl.value) + ' – ' + fmtDate(toEl.value);
       else if (fromEl.value) dates = fmtDate(fromEl.value);
-      const msg = [T.wa_hi]
+      const msg = [T.wa_hi, `${T.wa_name}: ${name}`, `${T.wa_email}: ${email}`]
         .concat(lines.filter(([, v]) => v || true).map(([l, v]) => `· ${l}${v ? ' — ' + idr(v) : ''}`))
         .concat(people > 1 ? [`· ${T.l_people(people)}`] : [])
         .concat([`${T.total}: ${idr(total)} (${T.eur} ${eur(total)})`])
