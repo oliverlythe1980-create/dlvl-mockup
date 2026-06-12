@@ -1178,7 +1178,7 @@ a:hover { color: var(--crimson); }
 /* alternating bands: light sand page, crimson panel with gold/ivory text */
 .feature-row:nth-of-type(even) {
   background: radial-gradient(120% 160% at 50% -20%, #a4161f 0%, var(--crimson) 45%, #430a0e 100%);
-  border: 1px solid var(--gold);
+  border: 2px solid var(--gold);
   border-radius: var(--r-card);
   padding: 2.4rem;
   margin-inline: -2.4rem;
