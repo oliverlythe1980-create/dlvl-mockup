@@ -95,6 +95,7 @@ FOOT = """
           <li><a href="dive-sites.html">Dive Sites</a></li>
           <li><a href="fun-dives.html">Fun Dives &amp; Prices</a></li>
           <li><a href="amed-diving-guide.html">Diving Guide</a></li>
+          <li><a href="plan-your-trip.html">Trip Builder</a></li>
           <li><a href="stay-and-dive.html">Stay &amp; Dive</a></li>
         </ul>
       </div>
@@ -910,6 +911,26 @@ pages["amed-diving-guide.html"] = (
     + quote("The sea, once it casts its spell, holds one in its net of wonder forever.", "Jacques-Yves Cousteau"),
 )
 
+
+
+# ─────────────────────────── TRIP BUILDER ───────────────────────────
+pages["plan-your-trip.html"] = (
+    "Build Your Dive Trip in Amed, Bali · Instant Estimate | Diving La Vida Loca",
+    "Answer three questions and get an instant estimate for your diving in Amed, Bali: courses, fun dives, stay & dive packs. Real prices, no commitment, confirmed on WhatsApp.",
+    hero(f"{WP}/2022/09/Open_water_padi.webp",
+         '<a href="index.html">Home</a> / Trip Builder',
+         "Build Your Trip",
+         "Three questions, an honest estimate from our real price list, and your plan lands in our WhatsApp ready to confirm. Tailored is the whole point: this just gets the conversation started.")
+    + f"""
+<section class="page-section">
+  <div class="container wiz-wrap">
+    <div id="wizard" class="wiz-card"></div>
+  </div>
+</section>
+<script src="wizard.js?v=1" defer></script>
+"""
+    + quote("We feel like we could not have picked a better place.", "Google review &middot; one of 508 five-star reviews"),
+)
 
 for fname, (title, desc, body) in pages.items():
     es_name = fname.replace(".html", "-es.html")

@@ -1383,6 +1383,78 @@ a:hover { color: var(--crimson); }
 }
 .map-card-b em { display: block; font-style: normal; font-size: 0.78rem; font-weight: 300; color: var(--text-muted); line-height: 1.5; }
 
+/* ── Trip builder wizard ── */
+.wiz-wrap { max-width: 720px; }
+.wiz-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--gold);
+  border-radius: var(--r-card);
+  padding: 2.2rem 2.2rem 2rem;
+  box-shadow: var(--shadow-md);
+}
+.wiz-prog {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+.wiz-q { font-size: 1.5rem; color: var(--crimson); margin-bottom: 1.4rem; }
+.wiz-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+.wiz-opt {
+  font-family: var(--font-sans);
+  text-align: left;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s var(--ease-out);
+}
+.wiz-opt:hover { border-color: var(--crimson); background: #fff; transform: translateY(-2px); }
+.wiz-opt strong { display: block; font-family: var(--font-serif); font-size: 1.05rem; color: var(--text); }
+.wiz-opt span { display: block; font-size: 0.74rem; font-weight: 300; color: var(--text-muted); margin-top: 0.15rem; }
+.wiz-back, .wiz-restart {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 1.4rem;
+  padding: 0;
+}
+.wiz-back:hover, .wiz-restart:hover { color: var(--crimson); }
+.wiz-summary { border-top: 1px solid var(--line); margin-top: 0.4rem; }
+.wiz-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.88rem;
+  font-weight: 300;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.wiz-row span:last-child { font-weight: 600; white-space: nowrap; }
+.wiz-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.9rem 0 0.2rem;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--crimson);
+}
+.wiz-eur { font-size: 0.78rem; color: var(--gold); font-weight: 600; margin-bottom: 1rem; }
+.wiz-note { font-size: 0.78rem; font-weight: 300; color: var(--text-muted); margin-bottom: 1.3rem; }
+.wiz-card .pill-btn { width: 100%; }
+@media (max-width: 560px) { .wiz-grid { grid-template-columns: 1fr; } }
+
 /* ── Toast ── */
 .toast {
   position: fixed;
