@@ -174,20 +174,27 @@ def coast_map(lang):
         (12, "japanese-wreck", 966, 320, T("Japanese Wreck", "Pecio Japon\u00e9s"), "r",
               "2&ndash;12 m &middot; " + T("Wreck &middot; All levels", "Pecio &middot; Todos los niveles"),
               T("Soft-coral-covered and snorkelable.", "Forrado de coral blando, visible con esn&oacute;rquel."), "2022/09/Open_water_padi.webp"),
-        (13, "gili-selang",   1124, 400, "Gili Selang", "r",
+        (13, "gili-selang",   1150, 392, "Gili Selang", "r",
               "5&ndash;30 m &middot; " + T("Currents &middot; Advanced only", "Corrientes &middot; Solo avanzados"),
               T("Pristine coral at Bali&rsquo;s eastern tip. Ask us.", "Coral intacto en la punta este de Bali. Preg&uacute;ntanos."), ""),
     ]
     pin_html = ""
+    # absolute label positions: two flat rows per cluster, language-tuned for longer ES names
+    LPOS = {
+        1: (95, 126), 2: (162, 100), 3: (T(214, 214), 126), 4: (274, 100), 5: (T(340, 340), 126), 6: (402, 100),
+        7: (T(655, 638), 216), 8: (706, 190), 9: (T(762, 780), 216), 10: (846, 190), 11: (T(906, 920), 216), 12: (966, 190),
+        13: (1132, 366),
+    }
     for i, (n, anchor, x, y, label, side, meta, desc, img) in enumerate(pins):
-        dy = (-26, -44, -62)[i % 3]
+        lx, ly = LPOS[n]
         plain = label.replace("&middot;", "\u00b7")
         imgattr = f' data-img="{WP}/{img}"' if img else ""
         pin_html += f"""
       <a href="{guide}#{anchor}" data-name="{plain}" data-meta="{meta}" data-desc="{desc}"{imgattr}>
         <circle class="pin-c" cx="{x}" cy="{y}" r="11" fill="#91131b" stroke="#c9a227" stroke-width="1.5"/>
         <text x="{x}" y="{y + 4}" text-anchor="middle" style="font: 700 10px Inter, sans-serif; fill: #fff;">{n}</text>
-        <text x="{x}" y="{y + dy}" text-anchor="middle" style="font: 600 11px Inter, sans-serif; letter-spacing: 1.2px; text-transform: uppercase; fill: #2a1d18;">{label}</text>
+        <line x1="{x}" y1="{y - 12}" x2="{lx}" y2="{ly + 5}" stroke="#c9a227" stroke-width="1" opacity="0.45"/>
+        <text x="{lx}" y="{ly}" text-anchor="middle" style="font: 600 11px Inter, sans-serif; letter-spacing: 1.2px; text-transform: uppercase; fill: #2a1d18;">{label}</text>
       </a>"""
     sea = "Bali Sea" if en else "Mar de Bali"
     note = "Hand-drawn &middot; not to scale" if en else "Dibujado a mano &middot; sin escala"
@@ -196,14 +203,14 @@ def coast_map(lang):
     sub = ("Thirteen sites along one volcanic shoreline, from the Boga Wreck at Kubu to Gili Selang at Bali&rsquo;s eastern tip. Tap a pin to read its chapter in the guide."
            if en else
            "Trece puntos en una misma costa volc\u00e1nica, del pecio Boga en Kubu hasta Gili Selang en la punta este de Bali. Toca un pin para leer su cap\u00edtulo en la gu\u00eda.")
-    COAST = "M 20,168 C 70,162 115,162 140,172 C 165,198 245,206 280,182 C 305,162 318,160 340,168 C 365,180 385,184 405,190 C 470,212 560,226 615,242 C 638,266 688,270 718,252 C 740,256 750,258 775,264 C 830,278 880,294 940,312 C 990,328 1050,352 1100,370 C 1140,384 1170,380 1200,378"
+    COAST = "M 20,168 C 70,162 115,162 140,172 C 165,198 245,206 280,182 C 305,162 318,160 340,168 C 365,180 385,184 405,190 C 470,212 560,226 615,242 C 638,266 688,270 718,252 C 740,256 750,258 775,264 C 830,278 880,294 940,312 C 990,328 1040,348 1078,366 C 1106,380 1116,404 1108,430 C 1102,446 1098,452 1096,460"
     return f"""
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">{title}</h2></div>
     <p class="section-sub">{sub}</p>
     <div class="coast-map">
       <svg class="coast-svg" viewBox="0 0 1200 460" role="img" aria-label="{title}">
         <rect width="1200" height="460" fill="#f9f3e8"/>
-        <path d="{COAST} L 1200,460 L 0,460 Z" fill="#ead9c0"/>
+        <path d="{COAST} L 1096,460 L 0,460 Z" fill="#ead9c0"/>
         <path d="{COAST}" fill="none" stroke="#c9a227" stroke-width="3" stroke-linecap="round"/>
         <path d="M 250,420 L 310,326 L 370,420" fill="none" stroke="#2a1d18" stroke-width="2" stroke-linejoin="round" opacity="0.5"/>
         <path d="M 285,372 L 308,344 L 328,374" fill="none" stroke="#2a1d18" stroke-width="1.3" opacity="0.35"/>
@@ -215,11 +222,11 @@ def coast_map(lang):
           <path d="M 420,70 q7,-7 14,0 q7,7 14,0"/><path d="M 600,60 q7,-7 14,0 q7,7 14,0"/>
         </g>
         <g transform="translate(1150,52)"><line x1="0" y1="14" x2="0" y2="-12" stroke="#91131b" stroke-width="2"/><path d="M0,-12 L-5,-3 L5,-3 Z" fill="#91131b"/><text x="0" y="30" text-anchor="middle" style="font: 700 11px Inter, sans-serif; fill: #91131b;">N</text></g>
-        <ellipse cx="1124" cy="400" rx="20" ry="12" fill="#ead9c0" stroke="#c9a227" stroke-width="2"/>
+        <ellipse cx="1150" cy="392" rx="20" ry="12" fill="#ead9c0" stroke="#c9a227" stroke-width="2"/>
         <g>
-          <circle cx="730" cy="306" r="13" fill="#91131b" stroke="#c9a227" stroke-width="2"/>
-          <text x="730" y="311" text-anchor="middle" style="font: 700 12px Inter, sans-serif; fill: #e6c45c;">&#9733;</text>
-          <text x="730" y="338" text-anchor="middle" style="font: 700 10px Inter, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; fill: #91131b;">{shop}</text>
+          <circle cx="775" cy="308" r="13" fill="#91131b" stroke="#c9a227" stroke-width="2"/>
+          <text x="775" y="313" text-anchor="middle" style="font: 700 12px Inter, sans-serif; fill: #e6c45c;">&#9733;</text>
+          <text x="775" y="340" text-anchor="middle" style="font: 700 10px Inter, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; fill: #91131b;">{shop}</text>
         </g>{pin_html}
         <text x="36" y="442" style="font: italic 500 12px 'Playfair Display', serif; fill: #75655c;">{note}</text>
       </svg>
