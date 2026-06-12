@@ -52,7 +52,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=7">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
 
@@ -126,7 +126,7 @@ FOOT = """
   </div>
 </footer>
 
-<script src="script.js?v=4" defer></script>
+<script src="script.js?v=5" defer></script>
 </body>
 </html>
 """.replace("WPURL", WP).replace("WAURL", WA)
@@ -138,57 +138,56 @@ def coast_map(lang):
     guide = "amed-diving-guide.html" if en else "amed-diving-guide-es.html"
     T = (lambda a, b: a) if en else (lambda a, b: b)
     pins = [
-        (1,  "boga",           232,  62, T("Boga Wreck &middot; Kubu", "Pecio Boga &middot; Kubu"), "r",
+        (1,  "boga",            95, 158, T("Boga Wreck", "Pecio Boga"), "r",
               "16&ndash;40 m &middot; " + T("Wreck &middot; Advanced", "Pecio &middot; Avanzado"),
               T("Purpose-sunk in 2012; statues and a sunken car on deck.", "Hundido a prop&oacute;sito en 2012; estatuas y un coche en cubierta."), ""),
-        (2,  "liberty",        300, 128, T("USAT Liberty Wreck", "Pecio del USAT Liberty"), "r",
+        (2,  "liberty",        162, 192, T("USAT Liberty", "USAT Liberty"), "r",
               "5&ndash;30 m &middot; " + T("Wreck &middot; All levels", "Pecio &middot; Todos los niveles"),
               T("120 m WWII wreck; bumpheads at dawn.", "Pecio de 120 m de la II GM; cabezones al amanecer."), "2022/09/Advanced_open_water.webp"),
-        (3,  "coral-garden",   334, 176, "Coral Garden", "r",
+        (3,  "coral-garden",   218, 200, "Coral Garden", "r",
               "2&ndash;12 m &middot; " + T("Reef &middot; All levels", "Arrecife &middot; Todos los niveles"),
               T("Statues and soft coral; long, easy dives.", "Estatuas y coral blando; inmersiones largas y f&aacute;ciles."), "2022/09/Nitrox.webp"),
-        (4,  "coral-garden",   366, 224, "Drop-Off", "r",
+        (4,  "coral-garden",   274, 184, "Drop-Off", "r",
               "10&ndash;40 m &middot; " + T("Wall &middot; Advanced", "Pared &middot; Avanzado"),
               T("Volcanic wall, giant gorgonians.", "Pared volc&aacute;nica, gorgonias gigantes."), "2022/09/Advanced_open_water.webp"),
-        (5,  "batu-kelebit",   416, 264, "Batu Kelebit", "r",
+        (5,  "batu-kelebit",   332, 166, "Batu Kelebit", "r",
               "15&ndash;40 m &middot; " + T("Ridges &middot; Advanced", "Crestas &middot; Avanzado"),
               T("Deep ridges with real pelagic chances.", "Crestas profundas con opciones pel&aacute;gicas de verdad."), ""),
-        (6,  "seraya",         478, 306, "Seraya Secrets", "r",
+        (6,  "seraya",         402, 188, "Seraya Secrets", "r",
               "5&ndash;20 m &middot; Muck &middot; " + T("All levels", "Todos los niveles"),
               T("Frogfish, harlequin shrimp: macro heaven.", "Peces sapo, gambas arlequ&iacute;n: para&iacute;so macro."), "2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp"),
-        (7,  "jemeluk",        622, 396, T("Jemeluk Bay", "Bah\u00eda de Jemeluk"), "r",
+        (7,  "jemeluk",        655, 262, T("Jemeluk Bay", "Bah\u00eda de Jemeluk"), "r",
               "3&ndash;25 m &middot; " + T("Reef &middot; All levels", "Arrecife &middot; Todos los niveles"),
               T("Our house reef and training bay.", "Nuestro arrecife de casa y bah&iacute;a de pr&aacute;cticas."), "2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp"),
-        (8,  "pyramids",       672, 436, T("The Pyramids", "Las Pir\u00e1mides"), "r",
-              "5&ndash;22 m &middot; " + T("Artificial reef &middot; All levels", "Arrecife artificial &middot; Todos los niveles"),
+        (8,  "pyramids",       706, 256, T("The Pyramids", "Las Pir\u00e1mides"), "r",
+              "5&ndash;22 m &middot; " + T("Artificial reef", "Arrecife artificial"),
               T("Glassfish swarms; our navigation classroom.", "Enjambres de peces cristal; nuestra aula de navegaci&oacute;n."), "2022/09/DiveMasterw.webp"),
-        (9,  "pyramids",       744, 498, T("Melasti Reef", "Arrecife de Melasti"), "r",
+        (9,  "pyramids",       762, 260, T("Melasti Reef", "Arrecife de Melasti"), "r",
               "4&ndash;20 m &middot; " + T("Reef &middot; All levels", "Arrecife &middot; Todos los niveles"),
               T("Resident turtles, 500 m from our door.", "Tortugas residentes, a 500 m de la puerta."), "2022/09/Rescue_diver-1.webp"),
-        (10, "bunutan",        788, 530, "Bunutan", "r",
+        (10, "bunutan",        846, 284, "Bunutan", "r",
               "10&ndash;30 m &middot; " + T("Point &middot; All levels", "Punta &middot; Todos los niveles"),
               T("Garden eels and a gentle drift.", "Anguilas jard&iacute;n y una deriva suave."), ""),
-        (11, "lipah",          826, 556, T("Lipah Bay", "Bah\u00eda de Lipah"), "r",
+        (11, "lipah",          906, 302, T("Lipah Bay", "Bah\u00eda de Lipah"), "r",
               "3&ndash;20 m &middot; " + T("Bay &middot; All levels", "Bah&iacute;a &middot; Todos los niveles"),
               T("Coral bommies; easy diving and snorkelling.", "Bommies de coral; buceo f&aacute;cil y esn&oacute;rquel."), ""),
-        (12, "japanese-wreck", 862, 584, T("Japanese Wreck", "Pecio Japon\u00e9s"), "l",
+        (12, "japanese-wreck", 966, 320, T("Japanese Wreck", "Pecio Japon\u00e9s"), "r",
               "2&ndash;12 m &middot; " + T("Wreck &middot; All levels", "Pecio &middot; Todos los niveles"),
               T("Soft-coral-covered and snorkelable.", "Forrado de coral blando, visible con esn&oacute;rquel."), "2022/09/Open_water_padi.webp"),
-        (13, "gili-selang",    946, 636, "Gili Selang", "l",
+        (13, "gili-selang",   1124, 400, "Gili Selang", "r",
               "5&ndash;30 m &middot; " + T("Currents &middot; Advanced only", "Corrientes &middot; Solo avanzados"),
               T("Pristine coral at Bali&rsquo;s eastern tip. Ask us.", "Coral intacto en la punta este de Bali. Preg&uacute;ntanos."), ""),
     ]
     pin_html = ""
-    for n, anchor, x, y, label, side, meta, desc, img in pins:
-        lx = x + 22 if side == "r" else x - 22
-        ta = "start" if side == "r" else "end"
+    for i, (n, anchor, x, y, label, side, meta, desc, img) in enumerate(pins):
+        dy = (-26, -44, -62)[i % 3]
         plain = label.replace("&middot;", "\u00b7")
         imgattr = f' data-img="{WP}/{img}"' if img else ""
         pin_html += f"""
       <a href="{guide}#{anchor}" data-name="{plain}" data-meta="{meta}" data-desc="{desc}"{imgattr}>
-        <circle class="pin-c" cx="{x}" cy="{y}" r="12" fill="#91131b" stroke="#c9a227" stroke-width="1.5"/>
-        <text x="{x}" y="{y + 4}" text-anchor="middle" style="font: 700 11px Inter, sans-serif; fill: #fff;">{n}</text>
-        <text x="{lx}" y="{y + 4}" text-anchor="{ta}" style="font: 600 12px Inter, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; fill: #2a1d18;">{label}</text>
+        <circle class="pin-c" cx="{x}" cy="{y}" r="11" fill="#91131b" stroke="#c9a227" stroke-width="1.5"/>
+        <text x="{x}" y="{y + 4}" text-anchor="middle" style="font: 700 10px Inter, sans-serif; fill: #fff;">{n}</text>
+        <text x="{x}" y="{y + dy}" text-anchor="middle" style="font: 600 11px Inter, sans-serif; letter-spacing: 1.2px; text-transform: uppercase; fill: #2a1d18;">{label}</text>
       </a>"""
     sea = "Bali Sea" if en else "Mar de Bali"
     note = "Hand-drawn &middot; not to scale" if en else "Dibujado a mano &middot; sin escala"
@@ -197,34 +196,34 @@ def coast_map(lang):
     sub = ("Thirteen sites along one volcanic shoreline, from the Boga Wreck at Kubu to Gili Selang at Bali&rsquo;s eastern tip. Tap a pin to read its chapter in the guide."
            if en else
            "Trece puntos en una misma costa volc\u00e1nica, del pecio Boga en Kubu hasta Gili Selang en la punta este de Bali. Toca un pin para leer su cap\u00edtulo en la gu\u00eda.")
+    COAST = "M 20,168 C 70,162 115,162 140,172 C 165,198 245,206 280,182 C 305,162 318,160 340,168 C 365,180 385,184 405,190 C 470,212 560,226 615,242 C 638,266 688,270 718,252 C 740,256 750,258 775,264 C 830,278 880,294 940,312 C 990,328 1050,352 1100,370 C 1140,384 1170,380 1200,378"
     return f"""
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">{title}</h2></div>
     <p class="section-sub">{sub}</p>
     <div class="coast-map">
-      <svg class="coast-svg" viewBox="0 0 1000 660" role="img" aria-label="{title}">
-        <rect width="1000" height="660" fill="#f9f3e8"/>
-        <path d="M0,0 L212,0 C 238,70 218,118 248,168 C 276,226 356,238 420,290 C 468,330 520,332 580,372 C 640,412 652,452 712,482 C 772,516 802,560 858,598 C 884,616 900,638 906,660 L0,660 Z" fill="#ead9c0"/>
-        <path d="M212,0 C 238,70 218,118 248,168 C 276,226 356,238 420,290 C 468,330 520,332 580,372 C 640,412 652,452 712,482 C 772,516 802,560 858,598 C 884,616 900,638 906,660" fill="none" stroke="#c9a227" stroke-width="3" stroke-linecap="round"/>
-        <path d="M70,320 L145,190 L215,320" fill="none" stroke="#2a1d18" stroke-width="2" stroke-linejoin="round" opacity="0.55"/>
-        <path d="M112,255 L132,230 L150,258" fill="none" stroke="#2a1d18" stroke-width="1.4" opacity="0.4"/>
-        <text x="143" y="348" text-anchor="middle" style="font: 600 11px Inter, sans-serif; letter-spacing: 2px; text-transform: uppercase; fill: #75655c;">Gunung Agung</text>
-        <text x="790" y="150" style="font: italic 700 24px 'Playfair Display', serif; fill: #c9a227;">{sea}</text>
+      <svg class="coast-svg" viewBox="0 0 1200 460" role="img" aria-label="{title}">
+        <rect width="1200" height="460" fill="#f9f3e8"/>
+        <path d="{COAST} L 1200,460 L 0,460 Z" fill="#ead9c0"/>
+        <path d="{COAST}" fill="none" stroke="#c9a227" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 250,420 L 310,326 L 370,420" fill="none" stroke="#2a1d18" stroke-width="2" stroke-linejoin="round" opacity="0.5"/>
+        <path d="M 285,372 L 308,344 L 328,374" fill="none" stroke="#2a1d18" stroke-width="1.3" opacity="0.35"/>
+        <text x="310" y="442" text-anchor="middle" style="font: 600 10px Inter, sans-serif; letter-spacing: 2px; text-transform: uppercase; fill: #75655c;">Gunung Agung</text>
+        <text x="960" y="84" style="font: italic 700 24px 'Playfair Display', serif; fill: #c9a227;">{sea}</text>
         <g stroke="#c9a227" stroke-width="1.4" fill="none" opacity="0.45">
-          <path d="M700,250 q7,-7 14,0 q7,7 14,0"/><path d="M780,330 q7,-7 14,0 q7,7 14,0"/>
-          <path d="M620,200 q7,-7 14,0 q7,7 14,0"/><path d="M850,430 q7,-7 14,0 q7,7 14,0"/>
-          <path d="M540,150 q7,-7 14,0 q7,7 14,0"/><path d="M920,300 q7,-7 14,0 q7,7 14,0"/>
+          <path d="M 520,90 q7,-7 14,0 q7,7 14,0"/><path d="M 700,120 q7,-7 14,0 q7,7 14,0"/>
+          <path d="M 860,160 q7,-7 14,0 q7,7 14,0"/><path d="M 1020,210 q7,-7 14,0 q7,7 14,0"/>
+          <path d="M 420,70 q7,-7 14,0 q7,7 14,0"/><path d="M 600,60 q7,-7 14,0 q7,7 14,0"/>
         </g>
-        <ellipse cx="946" cy="636" rx="22" ry="14" fill="#ead9c0" stroke="#c9a227" stroke-width="2"/>
-        <g transform="translate(940,58)"><line x1="0" y1="16" x2="0" y2="-14" stroke="#91131b" stroke-width="2"/><path d="M0,-14 L-5,-4 L5,-4 Z" fill="#91131b"/><text x="0" y="34" text-anchor="middle" style="font: 700 12px Inter, sans-serif; fill: #91131b;">N</text></g>
+        <g transform="translate(1150,52)"><line x1="0" y1="14" x2="0" y2="-12" stroke="#91131b" stroke-width="2"/><path d="M0,-12 L-5,-3 L5,-3 Z" fill="#91131b"/><text x="0" y="30" text-anchor="middle" style="font: 700 11px Inter, sans-serif; fill: #91131b;">N</text></g>
+        <ellipse cx="1124" cy="400" rx="20" ry="12" fill="#ead9c0" stroke="#c9a227" stroke-width="2"/>
         <g>
-          <circle cx="652" cy="470" r="15" fill="#91131b" stroke="#c9a227" stroke-width="2"/>
-          <text x="652" y="475" text-anchor="middle" style="font: 700 13px Inter, sans-serif; fill: #e6c45c;">&#9733;</text>
-          <text x="652" y="510" text-anchor="middle" style="font: 700 11px Inter, sans-serif; letter-spacing: 1.6px; text-transform: uppercase; fill: #91131b;">{shop}</text>
+          <circle cx="730" cy="306" r="13" fill="#91131b" stroke="#c9a227" stroke-width="2"/>
+          <text x="730" y="311" text-anchor="middle" style="font: 700 12px Inter, sans-serif; fill: #e6c45c;">&#9733;</text>
+          <text x="730" y="338" text-anchor="middle" style="font: 700 10px Inter, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; fill: #91131b;">{shop}</text>
         </g>{pin_html}
-        <text x="40" y="636" style="font: italic 500 13px 'Playfair Display', serif; fill: #75655c;">{note}</text>
+        <text x="36" y="442" style="font: italic 500 12px 'Playfair Display', serif; fill: #75655c;">{note}</text>
       </svg>
     </div>
-    <div style="height: 2.5rem"></div>
 """
 
 def hero(img, crumb, title, lede, pos=None):
