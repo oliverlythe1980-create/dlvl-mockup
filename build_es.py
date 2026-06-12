@@ -96,7 +96,7 @@ FOOT = """
           <li><a href="dive-sites-es.html">Puntos de Inmersi&oacute;n</a></li>
           <li><a href="fun-dives-es.html">Inmersiones y Precios</a></li>
           <li><a href="amed-diving-guide-es.html">Gu&iacute;a de Buceo</a></li>
-          <li><a href="plan-your-trip-es.html">Crea tu Experiencia</a></li>
+          <li><a href="plan-your-trip-es.html">Crea tu Viaje</a></li>
           <li><a href="stay-and-dive-es.html">Aloja y Bucea</a></li>
         </ul>
       </div>
@@ -262,7 +262,7 @@ def booking(price, sub, options, wa_text, trust):
     <ul class="booking-options">
 {opts}
     </ul>
-    <a class="pill-btn" href="plan-your-trip-es.html">Crea tu experiencia &rarr;</a>
+    <a class="pill-btn" href="plan-your-trip-es.html">Crea tu viaje &rarr;</a>
     <p class="booking-note">Preguntar no cuesta nada: dinos tus fechas y te confirmamos disponibilidad.</p>
     <ul class="booking-trust">
 {ticks}
@@ -934,11 +934,11 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
 
 # ─────────────────────────── CREA TU VIAJE ───────────────────────────
 pages["plan-your-trip-es.html"] = ("plan-your-trip.html",
-    "Crea Tu Experiencia de Buceo en Amed, Bali · Presupuesto al Instante | Diving La Vida Loca",
+    "Crea Tu Viaje de Buceo en Amed, Bali · Presupuesto al Instante | Diving La Vida Loca",
     "Responde tres preguntas y consigue un presupuesto al instante para bucear en Amed, Bali: cursos, inmersiones y packs aloja y bucea. Precios reales, sin compromiso, confirmado por WhatsApp.",
     hero(f"{WP}/2022/09/Open_water_padi.webp",
-         '<a href="index-es.html">Inicio</a> / Crea tu Experiencia',
-         "Crea Tu Experiencia",
+         '<a href="index-es.html">Inicio</a> / Crea tu Viaje',
+         "Crea Tu Viaje",
          "Tres preguntas, una estimaci&oacute;n honesta sacada de nuestra lista de precios real, y tu plan llega a nuestro WhatsApp listo para confirmar. Lo de hecho a medida va en serio: esto solo arranca la conversaci&oacute;n.")
     + f"""
 <section class="page-section">

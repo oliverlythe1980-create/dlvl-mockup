@@ -95,7 +95,7 @@ FOOT = """
           <li><a href="dive-sites.html">Dive Sites</a></li>
           <li><a href="fun-dives.html">Fun Dives &amp; Prices</a></li>
           <li><a href="amed-diving-guide.html">Diving Guide</a></li>
-          <li><a href="plan-your-trip.html">Tailor Your Experience</a></li>
+          <li><a href="plan-your-trip.html">Tailor Your Trip</a></li>
           <li><a href="stay-and-dive.html">Stay &amp; Dive</a></li>
         </ul>
       </div>
@@ -261,7 +261,7 @@ def booking(price, sub, options, wa_text, trust):
     <ul class="booking-options">
 {opts}
     </ul>
-    <a class="pill-btn" href="plan-your-trip.html">Tailor your experience &rarr;</a>
+    <a class="pill-btn" href="plan-your-trip.html">Tailor your trip &rarr;</a>
     <p class="booking-note">No deposit needed to ask: tell us your dates and we&rsquo;ll confirm availability.</p>
     <ul class="booking-trust">
 {ticks}
@@ -935,11 +935,11 @@ pages["amed-diving-guide.html"] = (
 
 # ─────────────────────────── TRIP BUILDER ───────────────────────────
 pages["plan-your-trip.html"] = (
-    "Tailor Your Dive Experience in Amed, Bali · Instant Estimate | Diving La Vida Loca",
+    "Tailor Your Dive Trip in Amed, Bali · Instant Estimate | Diving La Vida Loca",
     "Answer three questions and get an instant estimate for your diving in Amed, Bali: courses, fun dives, stay & dive packs. Real prices, no commitment, confirmed on WhatsApp.",
     hero(f"{WP}/2022/09/Open_water_padi.webp",
-         '<a href="index.html">Home</a> / Tailor Your Experience',
-         "Tailor Your Experience",
+         '<a href="index.html">Home</a> / Tailor Your Trip',
+         "Tailor Your Trip",
          "Three questions, an honest estimate from our real price list, and your plan lands in our WhatsApp ready to confirm. Tailored is the whole point: this just gets the conversation started.")
     + f"""
 <section class="page-section">
