@@ -1172,9 +1172,20 @@ a:hover { color: var(--crimson); }
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  margin-bottom: 5.5rem;
+  margin-bottom: 3.2rem;
 }
 .feature-row:last-of-type { margin-bottom: 0; }
+/* alternating sand bands: light sand page, darker sand panel */
+.feature-row:nth-of-type(even) {
+  background: var(--sand);
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: 2.4rem;
+  margin-inline: -2.4rem;
+}
+@media (max-width: 860px) {
+  .feature-row:nth-of-type(even) { padding: 1.4rem; margin-inline: -1.2rem; }
+}
 .feature-row--flip .feature-img { order: 2; }
 .feature-img {
   border-radius: var(--r-card);
