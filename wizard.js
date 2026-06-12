@@ -117,7 +117,7 @@
 
   const idr = (n) => 'IDR ' + n.toLocaleString('de-DE');
   const eur = (n) => '€' + Math.round(n / RATE);
-  const st = { history: [] };
+  const st = { history: [], labels: [] };
   const today = () => new Date().toISOString().slice(0, 10);
   const fmtDate = (iso) => new Date(iso + 'T12:00:00').toLocaleDateString(ES ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
@@ -127,8 +127,13 @@
     ).join('') + '</div>';
   }
 
+  function crumbs() {
+    if (!st.labels.length) return '';
+    return '<div class="wiz-crumbs">' + st.labels.map((l) => `<span class="wiz-crumb">${l}</span>`).join('') + '</div>';
+  }
+
   function header(q) {
-    return `<p class="wiz-prog">${T.step} ${st.history.length + 1}</p><h3 class="wiz-q">${q}</h3>`;
+    return crumbs() + `<p class="wiz-prog">${T.step} ${st.history.length + 1}</p><h3 class="wiz-q">${q}</h3>`;
   }
 
   const steps = {
@@ -224,7 +229,8 @@
     ).join('');
     const ppl = people > 1 ? `<div class="wiz-row"><span>${T.l_people(people)}</span><span>&times; ${people}</span></div>` : '';
     el.innerHTML = `
-      <h3 class="wiz-q">${T.sum}</h3>
+      <div class="wiz-step">
+      <div class="wiz-sumhead"><h3>${T.sum}</h3><img src="assets/logo-mark.png" alt=""></div>
       <div class="wiz-summary">${rows}${ppl}
         <div class="wiz-total"><span>${T.total}</span><span>${idr(total)}</span></div>
         <p class="wiz-eur">${T.eur} ${eur(total)} · ${T.taxes}</p>
@@ -236,7 +242,8 @@
         <div class="form-field"><label for="wiz-to">${T.dep}</label><input id="wiz-to" type="date" min="${today()}"></div>
       </div>
       <a class="pill-btn pill-btn--whatsapp wiz-send" href="#" target="_blank" rel="noopener">${T.send}</a>
-      <button type="button" class="wiz-restart">${T.start}</button>`;
+      <button type="button" class="wiz-restart">${T.start}</button>
+      </div>`;
     const fromEl = document.getElementById('wiz-from');
     const toEl = document.getElementById('wiz-to');
     fromEl.addEventListener('change', () => { toEl.min = fromEl.value || today(); if (toEl.value && toEl.value < fromEl.value) toEl.value = fromEl.value; });
@@ -252,7 +259,7 @@
         .join('\n');
       e.currentTarget.href = WA + '?text=' + encodeURIComponent(msg);
     });
-    el.querySelector('.wiz-restart').addEventListener('click', () => { for (const k in st) delete st[k]; st.history = []; show('goal'); });
+    el.querySelector('.wiz-restart').addEventListener('click', () => { for (const k in st) delete st[k]; st.history = []; st.labels = []; show('goal'); });
   }
 
   const flow = {
@@ -275,18 +282,19 @@
   steps.levelpeople = steps.people;
 
   function show(step) {
-    el.innerHTML = steps[step]() +
-      (st.history.length ? `<button type="button" class="wiz-back">${T.back}</button>` : '');
+    el.innerHTML = '<div class="wiz-step">' + steps[step]() +
+      (st.history.length ? `<button type="button" class="wiz-back">${T.back}</button>` : '') + '</div>';
     el.querySelectorAll('.wiz-opt').forEach((b) => {
       b.addEventListener('click', () => {
         st[step === 'levelpeople' ? 'people' : step] = b.dataset.v;
         st.history.push(step);
+        st.labels.push(b.querySelector('strong').textContent);
         const next = flow[step](b.dataset.v);
         if (next) show(next); else summary();
       });
     });
     const back = el.querySelector('.wiz-back');
-    if (back) back.addEventListener('click', () => { show(st.history.pop()); });
+    if (back) back.addEventListener('click', () => { st.labels.pop(); show(st.history.pop()); });
   }
 
   show('goal');

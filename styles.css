@@ -1401,7 +1401,44 @@ a:hover { color: var(--crimson); }
   color: var(--gold);
   margin-bottom: 0.6rem;
 }
-.wiz-q { font-size: 1.5rem; color: var(--crimson); margin-bottom: 1.4rem; }
+.wiz-q { font-size: 1.55rem; color: var(--crimson); margin-bottom: 1.4rem; }
+.wiz-q::before {
+  content: '';
+  display: block;
+  width: 2.6rem;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 0.8rem;
+}
+@keyframes wiz-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+.wiz-step { animation: wiz-in 0.4s var(--ease-out) both; }
+.wiz-crumbs { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.1rem; }
+.wiz-crumb {
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: radial-gradient(120% 160% at 50% -20%, #a4161f 0%, var(--crimson) 60%, #6f0e13 100%);
+  border: 1px solid var(--gold);
+  color: var(--gold-soft);
+  padding: 0.32rem 0.75rem;
+  border-radius: var(--r-btn);
+}
+.wiz-sumhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: -2.2rem -2.2rem 1.4rem;
+  padding: 1.1rem 1.6rem;
+  background: radial-gradient(120% 160% at 50% -20%, #a4161f 0%, var(--crimson) 45%, #430a0e 100%);
+  border-bottom: 2px solid var(--gold);
+  border-radius: calc(var(--r-card) - 1px) calc(var(--r-card) - 1px) 0 0;
+}
+.wiz-sumhead h3 { font-size: 1.45rem; color: var(--text-on-dark); }
+.wiz-sumhead img { width: 46px; height: 44px; opacity: 0.55; }
 .wiz-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
 .wiz-opt {
   font-family: var(--font-sans);
@@ -1413,7 +1450,20 @@ a:hover { color: var(--crimson); }
   cursor: pointer;
   transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s var(--ease-out);
 }
-.wiz-opt:hover { border-color: var(--crimson); background: #fff; transform: translateY(-2px); }
+.wiz-opt { position: relative; overflow: hidden; }
+.wiz-opt::after {
+  content: '→';
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translate(8px, -50%);
+  color: var(--gold);
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.3s var(--ease-out);
+}
+.wiz-opt:hover { border-color: var(--crimson); background: #fff; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.wiz-opt:hover::after { opacity: 1; transform: translate(0, -50%); }
 .wiz-opt strong { display: block; font-family: var(--font-serif); font-size: 1.05rem; color: var(--text); }
 .wiz-opt span { display: block; font-size: 0.74rem; font-weight: 300; color: var(--text-muted); margin-top: 0.15rem; }
 .wiz-back, .wiz-restart {

@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=4">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
@@ -927,7 +927,7 @@ pages["plan-your-trip.html"] = (
     <div id="wizard" class="wiz-card"></div>
   </div>
 </section>
-<script src="wizard.js?v=4" defer></script>
+<script src="wizard.js?v=5" defer></script>
 """
     + quote("We feel like we could not have picked a better place.", "Google review &middot; one of 508 five-star reviews"),
 )
