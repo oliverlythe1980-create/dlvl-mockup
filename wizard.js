@@ -32,6 +32,14 @@
     aow: 'Advanced Open Water', aow_s: '2 días · 5 inmersiones', resc: 'Rescue + EFR', resc_s: '3 días · primeros auxilios incl.',
     q_acc: '¿Te quedas a dormir?', acc_y: 'Sí, con desayuno', acc_n: 'No, solo el curso',
     q_days: '¿Cuántos días de buceo?', day: 'día', days: 'días', dives_s: '2 inmersiones/día',
+    q_cert: '¿Qué titulación tienes?',
+    lv_ow: 'Open Water', lv_ow_s: 'hasta 18 m', lv_aow: 'Advanced', lv_aow_s: 'hasta 30 m',
+    lv_resc: 'Rescue o superior', lv_pro: 'Divemaster / Instructor',
+    q_logged: '¿Cuántas inmersiones llevas, más o menos?',
+    db1: 'Menos de 20', db2: '20–50', db3: '50–200', db4: 'Más de 200',
+    l_cert: (lv, db) => `Titulación: ${lv} · ${db} inmersiones`,
+    note_ow: 'Planearemos puntos dentro de tu límite de 18 m; si te tienta la parte honda del pecio, el Advanced encaja perfecto.',
+    note_rusty: '¿Hace tiempo de tu última inmersión? El refresco ReActivate (IDR 900.000, media jornada) es la vuelta al agua más amable.',
     disc3: '5% dto. aplicado', disc5: '10% dto. aplicado',
     q_night: '¿Añadimos una nocturna?', night_y: 'Sí, una nocturna', night_n: 'Esta vez no',
     q_dm: '¿Qué programa?', dm: 'Divemaster', dm_s: 'inmersiones de formación incl.', dmu: 'Divemaster ilimitado', dmu_s: 'cada botella libre es tuya',
@@ -67,6 +75,14 @@
     aow: 'Advanced Open Water', aow_s: '2 days · 5 dives', resc: 'Rescue + EFR', resc_s: '3 days · first aid incl.',
     q_acc: 'Staying with us?', acc_y: 'Yes, with breakfast', acc_n: 'No, course only',
     q_days: 'How many days of diving?', day: 'day', days: 'days', dives_s: '2 dives/day',
+    q_cert: 'What are you certified to?',
+    lv_ow: 'Open Water', lv_ow_s: 'to 18 m', lv_aow: 'Advanced', lv_aow_s: 'to 30 m',
+    lv_resc: 'Rescue or higher', lv_pro: 'Divemaster / Instructor',
+    q_logged: 'Roughly how many dives have you logged?',
+    db1: 'Fewer than 20', db2: '20–50', db3: '50–200', db4: '200+',
+    l_cert: (lv, db) => `Certified: ${lv} · ${db} dives`,
+    note_ow: "We'll plan sites within your 18 m limit; if you fancy the deep side of the wreck, the Advanced course slots right in.",
+    note_rusty: 'Been a while since your last dive? The ReActivate refresher (IDR 900.000, half a day) is the kindest way back in.',
     disc3: '5% discount applied', disc5: '10% discount applied',
     q_night: 'Add a night dive?', night_y: 'Yes, one night dive', night_n: 'Not this time',
     q_dm: 'Which program?', dm: 'Divemaster', dm_s: 'training dives included', dmu: 'Unlimited Divemaster', dmu_s: 'every spare tank is yours',
@@ -119,10 +135,17 @@
       { v: 'aow', t: T.aow, s: T.aow_s }, { v: 'resc', t: T.resc, s: T.resc_s },
     ]),
     levelacc: () => header(3, 3, T.q_acc) + opts([{ v: 'y', t: T.acc_y }, { v: 'n', t: T.acc_n }]),
-    days: () => header(2, 3, T.q_days) + opts(
+    cert: () => header(2, 5, T.q_cert) + opts([
+      { v: 'ow', t: T.lv_ow, s: T.lv_ow_s }, { v: 'aow', t: T.lv_aow, s: T.lv_aow_s },
+      { v: 'resc', t: T.lv_resc }, { v: 'pro', t: T.lv_pro },
+    ]),
+    logged: () => header(3, 5, T.q_logged) + opts([
+      { v: 'db1', t: T.db1 }, { v: 'db2', t: T.db2 }, { v: 'db3', t: T.db3 }, { v: 'db4', t: T.db4 },
+    ]),
+    days: () => header(4, 5, T.q_days) + opts(
       [1, 2, 3, 4, 5, 6].map((d) => ({ v: String(d), t: `${d} ${d > 1 ? T.days : T.day}`, s: T.dives_s }))
     ),
-    night: () => header(3, 3, T.q_night) + opts([{ v: 'y', t: T.night_y }, { v: 'n', t: T.night_n }]),
+    night: () => header(5, 5, T.q_night) + opts([{ v: 'y', t: T.night_y }, { v: 'n', t: T.night_n }]),
     dm: () => header(2, 2, T.q_dm) + opts([
       { v: 'dm', t: T.dm, s: T.dm_s }, { v: 'dmu', t: T.dmu, s: T.dmu_s },
     ]),
@@ -149,6 +172,9 @@
         else { lines.push([T.l_resc, P.resc]); per = P.resc; }
       }
     } else if (st.goal === 'fun') {
+      const LV = { ow: T.lv_ow, aow: T.lv_aow, resc: T.lv_resc, pro: T.lv_pro };
+      const DB = { db1: T.db1, db2: T.db2, db3: T.db3, db4: T.db4 };
+      lines.push([T.l_cert(LV[st.cert], DB[st.logged]), 0]);
       const d = parseInt(st.days, 10);
       let base = P.funday * d;
       if (d >= 5) { base = Math.round(base * 0.9); }
@@ -158,6 +184,8 @@
       if (st.night === 'y') { lines.push([T.l_night, P.night]); base += P.night; }
       per = base;
       note = T.note_est + ' ' + T.note_funacc;
+      if (st.cert === 'ow') note += ' ' + T.note_ow;
+      if (st.logged === 'db1') note += ' ' + T.note_rusty;
     } else if (st.goal === 'pro') {
       per = st.dm === 'dmu' ? P.dmu : P.dm;
       lines.push([st.dm === 'dmu' ? T.l_dmu : T.l_dm, per]);
@@ -198,7 +226,7 @@
   }
 
   const flow = {
-    goal: (v) => ({ try: 'dsd', cert: 'people', level: 'levelcourse', fun: 'days', pro: 'dm' }[v]),
+    goal: (v) => ({ try: 'dsd', cert: 'people', level: 'levelcourse', fun: 'cert', pro: 'dm' }[v]),
     dsd: (v) => (v === '2' ? 'dsdacc' : null),
     dsdacc: () => null,
     people: () => (st.goal === 'cert' ? 'owpack' : null),
@@ -206,6 +234,8 @@
     levelcourse: () => 'levelpeople',
     levelpeople: () => 'levelacc',
     levelacc: () => null,
+    cert: () => 'logged',
+    logged: () => 'days',
     days: () => 'night',
     night: () => null,
     dm: () => null,
