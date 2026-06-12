@@ -125,7 +125,7 @@ FOOT = """
   </div>
 </footer>
 
-<script src="script.js?v=5" defer></script>
+<script src="script.js?v=6" defer></script>
 </body>
 </html>
 """.replace("WPURL", WP).replace("WAURL", WA)
@@ -939,7 +939,7 @@ pages["plan-your-trip.html"] = (
     <div id="wizard" class="wiz-card"></div>
   </div>
 </section>
-<script src="wizard.js?v=7" defer></script>
+<script src="wizard.js?v=8" defer></script>
 """
     + quote("We feel like we could not have picked a better place.", "Google review &middot; one of 508 five-star reviews"),
 )

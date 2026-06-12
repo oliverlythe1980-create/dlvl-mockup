@@ -125,7 +125,16 @@
 
   const idr = (n) => 'IDR ' + n.toLocaleString('de-DE');
   const eur = (n) => '€' + Math.round(n / RATE);
-  const st = { history: [], labels: [] };
+  const st = { history: [], labels: [], picks: [] };
+  const SKEY = 'dlvl-wiz';
+  function saveState() {
+    const f = {};
+    ['wiz-from', 'wiz-to', 'wiz-name', 'wiz-email'].forEach((id) => {
+      const e = document.getElementById(id);
+      if (e && e.value) f[id] = e.value;
+    });
+    try { sessionStorage.setItem(SKEY, JSON.stringify({ p: st.picks, f })); } catch (e) {}
+  }
   const today = () => new Date().toISOString().slice(0, 10);
   const fmtDate = (iso) => new Date(iso + 'T12:00:00').toLocaleDateString(ES ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
 
@@ -264,6 +273,9 @@
       <a class="pill-btn pill-btn--whatsapp wiz-send" href="#" target="_blank" rel="noopener">${T.send}</a>
       <button type="button" class="wiz-restart">${T.start}</button>
       </div>`;
+    ['wiz-from', 'wiz-to', 'wiz-name', 'wiz-email'].forEach((id) => {
+      document.getElementById(id).addEventListener('input', saveState);
+    });
     const fromEl = document.getElementById('wiz-from');
     const toEl = document.getElementById('wiz-to');
     fromEl.addEventListener('change', () => { toEl.min = fromEl.value || today(); if (toEl.value && toEl.value < fromEl.value) toEl.value = fromEl.value; });
@@ -290,7 +302,7 @@
         .join('\n');
       e.currentTarget.href = WA + '?text=' + encodeURIComponent(msg);
     });
-    el.querySelector('.wiz-restart').addEventListener('click', () => { for (const k in st) delete st[k]; st.history = []; st.labels = []; show('goal'); });
+    el.querySelector('.wiz-restart').addEventListener('click', () => { try { sessionStorage.removeItem(SKEY); } catch (e) {} for (const k in st) delete st[k]; st.history = []; st.labels = []; st.picks = []; show('goal'); });
   }
 
   const flow = {
@@ -320,13 +332,37 @@
         st[step === 'levelpeople' ? 'people' : step] = b.dataset.v;
         st.history.push(step);
         st.labels.push(b.querySelector('strong').textContent);
+        st.picks.push(b.dataset.v);
+        saveState();
         const next = flow[step](b.dataset.v);
         if (next) show(next); else summary();
       });
     });
     const back = el.querySelector('.wiz-back');
-    if (back) back.addEventListener('click', () => { st.labels.pop(); show(st.history.pop()); });
+    if (back) back.addEventListener('click', () => { st.labels.pop(); st.picks.pop(); saveState(); show(st.history.pop()); });
   }
 
   show('goal');
+
+  // restore state (e.g. after a language switch): replay picks, refill fields
+  try {
+    const saved = JSON.parse(sessionStorage.getItem(SKEY) || 'null');
+    if (saved && Array.isArray(saved.p) && saved.p.length) {
+      let ok = true;
+      for (const v of saved.p) {
+        const btn = el.querySelector('.wiz-opt[data-v="' + v + '"]');
+        if (!btn) { ok = false; break; }
+        btn.click();
+      }
+      if (ok && saved.f) {
+        Object.keys(saved.f).forEach((id) => {
+          const e = document.getElementById(id);
+          if (e) e.value = saved.f[id];
+        });
+        const fe = document.getElementById('wiz-from');
+        if (fe) fe.dispatchEvent(new Event('change'));
+      }
+      if (!ok) sessionStorage.removeItem(SKEY);
+    }
+  } catch (e) {}
 })();

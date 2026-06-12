@@ -204,6 +204,24 @@ function dlvlToast(msg) {
   });
 })();
 
+// ── Language switch continuity: keep section + scroll position ──
+(function () {
+  const KEY = 'dlvl-langpos';
+  document.querySelectorAll('.lang-toggle a, .footer-bottom a').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (location.hash) a.href = a.getAttribute('href').split('#')[0] + location.hash;
+      try { sessionStorage.setItem(KEY, JSON.stringify({ y: window.scrollY })); } catch (e) {}
+    });
+  });
+  try {
+    const saved = JSON.parse(sessionStorage.getItem(KEY) || 'null');
+    if (saved) {
+      sessionStorage.removeItem(KEY);
+      if (!location.hash && saved.y) window.addEventListener('load', () => window.scrollTo(0, saved.y));
+    }
+  } catch (e) {}
+})();
+
 // ── Nav: mark the current page ──
 (function () {
   const page = location.pathname.split('/').pop() || 'index.html';
