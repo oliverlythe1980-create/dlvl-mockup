@@ -202,14 +202,14 @@ def coast_map(lang):
     sub = ("Thirteen sites along one volcanic shoreline, from the Boga Wreck at Kubu to Gili Selang at Bali&rsquo;s eastern tip. Tap a pin to read its chapter in the guide."
            if en else
            "Trece puntos en una misma costa volc\u00e1nica, del pecio Boga en Kubu hasta Gili Selang en la punta este de Bali. Toca un pin para leer su cap\u00edtulo en la gu\u00eda.")
-    COAST = "M 20,168 C 70,162 115,162 140,172 C 165,198 245,206 280,182 C 305,162 318,160 340,168 C 365,180 385,184 405,190 C 470,212 545,228 612,244 C 648,252 668,256 700,262 C 722,288 766,292 794,272 C 838,282 890,298 940,312 C 990,328 1040,348 1078,366 C 1106,380 1116,404 1108,430 C 1102,446 1098,452 1096,460"
+    COAST = "M -4,170 C 60,163 115,162 140,172 C 165,198 245,206 280,182 C 305,162 318,160 340,168 C 365,180 385,184 405,190 C 470,212 545,228 612,244 C 648,252 668,256 700,262 C 722,288 766,292 794,272 C 838,282 890,298 940,312 C 990,328 1040,348 1078,366 C 1106,380 1116,404 1108,430 C 1102,446 1098,452 1096,460"
     return f"""
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">{title}</h2></div>
     <p class="section-sub">{sub}</p>
     <div class="coast-map">
       <svg class="coast-svg" viewBox="0 0 1200 460" role="img" aria-label="{title}">
         <rect width="1200" height="460" fill="#f9f3e8"/>
-        <path d="{COAST} L 1096,460 L 0,460 Z" fill="#ead9c0"/>
+        <path d="{COAST} L 1096,460 L -4,460 Z" fill="#ead9c0"/>
         <path d="{COAST}" fill="none" stroke="#c9a227" stroke-width="3" stroke-linecap="round"/>
         <path d="M 250,420 L 310,326 L 370,420" fill="none" stroke="#2a1d18" stroke-width="2" stroke-linejoin="round" opacity="0.5"/>
         <path d="M 285,372 L 308,344 L 328,374" fill="none" stroke="#2a1d18" stroke-width="1.3" opacity="0.35"/>
@@ -228,6 +228,7 @@ def coast_map(lang):
           <text x="622" y="332" text-anchor="middle" style="font: 700 10px Inter, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; fill: #91131b;">{shop}</text>
         </g>{pin_html}
         <text x="36" y="442" style="font: italic 500 12px 'Playfair Display', serif; fill: #75655c;">{note}</text>
+        <rect x="1.5" y="1.5" width="1197" height="457" fill="none" stroke="#c9a227" stroke-width="3"/>
       </svg>
     </div>
 """
