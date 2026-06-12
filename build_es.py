@@ -156,15 +156,15 @@ def coast_map(lang):
         (6,  "seraya",         402, 188, "Seraya Secrets", "r",
               "5&ndash;20 m &middot; Muck &middot; " + T("All levels", "Todos los niveles"),
               T("Frogfish, harlequin shrimp: macro heaven.", "Peces sapo, gambas arlequ&iacute;n: para&iacute;so macro."), "2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp"),
-        (7,  "jemeluk",        655, 262, T("Jemeluk Bay", "Bah\u00eda de Jemeluk"), "r",
-              "3&ndash;25 m &middot; " + T("Reef &middot; All levels", "Arrecife &middot; Todos los niveles"),
-              T("Our house reef and training bay.", "Nuestro arrecife de casa y bah&iacute;a de pr&aacute;cticas."), "2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp"),
-        (8,  "pyramids",       706, 256, T("The Pyramids", "Las Pir\u00e1mides"), "r",
-              "5&ndash;22 m &middot; " + T("Artificial reef", "Arrecife artificial"),
-              T("Glassfish swarms; our navigation classroom.", "Enjambres de peces cristal; nuestra aula de navegaci&oacute;n."), "2022/09/DiveMasterw.webp"),
-        (9,  "pyramids",       762, 260, T("Melasti Reef", "Arrecife de Melasti"), "r",
+        (7,  "pyramids",       640, 250, T("Melasti Reef", "Arrecife de Melasti"), "r",
               "4&ndash;20 m &middot; " + T("Reef &middot; All levels", "Arrecife &middot; Todos los niveles"),
               T("Resident turtles, 500 m from our door.", "Tortugas residentes, a 500 m de la puerta."), "2022/09/Rescue_diver-1.webp"),
+        (8,  "pyramids",       692, 258, T("The Pyramids", "Las Pir\u00e1mides"), "r",
+              "5&ndash;22 m &middot; " + T("Artificial reef", "Arrecife artificial"),
+              T("Glassfish swarms; our navigation classroom.", "Enjambres de peces cristal; nuestra aula de navegaci\u00f3n."), "2022/09/DiveMasterw.webp"),
+        (9,  "jemeluk",        748, 280, T("Jemeluk Bay", "Bah\u00eda de Jemeluk"), "r",
+              "3&ndash;25 m &middot; " + T("Reef &middot; All levels", "Arrecife &middot; Todos los niveles"),
+              T("Our house reef and training bay.", "Nuestro arrecife de casa y bah\u00eda de pr\u00e1cticas."), "2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp"),
         (10, "bunutan",        846, 284, "Bunutan", "r",
               "10&ndash;30 m &middot; " + T("Point &middot; All levels", "Punta &middot; Todos los niveles"),
               T("Garden eels and a gentle drift.", "Anguilas jard&iacute;n y una deriva suave."), ""),
@@ -182,7 +182,7 @@ def coast_map(lang):
     # absolute label positions: two flat rows per cluster, language-tuned for longer ES names
     LPOS = {
         1: (95, 126), 2: (162, 100), 3: (T(214, 214), 126), 4: (274, 100), 5: (T(340, 340), 126), 6: (402, 100),
-        7: (T(655, 638), 216), 8: (706, 190), 9: (T(762, 780), 216), 10: (846, 190), 11: (T(906, 920), 216), 12: (966, 190),
+        7: (T(640, 622), 190), 8: (692, 216), 9: (T(748, 770), 190), 10: (846, 216), 11: (T(906, 920), 190), 12: (966, 216),
         13: (1132, 366),
     }
     for i, (n, anchor, x, y, label, side, meta, desc, img) in enumerate(pins):
@@ -203,7 +203,7 @@ def coast_map(lang):
     sub = ("Thirteen sites along one volcanic shoreline, from the Boga Wreck at Kubu to Gili Selang at Bali&rsquo;s eastern tip. Tap a pin to read its chapter in the guide."
            if en else
            "Trece puntos en una misma costa volc\u00e1nica, del pecio Boga en Kubu hasta Gili Selang en la punta este de Bali. Toca un pin para leer su cap\u00edtulo en la gu\u00eda.")
-    COAST = "M 20,168 C 70,162 115,162 140,172 C 165,198 245,206 280,182 C 305,162 318,160 340,168 C 365,180 385,184 405,190 C 470,212 560,226 615,242 C 638,266 688,270 718,252 C 740,256 750,258 775,264 C 830,278 880,294 940,312 C 990,328 1040,348 1078,366 C 1106,380 1116,404 1108,430 C 1102,446 1098,452 1096,460"
+    COAST = "M 20,168 C 70,162 115,162 140,172 C 165,198 245,206 280,182 C 305,162 318,160 340,168 C 365,180 385,184 405,190 C 470,212 545,228 612,244 C 648,252 668,256 700,262 C 722,288 766,292 794,272 C 838,282 890,298 940,312 C 990,328 1040,348 1078,366 C 1106,380 1116,404 1108,430 C 1102,446 1098,452 1096,460"
     return f"""
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">{title}</h2></div>
     <p class="section-sub">{sub}</p>
@@ -224,9 +224,9 @@ def coast_map(lang):
         <g transform="translate(1150,52)"><line x1="0" y1="14" x2="0" y2="-12" stroke="#91131b" stroke-width="2"/><path d="M0,-12 L-5,-3 L5,-3 Z" fill="#91131b"/><text x="0" y="30" text-anchor="middle" style="font: 700 11px Inter, sans-serif; fill: #91131b;">N</text></g>
         <ellipse cx="1150" cy="392" rx="20" ry="12" fill="#ead9c0" stroke="#c9a227" stroke-width="2"/>
         <g>
-          <circle cx="775" cy="308" r="13" fill="#91131b" stroke="#c9a227" stroke-width="2"/>
-          <text x="775" y="313" text-anchor="middle" style="font: 700 12px Inter, sans-serif; fill: #e6c45c;">&#9733;</text>
-          <text x="775" y="340" text-anchor="middle" style="font: 700 10px Inter, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; fill: #91131b;">{shop}</text>
+          <circle cx="622" cy="300" r="13" fill="#91131b" stroke="#c9a227" stroke-width="2"/>
+          <text x="622" y="305" text-anchor="middle" style="font: 700 12px Inter, sans-serif; fill: #e6c45c;">&#9733;</text>
+          <text x="622" y="332" text-anchor="middle" style="font: 700 10px Inter, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; fill: #91131b;">{shop}</text>
         </g>{pin_html}
         <text x="36" y="442" style="font: italic 500 12px 'Playfair Display', serif; fill: #75655c;">{note}</text>
       </svg>
@@ -846,7 +846,7 @@ guia_sitios = """
       <div class="feature-body">
         <p class="feature-kicker">Dos cl&aacute;sicos de Amed</p>
         <h2>Las Pir&aacute;mides y el arrecife de Melasti</h2>
-        <p>Las Pir&aacute;mides son estructuras de arrecife artificial sembradas en la arena al sur de Jemeluk, con dos d&eacute;cadas de crecimiento encima y repletas de peces cristal, peces le&oacute;n y tortugas de paso: una segunda inmersi&oacute;n brillante y nuestra aula de navegaci&oacute;n. Melasti es el arrecife al final de nuestro propio camino, una pendiente suave de coral y praderas con tortugas residentes, perfecta para una ma&ntilde;ana f&aacute;cil con log&iacute;stica cero.</p>
+        <p>Las Pir&aacute;mides son estructuras de arrecife artificial sembradas en la arena frente a la playa de Amed, a un paso de Jemeluk, con dos d&eacute;cadas de crecimiento encima y repletas de peces cristal, peces le&oacute;n y tortugas de paso: una segunda inmersi&oacute;n brillante y nuestra aula de navegaci&oacute;n. Melasti es el arrecife al final de nuestro propio camino, una pendiente suave de coral y praderas con tortugas residentes, perfecta para una ma&ntilde;ana f&aacute;cil con log&iacute;stica cero.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>5&ndash;22 m</strong><span>Pir&aacute;mides</span></div><div class="feature-stat"><strong>4&ndash;20 m</strong><span>Melasti</span></div><div class="feature-stat"><strong>500 m</strong><span>Melasti desde la puerta</span></div></div>
       </div>
     </div>
