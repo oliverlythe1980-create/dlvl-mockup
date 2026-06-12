@@ -1347,11 +1347,11 @@ a:hover { color: var(--crimson); }
 /* ── Hand-drawn coast map + anchored postcard preview ── */
 .coast-map {
   position: relative;
-  background: #fff;
-  border: 1px solid var(--line);
+  background: radial-gradient(120% 160% at 50% -20%, #a4161f 0%, var(--crimson) 45%, #430a0e 100%);
+  border: 2px solid var(--gold);
   border-radius: var(--r-card);
   padding: 1.2rem;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 .coast-svg { display: block; width: 100%; height: auto; }
 .coast-map a { cursor: pointer; }
