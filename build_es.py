@@ -136,14 +136,19 @@ def coast_map(lang):
     en = lang == "en"
     guide = "amed-diving-guide.html" if en else "amed-diving-guide-es.html"
     pins = [
-        (1, "liberty",        300, 128, "USAT Liberty Wreck" if en else "Pecio del USAT Liberty", "r"),
-        (2, "coral-garden",   334, 176, "Coral Garden", "r"),
-        (3, "coral-garden",   366, 224, "Drop-Off", "r"),
-        (4, "seraya",         470, 300, "Seraya Secrets", "r"),
-        (5, "jemeluk",        622, 396, "Jemeluk Bay" if en else "Bah\u00eda de Jemeluk", "r"),
-        (6, "pyramids",       672, 436, "The Pyramids" if en else "Las Pir\u00e1mides", "r"),
-        (7, "pyramids",       744, 498, "Melasti Reef" if en else "Arrecife de Melasti", "r"),
-        (8, "japanese-wreck", 866, 580, "Japanese Wreck" if en else "Pecio Japon\u00e9s", "l"),
+        (1,  "boga",           232,  62, "Boga Wreck &middot; Kubu", "r"),
+        (2,  "liberty",        300, 128, "USAT Liberty Wreck" if en else "Pecio del USAT Liberty", "r"),
+        (3,  "coral-garden",   334, 176, "Coral Garden", "r"),
+        (4,  "coral-garden",   366, 224, "Drop-Off", "r"),
+        (5,  "batu-kelebit",   416, 264, "Batu Kelebit", "r"),
+        (6,  "seraya",         478, 306, "Seraya Secrets", "r"),
+        (7,  "jemeluk",        622, 396, "Jemeluk Bay" if en else "Bah\u00eda de Jemeluk", "r"),
+        (8,  "pyramids",       672, 436, "The Pyramids" if en else "Las Pir\u00e1mides", "r"),
+        (9,  "pyramids",       744, 498, "Melasti Reef" if en else "Arrecife de Melasti", "r"),
+        (10, "bunutan",        788, 530, "Bunutan", "r"),
+        (11, "lipah",          826, 556, "Lipah Bay" if en else "Bah\u00eda de Lipah", "r"),
+        (12, "japanese-wreck", 862, 584, "Japanese Wreck" if en else "Pecio Japon\u00e9s", "l"),
+        (13, "gili-selang",    946, 636, "Gili Selang", "l"),
     ]
     pin_html = ""
     for n, anchor, x, y, label, side in pins:
@@ -159,9 +164,9 @@ def coast_map(lang):
     note = "Hand-drawn &middot; not to scale" if en else "Dibujado a mano &middot; sin escala"
     shop = "Diving La Vida Loca"
     title = ("The Coast at a Glance" if en else "La Costa de un Vistazo")
-    sub = ("Eight sites along one volcanic shoreline, from the Liberty in Tulamben to the Japanese Wreck at Banyuning. Tap a pin to read its chapter in the guide."
+    sub = ("Thirteen sites along one volcanic shoreline, from the Boga Wreck at Kubu to Gili Selang at Bali&rsquo;s eastern tip. Tap a pin to read its chapter in the guide."
            if en else
-           "Ocho puntos en una misma costa volc\u00e1nica, del Liberty en Tulamben al Pecio Japon\u00e9s en Banyuning. Toca un pin para leer su cap\u00edtulo en la gu\u00eda.")
+           "Trece puntos en una misma costa volc\u00e1nica, del pecio Boga en Kubu hasta Gili Selang en la punta este de Bali. Toca un pin para leer su cap\u00edtulo en la gu\u00eda.")
     return f"""
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">{title}</h2></div>
     <p class="section-sub">{sub}</p>
@@ -179,6 +184,7 @@ def coast_map(lang):
           <path d="M620,200 q7,-7 14,0 q7,7 14,0"/><path d="M850,430 q7,-7 14,0 q7,7 14,0"/>
           <path d="M540,150 q7,-7 14,0 q7,7 14,0"/><path d="M920,300 q7,-7 14,0 q7,7 14,0"/>
         </g>
+        <ellipse cx="946" cy="636" rx="22" ry="14" fill="#ead9c0" stroke="#c9a227" stroke-width="2"/>
         <g transform="translate(940,58)"><line x1="0" y1="16" x2="0" y2="-14" stroke="#91131b" stroke-width="2"/><path d="M0,-14 L-5,-4 L5,-4 Z" fill="#91131b"/><text x="0" y="34" text-anchor="middle" style="font: 700 12px Inter, sans-serif; fill: #91131b;">N</text></g>
         <g>
           <circle cx="652" cy="470" r="15" fill="#91131b" stroke="#c9a227" stroke-width="2"/>
@@ -509,7 +515,7 @@ pages["dive-sites-es.html"] = ("dive-sites.html",
          '<a href="index-es.html">Inicio</a> / Puntos de Inmersi&oacute;n',
          "D&oacute;nde Bucear&aacute;s",
          "La costa Amed&ndash;Tulamben es una hilera de inmersiones desde costa de primer nivel, un pecio de la Segunda Guerra Mundial, bah&iacute;as de coral, paredes y arrecifes artificiales, todo entrando por playas de arena negra de un mismo tramo de costa. Son los sitios donde buceamos a diario, que conocemos palmo a palmo y que ayudamos a cuidar.")
-    + facts([("8+", "puntos que buceamos cada semana"), ("Desde costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("Abr&ndash;Nov", "mejor visibilidad"), ("25 min", "en coche hasta el Liberty")])
+    + facts([("13", "puntos con nombre en la costa"), ("Desde costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("Abr&ndash;Nov", "mejor visibilidad"), ("25 min", "en coche hasta el Liberty")])
     + f"""
 <section class="page-section">
   <div class="container">{coast_map("es")}{site_rows}
@@ -832,7 +838,7 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
          '<a href="index-es.html">Inicio</a> / <a href="dive-sites-es.html">Puntos de Inmersi&oacute;n</a> / Gu&iacute;a de Buceo',
          "Gu&iacute;a de Buceo de Amed y Tulamben",
          "Todo lo que sabemos de la costa que buceamos cada d&iacute;a: la historia del Liberty, profundidades reales, a qui&eacute;n le va cada punto, cu&aacute;ndo venir y los trucos locales que marcan la diferencia. Sin vender ning&uacute;n sitio m&aacute;s de lo que merece.")
-    + facts([("8+", "puntos en esta gu&iacute;a"), ("Desde costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("15&ndash;30 m", "visibilidad en seca"), ("Abr&ndash;Nov", "temporada top")])
+    + facts([("13", "puntos en esta gu&iacute;a"), ("Desde costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("15&ndash;30 m", "visibilidad en seca"), ("Abr&ndash;Nov", "temporada top")])
     + f"""
 <section class="page-section">
   <div class="container">
@@ -840,6 +846,17 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
     <p class="section-sub">En el corto tramo de costa entre Amed y Tulamben caben un pecio de fama mundial, bah&iacute;as de coral, una pared que se desploma y muck diving sobre arena negra, todo entrando a pie desde playas de un mismo tramo de costa. Sin barcos ni trayectos largos: te metes andando, desciendes, y ya est&aacute;s. La arena volc&aacute;nica del Agung hace estallar los colores del coral y alimenta la vida macro que da fama a la zona.</p>
 {guia_sitios.replace("{{WP}}".replace("{{","{").replace("}}","}"), WP)}
 
+
+    <div style="height:3rem"></div>
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">M&aacute;s Puntos Que Buceamos</h2></div>
+    <p class="section-sub">Los ocho de arriba son el coraz&oacute;n de la costa; estos cinco completan el mapa para quien se queda m&aacute;s tiempo o busca algo concreto.</p>
+    <div class="day-plan">
+      <div class="day" id="boga"><h3>Pecio Boga &middot; Kubu &middot; 16&ndash;40 m</h3><p>Un carguero de 40 metros hundido a prop&oacute;sito en 2012 como arrecife artificial, diez minutos pasado Tulamben. Descansa adrizado, con estatuas en cubierta y un coche hundido de lo m&aacute;s surrealista; su profundidad lo convierte en inmersi&oacute;n para Advanced, ideal con Nitrox.</p></div>
+      <div class="day" id="batu-kelebit"><h3>Batu Kelebit &middot; Tulamben &middot; 15&ndash;40 m</h3><p>Crestas rocosas que se hunden hacia el azul justo al este del Drop-Off: gorgonias grandes, bancos de peces y la mejor papeleta de la costa para que pase algo pel&aacute;gico. El lado salvaje de Tulamben, mejor con algo de experiencia.</p></div>
+      <div class="day" id="bunutan"><h3>Bunutan &middot; Amed &middot; 10&ndash;30 m</h3><p>Una punta de arena en el tramo de Amed con colonias de anguilas jard&iacute;n, praderas y una pendiente suave hacia lo profundo, que solemos bucear como deriva f&aacute;cil. Discretamente excelente, y casi siempre vac&iacute;o.</p></div>
+      <div class="day" id="lipah"><h3>Bah&iacute;a de Lipah &middot; Amed &middot; 3&ndash;20 m</h3><p>Una bah&iacute;a peque&ntilde;a de bommies de coral sobre arena, relajada y somera, tan buena para esn&oacute;rquel como para bucear. La cl&aacute;sica segunda inmersi&oacute;n f&aacute;cil volviendo del Pecio Japon&eacute;s.</p></div>
+      <div class="day" id="gili-selang"><h3>Gili Selang &middot; la punta este de Bali &middot; 5&ndash;30 m</h3><p>El islote de la punta m&aacute;s oriental de Bali: coral intacto y potencial pel&aacute;gico de verdad, custodiados por corrientes fuertes e impredecibles. Solo buceadores avanzados, el d&iacute;a adecuado y con el plan adecuado. Preg&uacute;ntanos.</p></div>
+    </div>
     <div style="height:3rem"></div>
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Cu&aacute;ndo Venir</h2></div>
     <p class="section-sub">En Amed se bucea todo el a&ntilde;o. La estaci&oacute;n seca, de abril a noviembre, trae la mejor visibilidad (a menudo 15&ndash;30 metros) y ma&ntilde;anas de espejo; la de lluvias es m&aacute;s tranquila y perfectamente buceable, con visibilidad que var&iacute;a seg&uacute;n el d&iacute;a. El agua va de 26 a 29&deg;C sea el mes que sea: con un 3 mm vas sobrado. Las ma&ntilde;anas casi siempre dan las mejores condiciones del d&iacute;a, que es justo como nos gusta trabajar.</p>
