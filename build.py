@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=19">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
 
@@ -890,7 +890,11 @@ pages["amed-diving-guide.html"] = (
 {guide_sites_en.replace("{{WP}}".replace("{{","{").replace("}}","}"), WP)}
 
 
-    <div style="height:3rem"></div>
+  </div>
+</section>
+
+<section class="more-sites">
+  <div class="container">
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">More Sites We Dive</h2></div>
     <p class="section-sub">The eight above are the heart of the coast; these five round out the map for divers staying longer or chasing something specific.</p>
     <div class="day-plan">
@@ -900,7 +904,11 @@ pages["amed-diving-guide.html"] = (
       <div class="day" id="lipah"><h3>Lipah Bay &middot; Amed &middot; 3&ndash;20 m</h3><p>A small bay of coral bommies on sand, relaxed and shallow, as good for snorkellers as divers. A classic easy second dive on the way back from the Japanese Wreck.</p></div>
       <div class="day" id="gili-selang"><h3>Gili Selang &middot; Bali&rsquo;s eastern tip &middot; 5&ndash;30 m</h3><p>The little islet off Bali&rsquo;s easternmost point: pristine coral and real pelagic potential, guarded by strong, unpredictable currents. Advanced divers only, on the right day, with the right plan. Ask us.</p></div>
     </div>
-    <div style="height:3rem"></div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container">
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">When to Come</h2></div>
     <p class="section-sub">Amed dives all year. The dry season, April to November, brings the best visibility (often 15&ndash;30 metres) and glassy mornings; the rainy season is quieter, warmer-aired and still very diveable, with visibility that varies day to day. Water sits between 26 and 29&deg;C whatever the month, a 3 mm suit is plenty. Mornings are almost always the best conditions of the day, which suits the way we run things anyway.</p>
 

@@ -52,7 +52,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=19">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=20">
 </head>
 <body>
 
@@ -889,7 +889,11 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
 {guia_sitios.replace("{{WP}}".replace("{{","{").replace("}}","}"), WP)}
 
 
-    <div style="height:3rem"></div>
+  </div>
+</section>
+
+<section class="more-sites">
+  <div class="container">
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">M&aacute;s Puntos Que Buceamos</h2></div>
     <p class="section-sub">Los ocho de arriba son el coraz&oacute;n de la costa; estos cinco completan el mapa para quien se queda m&aacute;s tiempo o busca algo concreto.</p>
     <div class="day-plan">
@@ -899,7 +903,11 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
       <div class="day" id="lipah"><h3>Bah&iacute;a de Lipah &middot; Amed &middot; 3&ndash;20 m</h3><p>Una bah&iacute;a peque&ntilde;a de bommies de coral sobre arena, relajada y somera, tan buena para esn&oacute;rquel como para bucear. La cl&aacute;sica segunda inmersi&oacute;n f&aacute;cil volviendo del Pecio Japon&eacute;s.</p></div>
       <div class="day" id="gili-selang"><h3>Gili Selang &middot; la punta este de Bali &middot; 5&ndash;30 m</h3><p>El islote de la punta m&aacute;s oriental de Bali: coral intacto y potencial pel&aacute;gico de verdad, custodiados por corrientes fuertes e impredecibles. Solo buceadores avanzados, el d&iacute;a adecuado y con el plan adecuado. Preg&uacute;ntanos.</p></div>
     </div>
-    <div style="height:3rem"></div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container">
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Cu&aacute;ndo Venir</h2></div>
     <p class="section-sub">En Amed se bucea todo el a&ntilde;o. La estaci&oacute;n seca, de abril a noviembre, trae la mejor visibilidad (a menudo 15&ndash;30 metros) y ma&ntilde;anas de espejo; la de lluvias es m&aacute;s tranquila y perfectamente buceable, con visibilidad que var&iacute;a seg&uacute;n el d&iacute;a. El agua va de 26 a 29&deg;C sea el mes que sea: con un 3 mm vas sobrado. Las ma&ntilde;anas casi siempre dan las mejores condiciones del d&iacute;a, que es justo como nos gusta trabajar.</p>
 

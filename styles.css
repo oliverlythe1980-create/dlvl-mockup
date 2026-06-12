@@ -169,7 +169,7 @@ a:hover { color: var(--crimson); }
 
 
 /* ── Gold piping: every full-width red band, top and bottom ── */
-.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews {
+.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites {
   border-top: 2px solid var(--gold);
   border-bottom: 2px solid var(--gold);
 }
@@ -1541,6 +1541,14 @@ a:hover { color: var(--crimson); }
 .wiz-req { font-size: 0.78rem; color: var(--crimson); margin: -0.6rem 0 1rem; }
 .wiz-card .pill-btn { width: 100%; }
 @media (max-width: 560px) { .wiz-grid { grid-template-columns: 1fr; } }
+
+/* ── Guide: extra sites on a red band ── */
+.more-sites {
+  padding: 3.6rem 0 4.2rem;
+  background: radial-gradient(120% 160% at 50% -20%, #a4161f 0%, var(--crimson) 45%, #430a0e 100%);
+}
+.more-sites .section-title { color: var(--text-on-dark); }
+.more-sites .section-sub { color: var(--text-on-dark-muted); margin-bottom: 2rem; }
 
 /* ── Toast ── */
 .toast {
