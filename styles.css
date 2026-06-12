@@ -1183,7 +1183,7 @@ a:hover { color: var(--crimson); }
   padding: 2.4rem;
   margin-inline: -2.4rem;
 }
-.feature-row:nth-of-type(even) .feature-kicker { color: var(--gold-soft); }
+.feature-row:nth-of-type(even) .feature-body p.feature-kicker { color: var(--gold-soft); }
 .feature-row:nth-of-type(even) .feature-body h2 { color: var(--text-on-dark); }
 .feature-row:nth-of-type(even) .feature-body p { color: var(--text-on-dark-muted); }
 .feature-row:nth-of-type(even) .feature-stat strong { color: var(--text-on-dark); }
