@@ -130,6 +130,66 @@ FOOT = """
 """.replace("WPURL", WP).replace("WAURL", WA)
 
 
+
+def coast_map(lang):
+    en = lang == "en"
+    guide = "amed-diving-guide.html" if en else "amed-diving-guide-es.html"
+    pins = [
+        (1, "liberty",        300, 128, "USAT Liberty Wreck" if en else "Pecio del USAT Liberty", "r"),
+        (2, "coral-garden",   334, 176, "Coral Garden", "r"),
+        (3, "coral-garden",   366, 224, "Drop-Off", "r"),
+        (4, "seraya",         470, 300, "Seraya Secrets", "r"),
+        (5, "jemeluk",        622, 396, "Jemeluk Bay" if en else "Bah\u00eda de Jemeluk", "r"),
+        (6, "pyramids",       672, 436, "The Pyramids" if en else "Las Pir\u00e1mides", "r"),
+        (7, "pyramids",       744, 498, "Melasti Reef" if en else "Arrecife de Melasti", "r"),
+        (8, "japanese-wreck", 866, 580, "Japanese Wreck" if en else "Pecio Japon\u00e9s", "l"),
+    ]
+    pin_html = ""
+    for n, anchor, x, y, label, side in pins:
+        lx = x + 22 if side == "r" else x - 22
+        ta = "start" if side == "r" else "end"
+        pin_html += f"""
+      <a href="{guide}#{anchor}">
+        <circle class="pin-c" cx="{x}" cy="{y}" r="12" fill="#91131b" stroke="#c9a227" stroke-width="1.5"/>
+        <text x="{x}" y="{y + 4}" text-anchor="middle" style="font: 700 11px Inter, sans-serif; fill: #fff;">{n}</text>
+        <text x="{lx}" y="{y + 4}" text-anchor="{ta}" style="font: 600 12px Inter, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; fill: #2a1d18;">{label}</text>
+      </a>"""
+    sea = "Bali Sea" if en else "Mar de Bali"
+    note = "Hand-drawn &middot; not to scale" if en else "Dibujado a mano &middot; sin escala"
+    shop = "Diving La Vida Loca"
+    title = ("The Coast at a Glance" if en else "La Costa de un Vistazo")
+    sub = ("Eight sites along one volcanic shoreline, from the Liberty in Tulamben to the Japanese Wreck at Banyuning. Tap a pin to read its chapter in the guide."
+           if en else
+           "Ocho puntos en una misma costa volc\u00e1nica, del Liberty en Tulamben al Pecio Japon\u00e9s en Banyuning. Toca un pin para leer su cap\u00edtulo en la gu\u00eda.")
+    return f"""
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">{title}</h2></div>
+    <p class="section-sub">{sub}</p>
+    <div class="coast-map">
+      <svg class="coast-svg" viewBox="0 0 1000 660" role="img" aria-label="{title}">
+        <rect width="1000" height="660" fill="#f9f3e8"/>
+        <path d="M0,0 L212,0 C 238,70 218,118 248,168 C 276,226 356,238 420,290 C 468,330 520,332 580,372 C 640,412 652,452 712,482 C 772,516 802,560 858,598 C 884,616 900,638 906,660 L0,660 Z" fill="#ead9c0"/>
+        <path d="M212,0 C 238,70 218,118 248,168 C 276,226 356,238 420,290 C 468,330 520,332 580,372 C 640,412 652,452 712,482 C 772,516 802,560 858,598 C 884,616 900,638 906,660" fill="none" stroke="#c9a227" stroke-width="3" stroke-linecap="round"/>
+        <path d="M70,320 L145,190 L215,320" fill="none" stroke="#2a1d18" stroke-width="2" stroke-linejoin="round" opacity="0.55"/>
+        <path d="M112,255 L132,230 L150,258" fill="none" stroke="#2a1d18" stroke-width="1.4" opacity="0.4"/>
+        <text x="143" y="348" text-anchor="middle" style="font: 600 11px Inter, sans-serif; letter-spacing: 2px; text-transform: uppercase; fill: #75655c;">Gunung Agung</text>
+        <text x="790" y="150" style="font: italic 700 24px 'Playfair Display', serif; fill: #c9a227;">{sea}</text>
+        <g stroke="#c9a227" stroke-width="1.4" fill="none" opacity="0.45">
+          <path d="M700,250 q7,-7 14,0 q7,7 14,0"/><path d="M780,330 q7,-7 14,0 q7,7 14,0"/>
+          <path d="M620,200 q7,-7 14,0 q7,7 14,0"/><path d="M850,430 q7,-7 14,0 q7,7 14,0"/>
+          <path d="M540,150 q7,-7 14,0 q7,7 14,0"/><path d="M920,300 q7,-7 14,0 q7,7 14,0"/>
+        </g>
+        <g transform="translate(940,58)"><line x1="0" y1="16" x2="0" y2="-14" stroke="#91131b" stroke-width="2"/><path d="M0,-14 L-5,-4 L5,-4 Z" fill="#91131b"/><text x="0" y="34" text-anchor="middle" style="font: 700 12px Inter, sans-serif; fill: #91131b;">N</text></g>
+        <g>
+          <circle cx="652" cy="470" r="15" fill="#91131b" stroke="#c9a227" stroke-width="2"/>
+          <text x="652" y="475" text-anchor="middle" style="font: 700 13px Inter, sans-serif; fill: #e6c45c;">&#9733;</text>
+          <text x="652" y="510" text-anchor="middle" style="font: 700 11px Inter, sans-serif; letter-spacing: 1.6px; text-transform: uppercase; fill: #91131b;">{shop}</text>
+        </g>{pin_html}
+        <text x="40" y="636" style="font: italic 500 13px 'Playfair Display', serif; fill: #75655c;">{note}</text>
+      </svg>
+    </div>
+    <div style="height: 2.5rem"></div>
+"""
+
 def hero(img, crumb, title, lede, pos=None):
     style = f' style="object-position: {pos};"' if pos else ""
     return f"""
@@ -424,7 +484,7 @@ sites = [
     ("Melasti Reef", "Amed &middot; 500 m from our door", f"{WP}/2022/09/Rescue_diver-1.webp",
      "Our neighbourhood dive, literally down the path from the bungalows. A sloping coral reef with seagrass patches and resident turtles, perfect for an easy morning dive or a relaxed afternoon when you can&rsquo;t face the drive anywhere else.",
      [("4&ndash;20 m", "depth"), ("All levels", "easiest logistics"), ("Turtles", "resident")]),
-    ("Seraya Secrets", "Seraya &middot; 30 min by car", f"{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp",
+    ("Seraya Secrets", "Seraya &middot; 20 min by car", f"{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp",
      "Black sand and tiny treasures. Seraya is the muck-diving icon of the coast: frogfish, harlequin shrimp, ghost pipefish, and nudibranchs by the dozen. Bring a torch, slow right down, and let Irman&rsquo;s biologist eyes find you things you&rsquo;d swim straight past.",
      [("5&ndash;20 m", "depth"), ("All levels", "macro patience helps"), ("Muck", "critter capital")]),
 ]
@@ -453,7 +513,7 @@ pages["dive-sites.html"] = (
     + facts([("8+", "sites we dive weekly"), ("Shore entry", "every dive"), ("26&ndash;29&deg;C", "water all year"), ("Apr&ndash;Nov", "best visibility"), ("25 min", "drive to the Liberty")])
     + f"""
 <section class="page-section">
-  <div class="container">{site_rows}
+  <div class="container">{coast_map("en")}{site_rows}
     <div class="included-note">Every dive includes your guide, full equipment, transport in the Amed area, and coffee on the beach afterwards. Conditions briefing comes with every site, and if the reef is having a better day somewhere else, we&rsquo;ll tell you and go there instead. Want depths, seasons and history site by site? Read the full <a href="amed-diving-guide.html">Amed &amp; Tulamben diving guide</a>.</div>
     <div class="section-cta"><a class="section-cta-link" href="fun-dives.html">Fun dive prices &rarr;</a></div>
   </div>
@@ -703,7 +763,7 @@ pages["contact.html"] = (
 
 # ─────────────────────────── DIVING GUIDE ───────────────────────────
 guide_sites_en = """
-    <div class="feature-row">
+    <div class="feature-row id="liberty"">
       <div class="feature-img"><img src="{WP}/2022/09/Advanced_open_water.webp" alt="Divers on the USAT Liberty wreck, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">The flagship &middot; Tulamben</p>
@@ -715,7 +775,7 @@ guide_sites_en = """
     </div>
     <div class="included-note">How we dive it: the Liberty receives day-trippers from south Bali from mid-morning. Staying in Amed, we&rsquo;re in the water at sunrise, before the first buses arrive, with four divers at most. You get the wreck, the bumpheads, and the silence.</div>
 
-    <div class="feature-row feature-row--flip">
+    <div class="feature-row id="jemeluk" feature-row--flip">
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Coral reef in Jemeluk Bay, Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Our house reef &middot; Amed</p>
@@ -725,7 +785,7 @@ guide_sites_en = """
       </div>
     </div>
 
-    <div class="feature-row">
+    <div class="feature-row id="japanese-wreck"">
       <div class="feature-img"><img src="{WP}/2022/09/Open_water_padi.webp" alt="Soft coral on the Japanese wreck, Banyuning" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">The shallow secret &middot; Banyuning</p>
@@ -735,7 +795,7 @@ guide_sites_en = """
       </div>
     </div>
 
-    <div class="feature-row feature-row--flip">
+    <div class="feature-row id="pyramids" feature-row--flip">
       <div class="feature-img"><img src="{WP}/2022/09/DiveMasterw.webp" alt="Divers over reef structures in Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Two more Amed regulars</p>
@@ -745,7 +805,7 @@ guide_sites_en = """
       </div>
     </div>
 
-    <div class="feature-row">
+    <div class="feature-row id="coral-garden"">
       <div class="feature-img"><img src="{WP}/2022/09/Nitrox.webp" alt="Diver at Coral Garden, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Tulamben&rsquo;s other two</p>
@@ -755,12 +815,12 @@ guide_sites_en = """
       </div>
     </div>
 
-    <div class="feature-row feature-row--flip">
+    <div class="feature-row id="seraya" feature-row--flip">
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Macro life on black sand at Seraya" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">For the critter hunters &middot; Seraya</p>
         <h2>Seraya Secrets</h2>
-        <p>A few minutes&rsquo; drive past Tulamben, Seraya is the muck-diving icon of east Bali: a featureless-looking black-sand slope that rewards slow eyes with frogfish, harlequin shrimp, ghost pipefish, seahorses and nudibranchs by the dozen. It&rsquo;s a different discipline, hovering still, searching small, and with Irman&rsquo;s biologist eyes along, it ruins ordinary reef dives forever, in the best way.</p>
+        <p>A few minutes before Tulamben on the coast road, Seraya is the muck-diving icon of east Bali: a featureless-looking black-sand slope that rewards slow eyes with frogfish, harlequin shrimp, ghost pipefish, seahorses and nudibranchs by the dozen. It&rsquo;s a different discipline, hovering still, searching small, and with Irman&rsquo;s biologist eyes along, it ruins ordinary reef dives forever, in the best way.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>5&ndash;20 m</strong><span>depth</span></div><div class="feature-stat"><strong>All levels</strong><span>buoyancy helps</span></div><div class="feature-stat"><strong>Muck</strong><span>critter capital</span></div></div>
       </div>
     </div>
