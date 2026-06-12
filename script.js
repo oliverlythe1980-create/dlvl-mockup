@@ -233,14 +233,20 @@ function dlvlToast(msg) {
         '</div>';
       card.classList.add('map-card--show');
       const r = map.getBoundingClientRect();
+      const sr = map.querySelector('.coast-svg').getBoundingClientRect();
       const c = a.querySelector('circle');
-      const px = parseFloat(c.getAttribute('cx')) / 1000 * r.width;
-      const py = parseFloat(c.getAttribute('cy')) / 660 * r.height;
+      // pin centre in map coordinates, measured against the SVG itself
+      const px = parseFloat(c.getAttribute('cx')) / 1000 * sr.width + (sr.left - r.left);
+      const py = parseFloat(c.getAttribute('cy')) / 660 * sr.height + (sr.top - r.top);
       const w = card.offsetWidth;
       const h = card.offsetHeight;
-      let left = px + 22;
-      if (left + w > r.width - 8) left = px - w - 22;
-      let top = Math.max(8, Math.min(py - h / 2, r.height - h - 8));
+      // sit above the pin row so neither pin nor label is covered; fall below if no room
+      let left = px + 24;
+      if (left + w > r.width - 8) left = px - w - 24;
+      left = Math.max(8, left);
+      let top = py - h - 16;
+      if (top < 8) top = py + 24;
+      if (top + h > r.height - 8) top = r.height - h - 8;
       card.style.left = left + 'px';
       card.style.top = top + 'px';
     });
