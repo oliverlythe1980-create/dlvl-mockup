@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=17">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
 
@@ -811,7 +811,7 @@ pages["contact.html"] = (
 
 # ─────────────────────────── DIVING GUIDE ───────────────────────────
 guide_sites_en = """
-    <div class="feature-row id="liberty"">
+    <div class="feature-row" id="liberty">
       <div class="feature-img"><img src="{WP}/2022/09/Advanced_open_water.webp" alt="Divers on the USAT Liberty wreck, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">The flagship &middot; Tulamben</p>
@@ -823,7 +823,7 @@ guide_sites_en = """
     </div>
     <div class="included-note">How we dive it: the Liberty receives day-trippers from south Bali from mid-morning. Staying in Amed, we&rsquo;re in the water at sunrise, before the first buses arrive, with four divers at most. You get the wreck, the bumpheads, and the silence.</div>
 
-    <div class="feature-row id="jemeluk" feature-row--flip">
+    <div class="feature-row feature-row--flip" id="jemeluk">
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Coral reef in Jemeluk Bay, Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Our house reef &middot; Amed</p>
@@ -833,7 +833,7 @@ guide_sites_en = """
       </div>
     </div>
 
-    <div class="feature-row id="japanese-wreck"">
+    <div class="feature-row" id="japanese-wreck">
       <div class="feature-img"><img src="{WP}/2022/09/Open_water_padi.webp" alt="Soft coral on the Japanese wreck, Banyuning" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">The shallow secret &middot; Banyuning</p>
@@ -843,7 +843,7 @@ guide_sites_en = """
       </div>
     </div>
 
-    <div class="feature-row id="pyramids" feature-row--flip">
+    <div class="feature-row feature-row--flip" id="pyramids">
       <div class="feature-img"><img src="{WP}/2022/09/DiveMasterw.webp" alt="Divers over reef structures in Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Two more Amed regulars</p>
@@ -853,7 +853,7 @@ guide_sites_en = """
       </div>
     </div>
 
-    <div class="feature-row id="coral-garden"">
+    <div class="feature-row" id="coral-garden">
       <div class="feature-img"><img src="{WP}/2022/09/Nitrox.webp" alt="Diver at Coral Garden, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Tulamben&rsquo;s other two</p>
@@ -863,7 +863,7 @@ guide_sites_en = """
       </div>
     </div>
 
-    <div class="feature-row id="seraya" feature-row--flip">
+    <div class="feature-row feature-row--flip" id="seraya">
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Macro life on black sand at Seraya" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">For the critter hunters &middot; Seraya</p>

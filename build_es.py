@@ -52,7 +52,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=17">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
 
@@ -810,7 +810,7 @@ pages["contact-es.html"] = ("contact.html",
 
 # ─────────────────────────── GUÍA DE BUCEO ───────────────────────────
 guia_sitios = """
-    <div class="feature-row id="liberty"">
+    <div class="feature-row" id="liberty">
       <div class="feature-img"><img src="{WP}/2022/09/Advanced_open_water.webp" alt="Buceadores en el pecio USAT Liberty, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">La joya &middot; Tulamben</p>
@@ -822,7 +822,7 @@ guia_sitios = """
     </div>
     <div class="included-note">C&oacute;mo lo buceamos: el Liberty recibe excursiones del sur de Bali desde media ma&ntilde;ana. Alojados en Amed, nosotros entramos al agua al amanecer, antes de que llegue el primer autob&uacute;s, con cuatro buceadores como mucho. Te llevas el pecio, los cabezones y el silencio.</div>
 
-    <div class="feature-row id="jemeluk" feature-row--flip">
+    <div class="feature-row feature-row--flip" id="jemeluk">
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Arrecife de coral en la bah&iacute;a de Jemeluk, Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Nuestro arrecife de casa &middot; Amed</p>
@@ -832,7 +832,7 @@ guia_sitios = """
       </div>
     </div>
 
-    <div class="feature-row id="japanese-wreck"">
+    <div class="feature-row" id="japanese-wreck">
       <div class="feature-img"><img src="{WP}/2022/09/Open_water_padi.webp" alt="Coral blando en el pecio japon&eacute;s, Banyuning" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">El secreto somero &middot; Banyuning</p>
@@ -842,7 +842,7 @@ guia_sitios = """
       </div>
     </div>
 
-    <div class="feature-row id="pyramids" feature-row--flip">
+    <div class="feature-row feature-row--flip" id="pyramids">
       <div class="feature-img"><img src="{WP}/2022/09/DiveMasterw.webp" alt="Buceadores sobre estructuras de arrecife en Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Dos cl&aacute;sicos de Amed</p>
@@ -852,7 +852,7 @@ guia_sitios = """
       </div>
     </div>
 
-    <div class="feature-row id="coral-garden"">
+    <div class="feature-row" id="coral-garden">
       <div class="feature-img"><img src="{WP}/2022/09/Nitrox.webp" alt="Buceador en Coral Garden, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Los otros dos de Tulamben</p>
@@ -862,7 +862,7 @@ guia_sitios = """
       </div>
     </div>
 
-    <div class="feature-row id="seraya" feature-row--flip">
+    <div class="feature-row feature-row--flip" id="seraya">
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Vida macro en arena negra, Seraya" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Para cazadores de bichos &middot; Seraya</p>
