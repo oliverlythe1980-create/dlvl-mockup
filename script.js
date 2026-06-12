@@ -213,6 +213,34 @@ function dlvlToast(msg) {
   });
 })();
 
+
+// ── Coast map: hover tooltips on dive-site pins ──
+(function () {
+  const map = document.querySelector('.coast-map');
+  if (!map) return;
+  const tip = document.createElement('div');
+  tip.className = 'map-tip';
+  map.appendChild(tip);
+  map.querySelectorAll('a[data-name]').forEach((a) => {
+    a.addEventListener('mouseenter', () => {
+      tip.innerHTML = '<strong>' + a.dataset.name + '</strong>' +
+                      '<span>' + a.dataset.meta + '</span>' +
+                      '<em>' + a.dataset.desc + '</em>';
+      tip.classList.add('map-tip--show');
+    });
+    a.addEventListener('mousemove', (e) => {
+      const r = map.getBoundingClientRect();
+      let x = e.clientX - r.left + 16;
+      let y = e.clientY - r.top + 16;
+      if (x > r.width - 250) x -= 270;
+      if (y > r.height - 120) y -= 130;
+      tip.style.left = x + 'px';
+      tip.style.top = y + 'px';
+    });
+    a.addEventListener('mouseleave', () => tip.classList.remove('map-tip--show'));
+  });
+})();
+
 // ── Scroll-reveal ──
 (function () {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
