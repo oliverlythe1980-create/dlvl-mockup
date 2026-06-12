@@ -40,6 +40,12 @@
     l_cert: (lv, db) => `Titulación: ${lv} · ${db} inmersiones`,
     note_ow: 'Planearemos puntos dentro de tu límite de 18 m; si te tienta la parte honda del pecio, el Advanced encaja perfecto.',
     note_rusty: '¿Hace tiempo de tu última inmersión? El refresco ReActivate (IDR 900.000, media jornada) es la vuelta al agua más amable.',
+    q_accq: '¿Necesitas alojamiento con desayuno?',
+    accq_y: 'Sí, con vosotros', accq_y_s: 'bungalós entre los arrozales', accq_n: 'No, ya lo tengo',
+    q_equip: '¿Necesitas equipo?',
+    eq_full: 'Equipo completo', eq_full_s: 'incluido en nuestros precios', eq_own: 'Traigo el mío', eq_own_s: 'botellas y plomos los ponemos nosotros',
+    l_accq: 'Alojamiento con desayuno: sí', l_eq_full: 'Equipo: completo (incluido)', l_eq_own: 'Equipo: propio',
+    note_accask: 'Te pasamos opciones y tarifas de habitación para tus fechas por WhatsApp.',
     disc3: '5% dto. aplicado', disc5: '10% dto. aplicado',
     q_night: '¿Añadimos una nocturna?', night_y: 'Sí, una nocturna', night_n: 'Esta vez no',
     q_dm: '¿Qué programa?', dm: 'Divemaster', dm_s: 'inmersiones de formación incl.', dmu: 'Divemaster ilimitado', dmu_s: 'cada botella libre es tuya',
@@ -83,6 +89,12 @@
     l_cert: (lv, db) => `Certified: ${lv} · ${db} dives`,
     note_ow: "We'll plan sites within your 18 m limit; if you fancy the deep side of the wreck, the Advanced course slots right in.",
     note_rusty: 'Been a while since your last dive? The ReActivate refresher (IDR 900.000, half a day) is the kindest way back in.',
+    q_accq: 'Do you need accommodation + breakfast?',
+    accq_y: 'Yes, with you', accq_y_s: 'bungalows by the rice fields', accq_n: "No, I'm sorted",
+    q_equip: 'Do you need equipment?',
+    eq_full: 'Full equipment, please', eq_full_s: 'included in our prices', eq_own: 'I bring my own', eq_own_s: "we'll sort tanks & weights",
+    l_accq: 'Accommodation + breakfast: yes, please', l_eq_full: 'Equipment: full set (included)', l_eq_own: 'Equipment: brings own',
+    note_accask: "We'll send room options and rates for your dates on WhatsApp.",
     disc3: '5% discount applied', disc5: '10% discount applied',
     q_night: 'Add a night dive?', night_y: 'Yes, one night dive', night_n: 'Not this time',
     q_dm: 'Which program?', dm: 'Divemaster', dm_s: 'training dives included', dmu: 'Unlimited Divemaster', dmu_s: 'every spare tank is yours',
@@ -115,40 +127,46 @@
     ).join('') + '</div>';
   }
 
-  function header(n, total, q) {
-    return `<p class="wiz-prog">${T.step} ${n} ${T.of} ${total}</p><h3 class="wiz-q">${q}</h3>`;
+  function header(q) {
+    return `<p class="wiz-prog">${T.step} ${st.history.length + 1}</p><h3 class="wiz-q">${q}</h3>`;
   }
 
   const steps = {
-    goal: () => header(1, 3, T.q1) + opts([
+    goal: () => header(T.q1) + opts([
       { v: 'try', t: T.g_try, s: T.g_try_s }, { v: 'cert', t: T.g_cert, s: T.g_cert_s },
       { v: 'level', t: T.g_level, s: T.g_level_s }, { v: 'fun', t: T.g_fun, s: T.g_fun_s },
       { v: 'pro', t: T.g_pro, s: T.g_pro_s },
     ]),
-    dsd: () => header(2, 3, T.q_dsd) + opts([
+    dsd: () => header(T.q_dsd) + opts([
       { v: '1', t: T.dsd1, s: T.dsd1_s }, { v: '2', t: T.dsd2, s: T.dsd2_s },
     ]),
-    dsdacc: () => header(3, 3, T.q_acc) + opts([{ v: 'y', t: T.acc_y }, { v: 'n', t: T.acc_n }]),
-    people: () => header(2, 3, T.q_people) + opts([{ v: '1', t: T.p1 }, { v: '2', t: T.p2, s: T.p2_s }]),
-    owpack: () => header(3, 3, T.q_owpack) + opts([
+    dsdacc: () => header(T.q_acc) + opts([{ v: 'y', t: T.acc_y }, { v: 'n', t: T.acc_n }]),
+    people: () => header(T.q_people) + opts([{ v: '1', t: T.p1 }, { v: '2', t: T.p2, s: T.p2_s }]),
+    owpack: () => header(T.q_owpack) + opts([
       { v: 'solo', t: T.ow_solo }, { v: 'acc', t: T.ow_acc }, { v: 'aow', t: T.ow_aow, s: T.ow_aow_s },
     ]),
-    levelcourse: () => header(2, 3, T.q_level) + opts([
+    levelcourse: () => header(T.q_level) + opts([
       { v: 'aow', t: T.aow, s: T.aow_s }, { v: 'resc', t: T.resc, s: T.resc_s },
     ]),
-    levelacc: () => header(3, 3, T.q_acc) + opts([{ v: 'y', t: T.acc_y }, { v: 'n', t: T.acc_n }]),
-    cert: () => header(2, 5, T.q_cert) + opts([
+    levelacc: () => header(T.q_acc) + opts([{ v: 'y', t: T.acc_y }, { v: 'n', t: T.acc_n }]),
+    cert: () => header(T.q_cert) + opts([
       { v: 'ow', t: T.lv_ow, s: T.lv_ow_s }, { v: 'aow', t: T.lv_aow, s: T.lv_aow_s },
       { v: 'resc', t: T.lv_resc }, { v: 'pro', t: T.lv_pro },
     ]),
-    logged: () => header(3, 5, T.q_logged) + opts([
+    logged: () => header(T.q_logged) + opts([
       { v: 'db1', t: T.db1 }, { v: 'db2', t: T.db2 }, { v: 'db3', t: T.db3 }, { v: 'db4', t: T.db4 },
     ]),
-    days: () => header(4, 5, T.q_days) + opts(
+    days: () => header(T.q_days) + opts(
       [1, 2, 3, 4, 5, 6].map((d) => ({ v: String(d), t: `${d} ${d > 1 ? T.days : T.day}`, s: T.dives_s }))
     ),
-    night: () => header(5, 5, T.q_night) + opts([{ v: 'y', t: T.night_y }, { v: 'n', t: T.night_n }]),
-    dm: () => header(2, 2, T.q_dm) + opts([
+    night: () => header(T.q_night) + opts([{ v: 'y', t: T.night_y }, { v: 'n', t: T.night_n }]),
+    accq: () => header(T.q_accq) + opts([
+      { v: 'y', t: T.accq_y, s: T.accq_y_s }, { v: 'n', t: T.accq_n },
+    ]),
+    equip: () => header(T.q_equip) + opts([
+      { v: 'full', t: T.eq_full, s: T.eq_full_s }, { v: 'own', t: T.eq_own, s: T.eq_own_s },
+    ]),
+    dm: () => header(T.q_dm) + opts([
       { v: 'dm', t: T.dm, s: T.dm_s }, { v: 'dmu', t: T.dmu, s: T.dmu_s },
     ]),
   };
@@ -185,7 +203,7 @@
       if (d >= 5) lines.push([T.disc5, 0]); else if (d >= 3) lines.push([T.disc3, 0]);
       if (st.night === 'y') { lines.push([T.l_night, P.night]); base += P.night; }
       per = base;
-      note = T.note_est + ' ' + T.note_funacc;
+      note = T.note_est;
       if (st.cert === 'ow') note += ' ' + T.note_ow;
       if (st.logged === 'db1') note += ' ' + T.note_rusty;
     } else if (st.goal === 'pro') {
@@ -193,6 +211,8 @@
       lines.push([st.dm === 'dmu' ? T.l_dmu : T.l_dm, per]);
       note = T.note_dm;
     }
+    if (st.accq === 'y') { lines.push([T.l_accq, 0]); note += ' ' + T.note_accask; }
+    lines.push([st.equip === 'own' ? T.l_eq_own : T.l_eq_full, 0]);
     return { lines, per, people, note };
   }
 
@@ -237,18 +257,20 @@
 
   const flow = {
     goal: (v) => ({ try: 'dsd', cert: 'people', level: 'levelcourse', fun: 'cert', pro: 'dm' }[v]),
-    dsd: (v) => (v === '2' ? 'dsdacc' : null),
-    dsdacc: () => null,
+    dsd: (v) => (v === '2' ? 'dsdacc' : 'accq'),
+    dsdacc: () => 'equip',
     people: () => (st.goal === 'cert' ? 'owpack' : null),
-    owpack: () => null,
+    owpack: (v) => (v === 'aow' ? 'accq' : 'equip'),
     levelcourse: () => 'levelpeople',
     levelpeople: () => 'levelacc',
-    levelacc: () => null,
+    levelacc: () => 'equip',
     cert: () => 'logged',
     logged: () => 'days',
     days: () => 'night',
-    night: () => null,
-    dm: () => null,
+    night: () => 'accq',
+    accq: () => 'equip',
+    equip: () => null,
+    dm: () => 'accq',
   };
   steps.levelpeople = steps.people;
 
