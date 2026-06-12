@@ -1333,6 +1333,26 @@ a:hover { color: var(--crimson); }
 }
 .spec-price small { display: block; font-family: var(--font-sans); font-weight: 400; font-size: 0.7rem; color: var(--text-muted); }
 
+/* ── Dive-sites: map inside the first fold ── */
+.course-hero--low { min-height: 0; }
+.course-hero--low .course-hero-body { padding: 6.2rem 0 1.6rem; }
+.course-hero--low h1 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); margin-bottom: 0.4rem; }
+.course-hero--low .lede { font-size: 0.88rem; max-width: 72ch; }
+.map-fold { padding: 1.6rem 0 2rem; }
+.map-fold .section-hed { margin-bottom: 0.7rem; }
+.map-fold .section-title { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.map-fold .section-sub { margin-bottom: 1.2rem; }
+.map-fold .coast-svg {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100svh - 440px);
+  min-height: 330px;
+  margin-inline: auto;
+}
+@media (max-width: 860px) {
+  .map-fold .coast-svg { max-height: none; width: 100%; }
+}
+
 /* ── Hand-drawn coast map + anchored postcard preview ── */
 .coast-map {
   position: relative;

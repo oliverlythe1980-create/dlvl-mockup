@@ -52,7 +52,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=6">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
 
@@ -545,10 +545,15 @@ pages["dive-sites-es.html"] = ("dive-sites.html",
          '<a href="index-es.html">Inicio</a> / Puntos de Inmersi&oacute;n',
          "D&oacute;nde Bucear&aacute;s",
          "La costa Amed&ndash;Tulamben es una hilera de inmersiones desde costa de primer nivel, un pecio de la Segunda Guerra Mundial, bah&iacute;as de coral, paredes y arrecifes artificiales, todo entrando por playas de arena negra de un mismo tramo de costa. Son los sitios donde buceamos a diario, que conocemos palmo a palmo y que ayudamos a cuidar.")
+    + f"""
+<section class="page-section map-fold">
+  <div class="container">{coast_map("es")}</div>
+</section>
+"""
     + facts([("13", "puntos con nombre en la costa"), ("Desde costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("Abr&ndash;Nov", "mejor visibilidad"), ("25 min", "en coche hasta el Liberty")])
     + f"""
 <section class="page-section">
-  <div class="container">{coast_map("es")}{site_rows}
+  <div class="container">{site_rows}
     <div class="included-note">Cada inmersi&oacute;n incluye gu&iacute;a, equipo completo, transporte por la zona de Amed y caf&eacute; en la playa al salir. Con cada sitio va su briefing de condiciones, y si ese d&iacute;a el arrecife est&aacute; mejor en otro punto, te lo decimos y vamos all&iacute;. &iquest;Quieres profundidades, temporadas e historia punto por punto? Lee la <a href="amed-diving-guide-es.html">gu&iacute;a completa de buceo en Amed y Tulamben</a>.</div>
     <div class="section-cta"><a class="section-cta-link" href="fun-dives-es.html">Precios de inmersiones &rarr;</a></div>
   </div>
@@ -933,6 +938,9 @@ pages["plan-your-trip-es.html"] = ("plan-your-trip.html",
 
 for fname, (en_url, title, desc, body) in pages.items():
     schema = _faq_schema(body)
+    if fname.startswith("dive-sites"):
+        body = body.replace('<section class="course-hero">', '<section class="course-hero course-hero--low">')
+        body = body.replace('<div style="height: 2.5rem"></div>\n', '', 1)
     if fname.startswith("course-"):
         schema += _course_schema(title, desc, BASE + fname)
     html = (HEAD.replace("{{TITLE}}", title).replace("{{DESC}}", desc) + body + FOOT)
