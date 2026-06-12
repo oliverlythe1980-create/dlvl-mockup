@@ -553,12 +553,12 @@ pages["dive-sites.html"] = (
          '<a href="index.html">Home</a> / Dive Sites',
          "Where You&rsquo;ll Dive",
          "The Amed&ndash;Tulamben coast is a string of world-class shore dives, a WWII wreck, coral bays, walls and artificial reefs, all entered from black-sand beaches along one short coastline. These are the sites we dive daily, know intimately, and help look after.")
+    + facts([("13", "named sites on our coast"), ("Shore entry", "every dive"), ("26&ndash;29&deg;C", "water all year"), ("Apr&ndash;Nov", "best visibility"), ("25 min", "drive to the Liberty")])
     + f"""
 <section class="page-section map-fold">
   <div class="container">{coast_map("en")}</div>
 </section>
 """
-    + facts([("13", "named sites on our coast"), ("Shore entry", "every dive"), ("26&ndash;29&deg;C", "water all year"), ("Apr&ndash;Nov", "best visibility"), ("25 min", "drive to the Liberty")])
     + f"""
 <section class="page-section">
   <div class="container">{site_rows}
@@ -947,9 +947,6 @@ pages["plan-your-trip.html"] = (
 for fname, (title, desc, body) in pages.items():
     es_name = fname.replace(".html", "-es.html")
     schema = _faq_schema(body)
-    if fname.startswith("dive-sites"):
-        body = body.replace('<section class="course-hero">', '<section class="course-hero course-hero--low">')
-        body = body.replace('<div style="height: 2.5rem"></div>\n', '', 1)
     if fname.startswith("course-"):
         schema += _course_schema(title, desc, BASE + fname)
     html = (HEAD.replace("{{TITLE}}", title).replace("{{DESC}}", desc) + body + FOOT)
