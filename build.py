@@ -552,7 +552,7 @@ pages["dive-sites.html"] = (
     hero(f"{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp",
          '<a href="index.html">Home</a> / Dive Sites',
          "Where You&rsquo;ll Dive",
-         "The Amed&ndash;Tulamben coast is a string of world-class shore dives, a WWII wreck, coral bays, walls and artificial reefs, all entered from black-sand beaches along one short coastline. These are the sites we dive daily, know intimately, and help look after.")
+         "One volcanic coastline, strung with world-class shore dives: a WWII wreck, coral bays, walls and black-sand muck. These are the sites we dive daily and help look after.")
     + facts([("13", "named sites on our coast"), ("Shore entry", "every dive"), ("26&ndash;29&deg;C", "water all year"), ("Apr&ndash;Nov", "best visibility"), ("25 min", "drive to the Liberty")])
     + f"""
 <section class="page-section map-fold">
