@@ -926,7 +926,7 @@ pages["plan-your-trip-es.html"] = ("plan-your-trip.html",
     <div id="wizard" class="wiz-card"></div>
   </div>
 </section>
-<script src="wizard.js?v=6" defer></script>
+<script src="wizard.js?v=7" defer></script>
 """
     + quote("Sentimos que no pod&iacute;amos haber elegido un sitio mejor.", "Rese&ntilde;a de Google &middot; una de las 508 con cinco estrellas"),
 )

@@ -25,7 +25,7 @@
     g_pro: 'Hacerme pro', g_pro_s: 'Divemaster, hasta 2 meses',
     q_dsd: '¿Una o dos inmersiones?',
     dsd1: '1 inmersión', dsd1_s: 'Media jornada', dsd2: '2 inmersiones', dsd2_s: 'La experiencia completa',
-    q_people: '¿Cuántos sois?', p1: 'Solo yo', p2: '2 o más', p2_s: 'precio por persona reducido',
+    q_people: '¿Cuántos sois?', p1: 'Solo yo', p2_s: 'precio por persona reducido', p5: '5 o más', p5_s: 'guías en paralelo, nunca en manada',
     q_owpack: 'Redondea el plan',
     ow_solo: 'Solo el Open Water', ow_acc: '+ 3 noches con desayuno', ow_aow: '+ curso Advanced', ow_aow_s: '5 días, hasta 30 m y el pecio',
     q_level: '¿Qué curso?',
@@ -46,6 +46,7 @@
     eq_full: 'Equipo completo', eq_full_s: 'incluido en nuestros precios', eq_own: 'Traigo el mío', eq_own_s: 'botellas y plomos los ponemos nosotros',
     l_accq: 'Alojamiento con desayuno: sí', l_eq_full: 'Equipo: completo (incluido)', l_eq_own: 'Equipo: propio',
     note_accask: 'Te pasamos opciones y tarifas de habitación para tus fechas por WhatsApp.',
+    note_group: '¿Sois más de cuatro? Nunca buceréis en manada: montamos guías en paralelo y cerramos la logística por WhatsApp.',
     disc3: '5% dto. aplicado', disc5: '10% dto. aplicado',
     q_night: '¿Añadimos una nocturna?', night_y: 'Sí, una nocturna', night_n: 'Esta vez no',
     q_dm: '¿Qué programa?', dm: 'Divemaster', dm_s: 'inmersiones de formación incl.', dmu: 'Divemaster ilimitado', dmu_s: 'cada botella libre es tuya',
@@ -77,7 +78,7 @@
     g_pro: 'Go pro', g_pro_s: 'Divemaster, up to 2 months',
     q_dsd: 'One dive or two?',
     dsd1: '1 dive', dsd1_s: 'Half a day', dsd2: '2 dives', dsd2_s: 'The full experience',
-    q_people: 'How many of you?', p1: 'Just me', p2: '2 or more', p2_s: 'lower price per person',
+    q_people: 'How many of you?', p1: 'Just me', p2_s: 'lower price per person', p5: '5 or more', p5_s: 'parallel guides, never a crowd',
     q_owpack: 'Round out the plan',
     ow_solo: 'Just the Open Water', ow_acc: '+ 3 nights with breakfast', ow_aow: '+ Advanced course', ow_aow_s: '5 days, to 30 m and the wreck',
     q_level: 'Which course?',
@@ -98,6 +99,7 @@
     eq_full: 'Full equipment, please', eq_full_s: 'included in our prices', eq_own: 'I bring my own', eq_own_s: "we'll sort tanks & weights",
     l_accq: 'Accommodation + breakfast: yes, please', l_eq_full: 'Equipment: full set (included)', l_eq_own: 'Equipment: brings own',
     note_accask: "We'll send room options and rates for your dates on WhatsApp.",
+    note_group: "More than four? You'll never dive in a crowd: we run parallel guides and sort the logistics on WhatsApp.",
     disc3: '5% discount applied', disc5: '10% discount applied',
     q_night: 'Add a night dive?', night_y: 'Yes, one night dive', night_n: 'Not this time',
     q_dm: 'Which program?', dm: 'Divemaster', dm_s: 'training dives included', dmu: 'Unlimited Divemaster', dmu_s: 'every spare tank is yours',
@@ -152,7 +154,10 @@
       { v: '1', t: T.dsd1, s: T.dsd1_s }, { v: '2', t: T.dsd2, s: T.dsd2_s },
     ]),
     dsdacc: () => header(T.q_acc) + opts([{ v: 'y', t: T.acc_y }, { v: 'n', t: T.acc_n }]),
-    people: () => header(T.q_people) + opts([{ v: '1', t: T.p1 }, { v: '2', t: T.p2, s: T.p2_s }]),
+    people: () => header(T.q_people) + opts([
+      { v: '1', t: T.p1 }, { v: '2', t: '2', s: T.p2_s }, { v: '3', t: '3', s: T.p2_s },
+      { v: '4', t: '4', s: T.p2_s }, { v: '5', t: T.p5, s: T.p5_s },
+    ]),
     owpack: () => header(T.q_owpack) + opts([
       { v: 'solo', t: T.ow_solo }, { v: 'acc', t: T.ow_acc }, { v: 'aow', t: T.ow_aow, s: T.ow_aow_s },
     ]),
@@ -184,7 +189,8 @@
 
   function compute() {
     const lines = [];
-    let per = 0, note = T.note_est, people = st.people || 1;
+    let per = 0, note = T.note_est;
+    const people = parseInt(st.people || '1', 10);
     if (st.goal === 'try') {
       if (st.dsd === '1') { lines.push([T.l_dsd1, P.dsd1]); per = P.dsd1; }
       else if (st.dsdacc === 'y') { lines.push([T.l_dsd2, P.dsd2], [T.l_acc1, P.dsd2acc - P.dsd2]); per = P.dsd2acc; }
@@ -223,6 +229,7 @@
       note = T.note_dm;
     }
     if (st.accq === 'y') { lines.push([T.l_accq, 0]); note += ' ' + T.note_accask; }
+    if (people >= 5) note += ' ' + T.note_group;
     lines.push([st.equip === 'own' ? T.l_eq_own : T.l_eq_full, 0]);
     return { lines, per, people, note };
   }
@@ -233,7 +240,8 @@
     const rows = lines.map(([l, v]) =>
       `<div class="wiz-row"><span>${l}</span><span>${v ? idr(v) : ''}</span></div>`
     ).join('');
-    const ppl = people > 1 ? `<div class="wiz-row"><span>${T.l_people(people)}</span><span>&times; ${people}</span></div>` : '';
+    const disp = people >= 5 ? '5+' : String(people);
+    const ppl = people > 1 ? `<div class="wiz-row"><span>${T.l_people(disp)}</span><span>&times; ${people}</span></div>` : '';
     el.innerHTML = `
       <div class="wiz-step">
       <div class="wiz-sumhead"><h3>${T.sum}</h3><img src="assets/logo-mark.png" alt=""></div>
@@ -276,7 +284,7 @@
       else if (fromEl.value) dates = fmtDate(fromEl.value);
       const msg = [T.wa_hi, `${T.wa_name}: ${name}`, `${T.wa_email}: ${email}`]
         .concat(lines.filter(([, v]) => v || true).map(([l, v]) => `· ${l}${v ? ' — ' + idr(v) : ''}`))
-        .concat(people > 1 ? [`· ${T.l_people(people)}`] : [])
+        .concat(people > 1 ? [`· ${T.l_people(people >= 5 ? '5+' : people)}`] : [])
         .concat([`${T.total}: ${idr(total)} (${T.eur} ${eur(total)})`])
         .concat(dates ? [`${T.wa_dates}: ${dates}`] : [])
         .join('\n');
@@ -289,13 +297,13 @@
     goal: (v) => ({ try: 'dsd', cert: 'people', level: 'levelcourse', fun: 'cert', pro: 'dm' }[v]),
     dsd: (v) => (v === '2' ? 'dsdacc' : 'accq'),
     dsdacc: () => 'equip',
-    people: () => (st.goal === 'cert' ? 'owpack' : null),
+    people: () => (st.goal === 'cert' ? 'owpack' : st.goal === 'fun' ? 'days' : null),
     owpack: (v) => (v === 'aow' ? 'accq' : 'equip'),
     levelcourse: () => 'levelpeople',
     levelpeople: () => 'levelacc',
     levelacc: () => 'equip',
     cert: () => 'logged',
-    logged: () => 'days',
+    logged: () => 'people',
     days: () => 'night',
     night: () => 'accq',
     accq: () => 'equip',
