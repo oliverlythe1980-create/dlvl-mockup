@@ -152,7 +152,7 @@ def coast_map(lang):
               T("Volcanic wall, giant gorgonians.", "Pared volc&aacute;nica, gorgonias gigantes."), "2022/09/Advanced_open_water.webp"),
         (5,  "batu-kelebit",   332, 166, "Batu Kelebit", "r",
               "15&ndash;40 m &middot; " + T("Ridges &middot; Advanced", "Crestas &middot; Avanzado"),
-              T("Deep ridges with real pelagic chances.", "Crestas profundas con opciones pel&aacute;gicas de verdad."), ""),
+              T("Deep ridges with real pelagic chances.", "Crestas profundas con opci&oacute;n real de pel&aacute;gicos."), ""),
         (6,  "seraya",         402, 188, "Seraya Secrets", "r",
               "5&ndash;20 m &middot; Muck &middot; " + T("All levels", "Todos los niveles"),
               T("Frogfish, harlequin shrimp: macro heaven.", "Peces sapo, gambas arlequ&iacute;n: para&iacute;so macro."), "2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp"),
@@ -197,7 +197,7 @@ def coast_map(lang):
         <text x="{lx}" y="{ly}" text-anchor="middle" style="font: 600 11px Inter, sans-serif; letter-spacing: 1.2px; text-transform: uppercase; fill: #2a1d18;">{label}</text>
       </a>"""
     sea = "Bali Sea" if en else "Mar de Bali"
-    note = "Hand-drawn &middot; not to scale" if en else "Dibujado a mano &middot; sin escala"
+    note = "Hand-drawn &middot; not to scale" if en else "Dibujado a mano &middot; no a escala"
     shop = "Diving La Vida Loca"
     title = ("The Coast at a Glance" if en else "La Costa de un Vistazo")
     sub = ("Thirteen sites along one volcanic shoreline, from the Boga Wreck at Kubu to Gili Selang at Bali&rsquo;s eastern tip. Tap a pin to read its chapter in the guide."
@@ -506,13 +506,13 @@ pages["course-specialities-es.html"] = ("course-specialities.html",
 # ─────────────────────────── PUNTOS DE INMERSIÓN ───────────────────────────
 sites = [
     ("Pecio del USAT Liberty", "Tulamben &middot; 25 min en coche", f"{WP}/2022/09/Advanced_open_water.webp",
-     "Un carguero de 120 metros de la Segunda Guerra Mundial, torpedeado en 1942 y empujado al mar por la erupci&oacute;n del Agung en 1963. Hoy es la inmersi&oacute;n desde costa m&aacute;s famosa del mundo: entras andando por la arena volc&aacute;nica y en minutos est&aacute;s planeando sobre un casco cubierto de coral. Ven al amanecer y el banco de peces loro cabez&oacute;n desfila como quien va al trabajo.",
+     "Un carguero de 120 metros de la Segunda Guerra Mundial, torpedeado en 1942 y empujado al mar por la erupci&oacute;n del Agung en 1963. Hoy es la inmersi&oacute;n desde la costa m&aacute;s famosa del mundo: entras andando por la arena volc&aacute;nica y en minutos est&aacute;s planeando sobre un casco cubierto de coral. Ven al amanecer y el banco de peces loro cabez&oacute;n desfila como quien va al trabajo.",
      [("5&ndash;30 m", "profundidad"), ("Todos los niveles", "desde Open Water"), ("Amanecer", "mejor momento")]),
     ("Bah&iacute;a de Jemeluk", "Amed &middot; nuestro arrecife de casa", f"{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp",
      "Tranquila, somera y absurdamente generosa, aqu&iacute; respira por primera vez en el mar cada alumno de Open Water, y aqu&iacute; volvemos nosotros en los d&iacute;as libres. Jardines de coral desde los tres metros, una pared que se descuelga para las inmersiones m&aacute;s profundas, y la clase de vida macro que convierte 45 minutos en 70.",
      [("3&ndash;25 m", "profundidad"), ("Todos los niveles", "primeras inmersiones"), ("De casa", "el aula de cada d&iacute;a")]),
     ("Pecio Japon&eacute;s", "Banyuning &middot; 10 min en coche", f"{WP}/2022/09/Open_water_padi.webp",
-     "Una peque&ntilde;a patrullera de la Segunda Guerra Mundial, tan somera que hasta los esnorquelistas la ven, pero sus mejores secretos son para buceadores. El casco est&aacute; completamente cubierto de coral blando, y la ladera de alrededor esconde caballitos pigmeos para quien tenga ojos pacientes y buena flotabilidad. Un favorito infravalorado.",
+     "Una peque&ntilde;a patrullera de la Segunda Guerra Mundial, tan somera que hasta los esnorquelistas la ven, pero sus mejores secretos son para buceadores. El casco est&aacute; completamente cubierto de coral blando, y la ladera de alrededor esconde caballitos pigmeos para ojos pacientes y buena flotabilidad. Un favorito infravalorado.",
      [("2&ndash;12 m", "profundidad"), ("Todos los niveles", "esn&oacute;rquel tambi&eacute;n"), ("Macro", "caballitos pigmeos")]),
     ("Las Pir&aacute;mides", "Amed &middot; a 5 minutos", f"{WP}/2022/09/DiveMasterw.webp",
      "Estructuras de arrecife artificial apiladas en la arena como templos hundidos, hoy repletas de peces cristal, peces le&oacute;n y alguna tortuga de paso. Una segunda inmersi&oacute;n brillante, un aula perfecta de navegaci&oacute;n, y la prueba de que con un poco de ayuda el mar se reconstruye r&aacute;pido.",
@@ -547,12 +547,12 @@ for i, (name, kicker, img, desc, stats) in enumerate(sites):
 
 pages["dive-sites-es.html"] = ("dive-sites.html",
     "Buceo en Tulamben y Amed, Bali · Pecio USAT Liberty y Más | Diving La Vida Loca",
-    "Los puntos de inmersión de Amed y Tulamben, Bali: el pecio del USAT Liberty, la bahía de Jemeluk, el Pecio Japonés y más. Todo desde costa, todo a minutos de nuestra puerta.",
+    "Los puntos de inmersión de Amed y Tulamben, Bali: el pecio del USAT Liberty, la bahía de Jemeluk, el Pecio Japonés y más. Todo desde la costa, todo a minutos de nuestra puerta.",
     hero(f"{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp",
          '<a href="index-es.html">Inicio</a> / Puntos de Inmersi&oacute;n',
          "D&oacute;nde Bucear&aacute;s",
-         "Una sola costa volc&aacute;nica, llena de inmersiones desde orilla de primer nivel: un pecio de la II Guerra Mundial, bah&iacute;as de coral, paredes y muck sobre arena negra. Los sitios que buceamos a diario y ayudamos a cuidar.")
-    + facts([("13", "puntos con nombre en la costa"), ("Desde costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("Abr&ndash;Nov", "mejor visibilidad"), ("25 min", "en coche hasta el Liberty")])
+         "Una sola costa volc&aacute;nica, llena de inmersiones de primer nivel desde la orilla: un pecio de la II Guerra Mundial, bah&iacute;as de coral, paredes y muck sobre arena negra. Los sitios que buceamos a diario y ayudamos a cuidar.")
+    + facts([("13", "puntos con nombre en la costa"), ("Desde la costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("Abr&ndash;Nov", "mejor visibilidad"), ("25 min", "en coche hasta el Liberty")])
     + f"""
 <section class="page-section map-fold">
   <div class="container">{coast_map("es")}</div>
@@ -585,7 +585,7 @@ pages["fun-dives-es.html"] = ("fun-dives.html",
     <p class="section-sub">Todos los precios incluyen el 10% de impuestos, equipo completo, gu&iacute;a, transporte por la zona de Amed y caf&eacute;, t&eacute;, agua y galletas. Sin recargos esperando en caja.</p>
 
     <div class="price-block">
-      <h3>Inmersiones desde costa, Amed y Tulamben</h3>
+      <h3>Inmersiones desde la costa, Amed y Tulamben</h3>
       <p class="price-block-sub">Incluido el pecio del USAT Liberty, la bah&iacute;a de Jemeluk, el Pecio Japon&eacute;s y Las Pir&aacute;mides.</p>
       <div class="price-row"><span class="price-name">1 inmersi&oacute;n</span><span class="price-val">IDR 690.000<small>&asymp; 36 &euro;</small></span></div>
       <div class="price-row"><span class="price-name">2 inmersiones <small>el cl&aacute;sico d&iacute;a completo</small></span><span class="price-val">IDR 990.000<small>&asymp; 51 &euro;</small></span></div>
@@ -656,7 +656,7 @@ pages["about-es.html"] = ("about.html",
     hero(f"{WP}/2022/08/TEAM5-768x512.webp",
          '<a href="index-es.html">Inicio</a> / Nosotros',
          "Peque&ntilde;os a Prop&oacute;sito",
-         "La mayor&iacute;a de centros de buceo crecen a&ntilde;adiendo barcos, bancos y reservas. Nosotros crecimos decidiendo no hacerlo. Cuatro buceadores por salida no es una limitaci&oacute;n, es la idea entera.", pos="center 20%")
+         "La mayor&iacute;a de los centros de buceo crecen a&ntilde;adiendo barcos, bancos y reservas. Nosotros crecimos decidiendo no hacerlo. Cuatro buceadores por salida no es una limitaci&oacute;n, es la idea entera.", pos="center 20%")
     + facts([("M&aacute;x. 4", "buceadores por salida"), ("20+ a&ntilde;os", "en el agua"), ("5", "idiomas"), ("5,0 &#9733;", "508 rese&ntilde;as en Google"), ("PADI", "Dive Center")])
     + f"""
 <section class="page-section">
@@ -736,7 +736,7 @@ pages["conservation-es.html"] = ("conservation.html",
       <div class="feature-body">
         <p class="feature-kicker">02 &middot; Manos en el agua</p>
         <h2>Limpiezas, seguimiento y estar atentos</h2>
-        <p>Buceamos estos sitios todos los d&iacute;as, y eso nos convierte en su sistema de alerta temprana. Limpiezas de arrecife y de playa, ojo puesto en la salud del coral con cada estaci&oacute;n, y la voz de alarma cuando algo cambia. Preg&uacute;ntanos qu&eacute; est&aacute; pasando en el arrecife esta temporada. No vamos a saber parar de hablar.</p>
+        <p>Buceamos estos sitios todos los d&iacute;as, y eso nos convierte en su sistema de alerta temprana. Limpiezas de arrecife y de playa, ojo puesto en la salud del coral en cada estaci&oacute;n, y la voz de alarma cuando algo cambia. Preg&uacute;ntanos qu&eacute; est&aacute; pasando en el arrecife esta temporada. No vamos a saber parar de hablar.</p>
       </div>
     </div>
     <div class="feature-row">
@@ -857,7 +857,7 @@ guia_sitios = """
       <div class="feature-body">
         <p class="feature-kicker">Los otros dos de Tulamben</p>
         <h2>Coral Garden y el Drop-Off</h2>
-        <p>Coral Garden es la galer&iacute;a somera de Tulamben: estatuas y estructuras entre coral blando a 2&ndash;12 metros, llenas de vida, ideales para inmersiones largas y relajadas y las paradas de seguridad m&aacute;s bonitas de la costa. A diez minutos andando por la playa, el Drop-Off (los locales lo llaman The Wall) es el humor contrario: roca volc&aacute;nica cayendo desde los 10 metros hasta m&aacute;s all&aacute; de los 40, colgada de gorgonias gigantes, con bancos de peces pegados a la pared y, de vez en cuando, algo grande saliendo del azul. Aqu&iacute; hacemos nuestra formaci&oacute;n profunda.</p>
+        <p>Coral Garden es la galer&iacute;a somera de Tulamben: estatuas y estructuras entre coral blando a 2&ndash;12 metros, llenas de vida, ideales para inmersiones largas y relajadas y las paradas de seguridad m&aacute;s bonitas de la costa. A diez minutos andando por la playa, el Drop-Off (los locales lo llaman The Wall) es el polo opuesto: roca volc&aacute;nica cayendo desde los 10 metros hasta m&aacute;s all&aacute; de los 40, colgada de gorgonias gigantes, con bancos de peces pegados a la pared y, de vez en cuando, algo grande saliendo del azul. Aqu&iacute; hacemos nuestra formaci&oacute;n profunda.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>2&ndash;12 m</strong><span>Coral Garden</span></div><div class="feature-stat"><strong>10&ndash;40 m</strong><span>Drop-Off</span></div><div class="feature-stat"><strong>Avanzado</strong><span>para lo mejor de la pared</span></div></div>
       </div>
     </div>
@@ -880,7 +880,7 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
          '<a href="index-es.html">Inicio</a> / <a href="dive-sites-es.html">Puntos de Inmersi&oacute;n</a> / Gu&iacute;a de Buceo',
          "Gu&iacute;a de Buceo de Amed y Tulamben",
          "Todo lo que sabemos de la costa que buceamos cada d&iacute;a: la historia del Liberty, profundidades reales, a qui&eacute;n le va cada punto, cu&aacute;ndo venir y los trucos locales que marcan la diferencia. Sin vender ning&uacute;n sitio m&aacute;s de lo que merece.")
-    + facts([("13", "puntos en esta gu&iacute;a"), ("Desde costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("15&ndash;30 m", "visibilidad en seca"), ("Abr&ndash;Nov", "temporada top")])
+    + facts([("13", "puntos en esta gu&iacute;a"), ("Desde la costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("15&ndash;30 m", "visibilidad en seca"), ("Abr&ndash;Nov", "temporada top")])
     + f"""
 <section class="page-section">
   <div class="container">
@@ -911,7 +911,7 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
       <details><summary>&iquest;Puede un principiante bucear el pecio Liberty?</summary><p>S&iacute;. El pecio empieza sobre los 5 metros, as&iacute; que con el Open Water, e incluso con esn&oacute;rquel, ves much&iacute;simo. La popa profunda y los pasajes son el motivo por el que casi todos lo combinan con el curso Advanced.</p></details>
       <details><summary>&iquest;Cu&aacute;l es la mejor hora para el Liberty?</summary><p>El amanecer, sin discusi&oacute;n. Los peces loro cabez&oacute;n a&uacute;n patrullan, las excursiones del sur de Bali no han llegado, y la luz entrando por la superestructura es la foto que vienes buscando. Alojarse en Amed lo pone f&aacute;cil.</p></details>
       <details><summary>&iquest;Hay corriente en Amed y Tulamben?</summary><p>Generalmente suave, por eso esta costa es ideal para cursos y buceo tranquilo. Las condiciones cambian a diario y el briefing de cada ma&ntilde;ana es honesto. Si un punto tiene un mal d&iacute;a, vamos a otro mejor.</p></details>
-      <details><summary>&iquest;Hace falta barco para alguno de estos puntos?</summary><p>No. Todos los puntos de esta gu&iacute;a son de entrada desde costa: esa es la magia de esta zona. Entras andando desde la playa con tu gu&iacute;a, m&aacute;ximo cuatro buceadores.</p></details>
+      <details><summary>&iquest;Hace falta barco para alguno de estos puntos?</summary><p>No. Todos los puntos de esta gu&iacute;a son de entrada desde la costa: esa es la magia de esta zona. Entras andando desde la playa con tu gu&iacute;a, m&aacute;ximo cuatro buceadores.</p></details>
       <details><summary>&iquest;Cu&aacute;ndo es temporada de mola mola en Amed?</summary><p>Amed no es destino de molas ni grandes pel&aacute;gicos: ese es el terreno de Nusa Penida. Lo que esta costa hace mejor que casi nadie: pecios, coral somero sano, vida macro y un buceo f&aacute;cil y precioso que puedes repetir tres veces al d&iacute;a.</p></details>
     </div>
 
@@ -938,7 +938,7 @@ pages["plan-your-trip-es.html"] = ("plan-your-trip.html",
     <div id="wizard" class="wiz-card"></div>
   </div>
 </section>
-<script src="wizard.js?v=8" defer></script>
+<script src="wizard.js?v=9" defer></script>
 """
     + quote("Sentimos que no pod&iacute;amos haber elegido un sitio mejor.", "Rese&ntilde;a de Google &middot; una de las 508 con cinco estrellas"),
 )
