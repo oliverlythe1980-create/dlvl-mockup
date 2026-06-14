@@ -561,7 +561,7 @@ a:hover { color: var(--crimson); }
 .course-title a { color: var(--text-on-dark); }
 .course-title a:hover { color: var(--gold-soft); }
 .course-meta { color: var(--gold-soft); }
-.course-desc { color: var(--sand); }
+.course-desc { color: #d9c19a; }
 .course-foot { border-top-color: var(--line-on-dark); }
 .course-price { color: var(--text-on-dark); }
 .course-price small { color: var(--gold-soft); }
