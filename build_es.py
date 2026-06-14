@@ -52,7 +52,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=35">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=36">
 </head>
 <body>
 
@@ -189,8 +189,9 @@ def coast_map(lang):
         lx, ly = LPOS[n]
         plain = label.replace("&middot;", "\u00b7")
         imgattr = f' data-img="{WP}/{img}"' if img else ""
+        site_slug = {"Drop-Off":"drop-off","Melasti Reef":"melasti","Arrecife de Melasti":"melasti"}.get(plain, anchor)
         pin_html += f"""
-      <a href="{guide}#{anchor}" data-name="{plain}" data-meta="{meta}" data-desc="{desc}"{imgattr}>
+      <a href="site-{site_slug}-es.html" data-name="{plain}" data-meta="{meta}" data-desc="{desc}"{imgattr}>
         <circle class="pin-c" cx="{x}" cy="{y}" r="11" fill="#91131b" stroke="#c9a227" stroke-width="1.5"/>
         <text x="{x}" y="{y + 4}" text-anchor="middle" style="font: 700 10px Inter, sans-serif; fill: #fff;">{n}</text>
         <line x1="{x}" y1="{y - 12}" x2="{lx}" y2="{ly + 5}" stroke="#c9a227" stroke-width="1" opacity="0.45"/>
@@ -814,7 +815,7 @@ guia_sitios = """
       <div class="feature-img"><img src="{WP}/2022/09/Advanced_open_water.webp" alt="Buceadores en el pecio USAT Liberty, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">La joya &middot; Tulamben</p>
-        <h2>Pecio del USAT Liberty</h2>
+        <h2><a href="site-liberty-es.html" class="site-link">Pecio del USAT Liberty</a></h2>
         <p>El Liberty es la raz&oacute;n por la que media comunidad buceadora conoce esta costa. Un transporte del ej&eacute;rcito estadounidense de 120 metros, torpedeado por un submarino japon&eacute;s en enero de 1942 cuando cruzaba el estrecho de Lombok, remolcado hacia Bali y varado en la playa de Tulamben. All&iacute; pas&oacute; veinte a&ntilde;os, hasta que los temblores de la erupci&oacute;n del Agung en 1963 lo empujaron al agua, y el mar se puso manos a la obra.</p>
         <p>Hoy descansa sobre una ladera de arena volc&aacute;nica entre los 5 y los 30 metros, colonizado por completo de coral duro y blando. Su parte alta se ve haciendo esn&oacute;rquel; con el Open Water ves casi todo; con el Advanced llegas a la popa y a los pasajes profundos. El banco residente de peces loro cabez&oacute;n patrulla al amanecer, con j&uacute;reles, barracudas y anguilas jard&iacute;n en la ladera.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>5&ndash;30 m</strong><span>profundidad</span></div><div class="feature-stat"><strong>Todos los niveles</strong><span>esn&oacute;rquel incluido</span></div><div class="feature-stat"><strong>Amanecer</strong><span>cabezones y pecio vac&iacute;o</span></div></div>
@@ -826,7 +827,7 @@ guia_sitios = """
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Arrecife de coral en la bah&iacute;a de Jemeluk, Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Nuestro arrecife de casa &middot; Amed</p>
-        <h2>Bah&iacute;a de Jemeluk y la pared de Amed</h2>
+        <h2><a href="site-jemeluk-es.html" class="site-link">Bah&iacute;a de Jemeluk y la pared de Amed</a></h2>
         <p>Jemeluk es la bah&iacute;a alrededor de la que se enrosca el pueblo: jardines de coral tranquilos y someros desde los tres metros, bajando hasta una pared que se descuelga m&aacute;s all&aacute; de los 25 en su punta este. Aqu&iacute; respira por primera vez en el mar cada alumno de Open Water, y el esn&oacute;rquel es tan bueno que la pareja no buceadora no se queda fuera del plan. Nubes de anthias, alg&uacute;n pulpo si miras despacio, y el famoso buz&oacute;n submarino.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>3&ndash;25 m</strong><span>profundidad</span></div><div class="feature-stat"><strong>Todos los niveles</strong><span>primeras inmersiones</span></div><div class="feature-stat"><strong>De casa</strong><span>el aula de cada d&iacute;a</span></div></div>
       </div>
@@ -836,7 +837,7 @@ guia_sitios = """
       <div class="feature-img"><img src="{WP}/2022/09/Open_water_padi.webp" alt="Coral blando en el pecio japon&eacute;s, Banyuning" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">El secreto somero &middot; Banyuning</p>
-        <h2>Pecio Japon&eacute;s</h2>
+        <h2><a href="site-japanese-wreck-es.html" class="site-link">Pecio Japon&eacute;s</a></h2>
         <p>Un peque&ntilde;o barco de acero de la Segunda Guerra Mundial increíblemente somero, entre los 2 y los 12 metros, tan cerca de la superficie que los esnorquelistas flotan por encima. Que la profundidad no te enga&ntilde;e: el casco est&aacute; forrado de coral blando, y la ladera de al lado cae con gorgonias que esconden caballitos pigmeos. Inmersiones largas, someras y saturadas de color, con tiempo de fondo infinito. El favorito de los fot&oacute;grafos.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>2&ndash;12 m</strong><span>el pecio en s&iacute;</span></div><div class="feature-stat"><strong>Todos los niveles</strong><span>tiempo de fondo &eacute;pico</span></div><div class="feature-stat"><strong>Macro</strong><span>pigmeos al lado</span></div></div>
       </div>
@@ -846,7 +847,7 @@ guia_sitios = """
       <div class="feature-img"><img src="{WP}/2022/09/DiveMasterw.webp" alt="Buceadores sobre estructuras de arrecife en Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Dos cl&aacute;sicos de Amed</p>
-        <h2>Las Pir&aacute;mides y el arrecife de Melasti</h2>
+        <h2><a href="site-pyramids-es.html" class="site-link">Las Pir&aacute;mides</a> y el <a href="site-melasti-es.html" class="site-link">arrecife de Melasti</a></h2>
         <p>Las Pir&aacute;mides son estructuras de arrecife artificial sembradas en la arena frente a la playa de Amed, a un paso de Jemeluk, con dos d&eacute;cadas de crecimiento encima y repletas de peces cristal, peces le&oacute;n y tortugas de paso: una segunda inmersi&oacute;n brillante y nuestra aula de navegaci&oacute;n. Melasti es el arrecife al final de nuestro propio camino, una pendiente suave de coral y praderas con tortugas residentes, perfecta para una ma&ntilde;ana f&aacute;cil con log&iacute;stica cero.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>5&ndash;22 m</strong><span>Pir&aacute;mides</span></div><div class="feature-stat"><strong>4&ndash;20 m</strong><span>Melasti</span></div><div class="feature-stat"><strong>500 m</strong><span>Melasti desde la puerta</span></div></div>
       </div>
@@ -856,7 +857,7 @@ guia_sitios = """
       <div class="feature-img"><img src="{WP}/2022/09/Nitrox.webp" alt="Buceador en Coral Garden, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Los otros dos de Tulamben</p>
-        <h2>Coral Garden y el Drop-Off</h2>
+        <h2><a href="site-coral-garden-es.html" class="site-link">Coral Garden</a> y el <a href="site-drop-off-es.html" class="site-link">Drop-Off</a></h2>
         <p>Coral Garden es la galer&iacute;a somera de Tulamben: estatuas y estructuras entre coral blando a 2&ndash;12 metros, llenas de vida, ideales para inmersiones largas y relajadas y las paradas de seguridad m&aacute;s bonitas de la costa. A diez minutos andando por la playa, el Drop-Off (los locales lo llaman The Wall) es el polo opuesto: roca volc&aacute;nica cayendo desde los 10 metros hasta m&aacute;s all&aacute; de los 40, colgada de gorgonias gigantes, con bancos de peces pegados a la pared y, de vez en cuando, algo grande saliendo del azul. Aqu&iacute; hacemos nuestra formaci&oacute;n profunda.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>2&ndash;12 m</strong><span>Coral Garden</span></div><div class="feature-stat"><strong>10&ndash;40 m</strong><span>Drop-Off</span></div><div class="feature-stat"><strong>Avanzado</strong><span>para lo mejor de la pared</span></div></div>
       </div>
@@ -866,7 +867,7 @@ guia_sitios = """
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Vida macro en arena negra, Seraya" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Para cazadores de bichos &middot; Seraya</p>
-        <h2>Seraya Secrets</h2>
+        <h2><a href="site-seraya-es.html" class="site-link">Seraya Secrets</a></h2>
         <p>Unos minutos antes de llegar a Tulamben por la carretera de la costa, Seraya es el icono del muck diving del este de Bali: una ladera de arena negra que parece vac&iacute;a y que premia los ojos lentos con peces sapo, gambas arlequ&iacute;n, peces pipa fantasma, caballitos y nudibranquios por docenas. Es otra disciplina, flotar quieto, buscar peque&ntilde;o, y con los ojos de bi&oacute;logo de Irman al lado, te estropea para siempre las inmersiones normales. En el buen sentido.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>5&ndash;20 m</strong><span>profundidad</span></div><div class="feature-stat"><strong>Todos los niveles</strong><span>la flotabilidad ayuda</span></div><div class="feature-stat"><strong>Muck</strong><span>capital del bicheo</span></div></div>
       </div>
@@ -897,11 +898,11 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">M&aacute;s Puntos Que Buceamos</h2></div>
     <p class="section-sub">Los ocho de arriba son el coraz&oacute;n de la costa; estos cinco completan el mapa para quien se queda m&aacute;s tiempo o busca algo concreto.</p>
     <div class="day-plan">
-      <div class="day" id="boga"><h3>Pecio Boga &middot; Kubu &middot; 16&ndash;40 m</h3><p>Un carguero de 40 metros hundido a prop&oacute;sito en 2012 como arrecife artificial, diez minutos pasado Tulamben. Descansa adrizado, con estatuas en cubierta y un coche hundido de lo m&aacute;s surrealista; su profundidad lo convierte en inmersi&oacute;n para Advanced, ideal con Nitrox.</p></div>
-      <div class="day" id="batu-kelebit"><h3>Batu Kelebit &middot; Tulamben &middot; 15&ndash;40 m</h3><p>Crestas rocosas que se hunden hacia el azul justo al este del Drop-Off: gorgonias grandes, bancos de peces y la mejor papeleta de la costa para que pase algo pel&aacute;gico. El lado salvaje de Tulamben, mejor con algo de experiencia.</p></div>
-      <div class="day" id="bunutan"><h3>Bunutan &middot; Amed &middot; 10&ndash;30 m</h3><p>Una punta de arena en el tramo de Amed con colonias de anguilas jard&iacute;n, praderas y una pendiente suave hacia lo profundo, que solemos bucear como deriva f&aacute;cil. Discretamente excelente, y casi siempre vac&iacute;o.</p></div>
-      <div class="day" id="lipah"><h3>Bah&iacute;a de Lipah &middot; Amed &middot; 3&ndash;20 m</h3><p>Una bah&iacute;a peque&ntilde;a de bommies de coral sobre arena, relajada y somera, tan buena para esn&oacute;rquel como para bucear. La cl&aacute;sica segunda inmersi&oacute;n f&aacute;cil volviendo del Pecio Japon&eacute;s.</p></div>
-      <div class="day" id="gili-selang"><h3>Gili Selang &middot; la punta este de Bali &middot; 5&ndash;30 m</h3><p>El islote de la punta m&aacute;s oriental de Bali: coral intacto y potencial pel&aacute;gico de verdad, custodiados por corrientes fuertes e impredecibles. Solo buceadores avanzados, el d&iacute;a adecuado y con el plan adecuado. Preg&uacute;ntanos.</p></div>
+      <div class="day" id="boga"><h3><a href="site-boga-es.html" class="site-link">Pecio Boga &middot; Kubu &middot; 16&ndash;40 m</a></h3><p>Un carguero de 40 metros hundido a prop&oacute;sito en 2012 como arrecife artificial, diez minutos pasado Tulamben. Descansa adrizado, con estatuas en cubierta y un coche hundido de lo m&aacute;s surrealista; su profundidad lo convierte en inmersi&oacute;n para Advanced, ideal con Nitrox.</p></div>
+      <div class="day" id="batu-kelebit"><h3><a href="site-batu-kelebit-es.html" class="site-link">Batu Kelebit &middot; Tulamben &middot; 15&ndash;40 m</a></h3><p>Crestas rocosas que se hunden hacia el azul justo al este del Drop-Off: gorgonias grandes, bancos de peces y la mejor papeleta de la costa para que pase algo pel&aacute;gico. El lado salvaje de Tulamben, mejor con algo de experiencia.</p></div>
+      <div class="day" id="bunutan"><h3><a href="site-bunutan-es.html" class="site-link">Bunutan &middot; Amed &middot; 10&ndash;30 m</a></h3><p>Una punta de arena en el tramo de Amed con colonias de anguilas jard&iacute;n, praderas y una pendiente suave hacia lo profundo, que solemos bucear como deriva f&aacute;cil. Discretamente excelente, y casi siempre vac&iacute;o.</p></div>
+      <div class="day" id="lipah"><h3><a href="site-lipah-es.html" class="site-link">Bah&iacute;a de Lipah &middot; Amed &middot; 3&ndash;20 m</a></h3><p>Una bah&iacute;a peque&ntilde;a de bommies de coral sobre arena, relajada y somera, tan buena para esn&oacute;rquel como para bucear. La cl&aacute;sica segunda inmersi&oacute;n f&aacute;cil volviendo del Pecio Japon&eacute;s.</p></div>
+      <div class="day" id="gili-selang"><h3><a href="site-gili-selang-es.html" class="site-link">Gili Selang &middot; la punta este de Bali &middot; 5&ndash;30 m</a></h3><p>El islote de la punta m&aacute;s oriental de Bali: coral intacto y potencial pel&aacute;gico de verdad, custodiados por corrientes fuertes e impredecibles. Solo buceadores avanzados, el d&iacute;a adecuado y con el plan adecuado. Preg&uacute;ntanos.</p></div>
     </div>
   </div>
 </section>

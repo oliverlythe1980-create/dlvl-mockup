@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=35">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=36">
 </head>
 <body>
 
@@ -188,8 +188,9 @@ def coast_map(lang):
         lx, ly = LPOS[n]
         plain = label.replace("&middot;", "\u00b7")
         imgattr = f' data-img="{WP}/{img}"' if img else ""
+        site_slug = {"Drop-Off":"drop-off","Melasti Reef":"melasti","Arrecife de Melasti":"melasti"}.get(plain, anchor)
         pin_html += f"""
-      <a href="{guide}#{anchor}" data-name="{plain}" data-meta="{meta}" data-desc="{desc}"{imgattr}>
+      <a href="site-{site_slug}.html" data-name="{plain}" data-meta="{meta}" data-desc="{desc}"{imgattr}>
         <circle class="pin-c" cx="{x}" cy="{y}" r="11" fill="#91131b" stroke="#c9a227" stroke-width="1.5"/>
         <text x="{x}" y="{y + 4}" text-anchor="middle" style="font: 700 10px Inter, sans-serif; fill: #fff;">{n}</text>
         <line x1="{x}" y1="{y - 12}" x2="{lx}" y2="{ly + 5}" stroke="#c9a227" stroke-width="1" opacity="0.45"/>
@@ -815,7 +816,7 @@ guide_sites_en = """
       <div class="feature-img"><img src="{WP}/2022/09/Advanced_open_water.webp" alt="Divers on the USAT Liberty wreck, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">The flagship &middot; Tulamben</p>
-        <h2>USAT Liberty Wreck</h2>
+        <h2><a href="site-liberty.html" class="site-link">USAT Liberty Wreck</a></h2>
         <p>The Liberty is the reason most divers have heard of this coast. A 120-metre US Army transport ship, she was torpedoed by a Japanese submarine in January 1942 while crossing the Lombok Strait, towed towards Bali, and beached at Tulamben. There she sat for twenty years, until the tremors of Mount Agung&rsquo;s 1963 eruption pushed her off the sand and into the water, where the ocean got to work.</p>
         <p>Today she lies on a black-sand slope between roughly 5 and 30 metres, completely colonised by hard and soft coral. You can snorkel her shallowest sections; an Open Water diver sees most of her; an Advanced diver gets the stern and the deeper swim-throughs. The resident school of bumphead parrotfish patrols at first light, with jacks, barracuda and garden eels on the slope.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>5&ndash;30 m</strong><span>depth</span></div><div class="feature-stat"><strong>All levels</strong><span>snorkellers too</span></div><div class="feature-stat"><strong>Dawn</strong><span>bumpheads &amp; empty wreck</span></div></div>
@@ -827,7 +828,7 @@ guide_sites_en = """
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Coral reef in Jemeluk Bay, Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Our house reef &middot; Amed</p>
-        <h2>Jemeluk Bay &amp; the Amed Wall</h2>
+        <h2><a href="site-jemeluk.html" class="site-link">Jemeluk Bay &amp; the Amed Wall</a></h2>
         <p>Jemeluk is the bay the village curls around: calm, shallow coral gardens from three metres, sloping to a wall that falls away past 25 metres at its eastern point. It&rsquo;s where every Open Water student takes their first sea breaths, and the snorkelling is good enough that non-diving partners don&rsquo;t feel left out. Expect anthias clouds, octopus if you look slowly, and the underwater post box the tourists love.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>3&ndash;25 m</strong><span>depth</span></div><div class="feature-stat"><strong>All levels</strong><span>first dives welcome</span></div><div class="feature-stat"><strong>House reef</strong><span>our daily classroom</span></div></div>
       </div>
@@ -837,7 +838,7 @@ guide_sites_en = """
       <div class="feature-img"><img src="{WP}/2022/09/Open_water_padi.webp" alt="Soft coral on the Japanese wreck, Banyuning" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">The shallow secret &middot; Banyuning</p>
-        <h2>Japanese Wreck</h2>
+        <h2><a href="site-japanese-wreck.html" class="site-link">Japanese Wreck</a></h2>
         <p>A small steel vessel from WWII lying improbably shallow, between roughly 2 and 12 metres, close enough to the surface that snorkellers float over it. Don&rsquo;t let the depth fool you: the hull is smothered in soft coral, and the reef slope beside it drops away with gorgonians that hide pygmy seahorses. Long, shallow, colour-saturated dives with huge bottom time, and a photographer&rsquo;s favourite.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>2&ndash;12 m</strong><span>the wreck itself</span></div><div class="feature-stat"><strong>All levels</strong><span>epic bottom time</span></div><div class="feature-stat"><strong>Macro</strong><span>pygmy seahorses nearby</span></div></div>
       </div>
@@ -847,7 +848,7 @@ guide_sites_en = """
       <div class="feature-img"><img src="{WP}/2022/09/DiveMasterw.webp" alt="Divers over reef structures in Amed" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Two more Amed regulars</p>
-        <h2>The Pyramids &amp; Melasti Reef</h2>
+        <h2><a href="site-pyramids.html" class="site-link">The Pyramids</a> &amp; <a href="site-melasti.html" class="site-link">Melasti Reef</a></h2>
         <p>The Pyramids are tiered artificial-reef structures seeded on the sand off Amed beach, a few minutes along from Jemeluk, now two decades grown and swarming with glassfish, lionfish and passing turtles: a brilliant second dive and our navigation classroom. Melasti is the reef at the end of our own path, a gentle slope of coral and seagrass with resident turtles, perfect when you want an easy morning with zero logistics.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>5&ndash;22 m</strong><span>Pyramids</span></div><div class="feature-stat"><strong>4&ndash;20 m</strong><span>Melasti</span></div><div class="feature-stat"><strong>500 m</strong><span>Melasti from our door</span></div></div>
       </div>
@@ -857,7 +858,7 @@ guide_sites_en = """
       <div class="feature-img"><img src="{WP}/2022/09/Nitrox.webp" alt="Diver at Coral Garden, Tulamben" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">Tulamben&rsquo;s other two</p>
-        <h2>Coral Garden &amp; the Drop-Off</h2>
+        <h2><a href="site-coral-garden.html" class="site-link">Coral Garden</a> &amp; the <a href="site-drop-off.html" class="site-link">Drop-Off</a></h2>
         <p>Coral Garden is Tulamben&rsquo;s shallow gallery: statues and structures laid among soft coral at 2&ndash;12 metres, busy with life and ideal for long, relaxed dives and the prettiest safety stops on the coast. Ten minutes&rsquo; walk along the beach, the Drop-Off (locals call it The Wall) is the opposite mood: volcanic rock plunging from 10 metres to beyond 40, hung with giant gorgonians, schooling fish stacked against the wall, and the occasional something-big cruising out of the blue. It&rsquo;s where our deep training happens.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>2&ndash;12 m</strong><span>Coral Garden</span></div><div class="feature-stat"><strong>10&ndash;40 m</strong><span>Drop-Off</span></div><div class="feature-stat"><strong>Advanced</strong><span>for the wall&rsquo;s best</span></div></div>
       </div>
@@ -867,7 +868,7 @@ guide_sites_en = """
       <div class="feature-img"><img src="{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp" alt="Macro life on black sand at Seraya" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">For the critter hunters &middot; Seraya</p>
-        <h2>Seraya Secrets</h2>
+        <h2><a href="site-seraya.html" class="site-link">Seraya Secrets</a></h2>
         <p>A few minutes before Tulamben on the coast road, Seraya is the muck-diving icon of east Bali: a featureless-looking black-sand slope that rewards slow eyes with frogfish, harlequin shrimp, ghost pipefish, seahorses and nudibranchs by the dozen. It&rsquo;s a different discipline, hovering still, searching small, and with Irman&rsquo;s biologist eyes along, it ruins ordinary reef dives forever, in the best way.</p>
         <div class="feature-stats"><div class="feature-stat"><strong>5&ndash;20 m</strong><span>depth</span></div><div class="feature-stat"><strong>All levels</strong><span>buoyancy helps</span></div><div class="feature-stat"><strong>Muck</strong><span>critter capital</span></div></div>
       </div>
@@ -898,11 +899,11 @@ pages["amed-diving-guide.html"] = (
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">More Sites We Dive</h2></div>
     <p class="section-sub">The eight above are the heart of the coast; these five round out the map for divers staying longer or chasing something specific.</p>
     <div class="day-plan">
-      <div class="day" id="boga"><h3>Boga Wreck &middot; Kubu &middot; 16&ndash;40 m</h3><p>A 40-metre cargo vessel purpose-sunk in 2012 as an artificial reef, ten minutes past Tulamben. She sits upright with statues on deck and a famously surreal sunken car, but her depth makes this an Advanced dive, ideally on Nitrox.</p></div>
-      <div class="day" id="batu-kelebit"><h3>Batu Kelebit &middot; Tulamben &middot; 15&ndash;40 m</h3><p>Rocky ridges running into deep water just east of the Drop-Off: big gorgonians, schooling fish, the coast&rsquo;s best chance of something pelagic cruising past. Tulamben&rsquo;s wilder edge, best with some experience.</p></div>
-      <div class="day" id="bunutan"><h3>Bunutan &middot; Amed &middot; 10&ndash;30 m</h3><p>A sandy point on the Amed strip with garden eel colonies, seagrass patches and a gentle deep slope, often dived as an easy drift. Quietly excellent, and usually empty.</p></div>
-      <div class="day" id="lipah"><h3>Lipah Bay &middot; Amed &middot; 3&ndash;20 m</h3><p>A small bay of coral bommies on sand, relaxed and shallow, as good for snorkellers as divers. A classic easy second dive on the way back from the Japanese Wreck.</p></div>
-      <div class="day" id="gili-selang"><h3>Gili Selang &middot; Bali&rsquo;s eastern tip &middot; 5&ndash;30 m</h3><p>The little islet off Bali&rsquo;s easternmost point: pristine coral and real pelagic potential, guarded by strong, unpredictable currents. Advanced divers only, on the right day, with the right plan. Ask us.</p></div>
+      <div class="day" id="boga"><h3><a href="site-boga.html" class="site-link">Boga Wreck &middot; Kubu &middot; 16&ndash;40 m</a></h3><p>A 40-metre cargo vessel purpose-sunk in 2012 as an artificial reef, ten minutes past Tulamben. She sits upright with statues on deck and a famously surreal sunken car, but her depth makes this an Advanced dive, ideally on Nitrox.</p></div>
+      <div class="day" id="batu-kelebit"><h3><a href="site-batu-kelebit.html" class="site-link">Batu Kelebit &middot; Tulamben &middot; 15&ndash;40 m</a></h3><p>Rocky ridges running into deep water just east of the Drop-Off: big gorgonians, schooling fish, the coast&rsquo;s best chance of something pelagic cruising past. Tulamben&rsquo;s wilder edge, best with some experience.</p></div>
+      <div class="day" id="bunutan"><h3><a href="site-bunutan.html" class="site-link">Bunutan &middot; Amed &middot; 10&ndash;30 m</a></h3><p>A sandy point on the Amed strip with garden eel colonies, seagrass patches and a gentle deep slope, often dived as an easy drift. Quietly excellent, and usually empty.</p></div>
+      <div class="day" id="lipah"><h3><a href="site-lipah.html" class="site-link">Lipah Bay &middot; Amed &middot; 3&ndash;20 m</a></h3><p>A small bay of coral bommies on sand, relaxed and shallow, as good for snorkellers as divers. A classic easy second dive on the way back from the Japanese Wreck.</p></div>
+      <div class="day" id="gili-selang"><h3><a href="site-gili-selang.html" class="site-link">Gili Selang &middot; Bali&rsquo;s eastern tip &middot; 5&ndash;30 m</a></h3><p>The little islet off Bali&rsquo;s easternmost point: pristine coral and real pelagic potential, guarded by strong, unpredictable currents. Advanced divers only, on the right day, with the right plan. Ask us.</p></div>
     </div>
   </div>
 </section>
