@@ -543,7 +543,7 @@ SITES = [
     "en": {
       "name": "Bunutan",
       "lede": "A sandy point on the Amed strip with garden-eel colonies and a gentle deep slope, often dived as an easy drift.",
-      "facts": [("12&ndash;30 m", "depth"), ("All levels", "drift"), ("Shore / jukung", "Amed"), ("Garden eels", "highlight"), ("Amed strip", "location")],
+      "facts": [("12&ndash;30 m", "depth"), ("All levels", "drift"), ("Shore entry", "Amed"), ("Garden eels", "highlight"), ("Amed strip", "location")],
       "overview": [
         "Bunutan Point begins with a gentle sandy slope dotted with macro life and garden-eel colonies, then deepens into open water often swept by a soft current, which makes it a lovely easy drift.",
         "Quietly excellent and usually empty, it&rsquo;s a favourite for divers who like to fly along a slope and let the reef come to them.",
@@ -554,11 +554,11 @@ SITES = [
         "Schooling fish, barracuda and the occasional reef shark deeper down",
         "Rays and flatfish on the sand",
       ],
-      "conditions": "Suits all levels as a relaxed drift, with deeper sections for Advanced divers. Currents are usually gentle. Visibility 10&ndash;30 metres. Sometimes reached by a short traditional jukung.",
+      "conditions": "Suits all levels as a relaxed drift, with deeper sections for Advanced divers. Currents are usually gentle. Visibility 10&ndash;30 metres.",
       "how": "We run Bunutan as an easy drift, letting the current do the work while we point out the macro and watch the blue. Four divers maximum, a relaxed pace.",
       "faqs": [
         ("Is it a drift dive?", "Usually a gentle one, yes, an easy, enjoyable way to cover the slope."),
-        ("Shore or boat?", "Both, depending on the day, sometimes a short jukung ride, sometimes from the beach."),
+        ("Good for all levels?", "Yes, as a relaxed drift it suits everyone, with deeper sections for Advanced divers who want them."),
       ],
       "quote": "We feel like we could not have picked a better place.",
       "quote_by": "Google review &middot; one of 508 five-star reviews",
@@ -566,7 +566,7 @@ SITES = [
     "es": {
       "name": "Bunutan",
       "lede": "Una punta de arena en el tramo de Amed con colonias de anguilas jard&iacute;n y una pendiente suave hacia lo hondo, que solemos bucear como deriva f&aacute;cil.",
-      "facts": [("12&ndash;30 m", "profundidad"), ("Todos los niveles", "deriva"), ("Costa / jukung", "Amed"), ("Anguilas jard&iacute;n", "lo mejor"), ("Tramo de Amed", "ubicaci&oacute;n")],
+      "facts": [("12&ndash;30 m", "profundidad"), ("Todos los niveles", "deriva"), ("Desde costa", "Amed"), ("Anguilas jard&iacute;n", "lo mejor"), ("Tramo de Amed", "ubicaci&oacute;n")],
       "overview": [
         "La punta de Bunutan empieza con una pendiente suave de arena salpicada de vida macro y colonias de anguilas jard&iacute;n, y luego se ahonda hacia mar abierto, a menudo barrida por una corriente suave que la convierte en una deriva preciosa y f&aacute;cil.",
         "Discretamente excelente y casi siempre vac&iacute;a, es un favorito de quien disfruta volando por una ladera y dejando que el arrecife venga a &eacute;l.",
@@ -577,11 +577,11 @@ SITES = [
         "Bancos de peces, barracudas y alg&uacute;n tibur&oacute;n de arrecife m&aacute;s abajo",
         "Rayas y peces planos en la arena",
       ],
-      "conditions": "Vale para todos los niveles como deriva relajada, con tramos m&aacute;s profundos para Advanced. Las corrientes suelen ser suaves. Visibilidad 10&ndash;30 metros. A veces se llega en un jukung tradicional corto.",
+      "conditions": "Vale para todos los niveles como deriva relajada, con tramos m&aacute;s profundos para Advanced. Las corrientes suelen ser suaves. Visibilidad 10&ndash;30 metros.",
       "how": "Hacemos Bunutan como deriva f&aacute;cil, dejando que la corriente trabaje mientras se&ntilde;alamos el macro y vigilamos el azul. Cuatro buceadores como m&aacute;ximo, ritmo relajado.",
       "faqs": [
         ("&iquest;Es una inmersi&oacute;n en deriva?", "Normalmente una suave, s&iacute;: una forma f&aacute;cil y disfrutona de recorrer la ladera."),
-        ("&iquest;Costa o barco?", "Ambas, seg&uacute;n el d&iacute;a: a veces un jukung corto, a veces desde la playa."),
+        ("&iquest;Vale para todos los niveles?", "S&iacute;, como deriva relajada vale para todos, con tramos m&aacute;s profundos para los Advanced que los quieran."),
       ],
       "quote": "Sentimos que no pod&iacute;amos haber elegido un sitio mejor.",
       "quote_by": "Rese&ntilde;a de Google &middot; una de las 508 con cinco estrellas",
@@ -690,9 +690,9 @@ SITES = [
     "en": {
       "name": "Gili Selang",
       "lede": "The little island at Bali&rsquo;s easternmost tip: pristine coral and real pelagic potential, guarded by strong, unpredictable currents.",
-      "facts": [("5&ndash;30 m", "depth"), ("Advanced only", "experienced"), ("Boat / jukung", "access"), ("Currents &amp; pelagics", "highlight"), ("Bali&rsquo;s tip", "location")],
+      "facts": [("5&ndash;30 m", "depth"), ("Advanced only", "experienced"), ("Mostly shore", "boat occasionally"), ("Currents &amp; pelagics", "highlight"), ("Bali&rsquo;s tip", "location")],
       "overview": [
-        "Gili Selang is a small island off Bali&rsquo;s easternmost point, reached by a short traditional jukung. The protected side has big bommies and low, healthy coral; the exposed side can have strong, unpredictable currents, and with them the chance of larger pelagics.",
+        "Gili Selang sits at Bali&rsquo;s easternmost point. We usually dive it from the shore, though occasionally a short traditional jukung is needed to reach the best of it. The protected side has big bommies and low, healthy coral; the exposed side can have strong, unpredictable currents, and with them the chance of larger pelagics.",
         "It&rsquo;s the coast&rsquo;s wild card, advanced divers only, on the right day, with the right plan.",
       ],
       "see": [
@@ -713,9 +713,9 @@ SITES = [
     "es": {
       "name": "Gili Selang",
       "lede": "El islote de la punta m&aacute;s oriental de Bali: coral intacto y potencial pel&aacute;gico de verdad, custodiados por corrientes fuertes e impredecibles.",
-      "facts": [("5&ndash;30 m", "profundidad"), ("Solo avanzados", "con experiencia"), ("Barco / jukung", "acceso"), ("Corrientes y pel&aacute;gicos", "lo mejor"), ("Punta de Bali", "ubicaci&oacute;n")],
+      "facts": [("5&ndash;30 m", "profundidad"), ("Solo avanzados", "con experiencia"), ("Casi siempre costa", "barco a veces"), ("Corrientes y pel&aacute;gicos", "lo mejor"), ("Punta de Bali", "ubicaci&oacute;n")],
       "overview": [
-        "Gili Selang es un islote frente a la punta m&aacute;s oriental de Bali, al que se llega en un jukung tradicional corto. El lado protegido tiene grandes bommies y coral bajo y sano; el lado expuesto puede tener corrientes fuertes e impredecibles, y con ellas la opci&oacute;n de pel&aacute;gicos mayores.",
+        "Gili Selang est&aacute; en la punta m&aacute;s oriental de Bali. Lo solemos bucear desde la costa, aunque a veces hace falta un jukung tradicional corto para llegar a lo mejor. El lado protegido tiene grandes bommies y coral bajo y sano; el lado expuesto puede tener corrientes fuertes e impredecibles, y con ellas la opci&oacute;n de pel&aacute;gicos mayores.",
         "Es el comod&iacute;n de la costa: solo buceadores avanzados, el d&iacute;a adecuado y con el plan adecuado.",
       ],
       "see": [
