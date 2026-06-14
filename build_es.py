@@ -52,7 +52,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=36">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=37">
 </head>
 <body>
 
@@ -513,8 +513,8 @@ sites = [
      "Tranquila, somera y absurdamente generosa, aqu&iacute; respira por primera vez en el mar cada alumno de Open Water, y aqu&iacute; volvemos nosotros en los d&iacute;as libres. Jardines de coral desde los tres metros, una pared que se descuelga para las inmersiones m&aacute;s profundas, y la clase de vida macro que convierte 45 minutos en 70.",
      [("3&ndash;25 m", "profundidad"), ("Todos los niveles", "primeras inmersiones"), ("De casa", "el aula de cada d&iacute;a")]),
     ("Pecio Japon&eacute;s", "Banyuning &middot; 10 min en coche", f"{WP}/2022/09/Open_water_padi.webp",
-     "Una peque&ntilde;a patrullera de la Segunda Guerra Mundial, tan somera que hasta los esnorquelistas la ven, pero sus mejores secretos son para buceadores. El casco est&aacute; completamente cubierto de coral blando, y la ladera de alrededor esconde caballitos pigmeos para ojos pacientes y buena flotabilidad. Un favorito infravalorado.",
-     [("2&ndash;12 m", "profundidad"), ("Todos los niveles", "esn&oacute;rquel tambi&eacute;n"), ("Macro", "caballitos pigmeos")]),
+     "Un peque&ntilde;o pecio cubierto de coral de origen incierto, tan somero que hasta los esnorquelistas lo ven, pero sus mejores secretos son para buceadores. El casco est&aacute; completamente cubierto de coral blando, y la ladera de alrededor esconde caballitos pigmeos para ojos pacientes y buena flotabilidad. Un favorito infravalorado.",
+     [("6&ndash;12 m", "profundidad"), ("Todos los niveles", "esn&oacute;rquel tambi&eacute;n"), ("Macro", "caballitos pigmeos")]),
     ("Las Pir&aacute;mides", "Amed &middot; a 5 minutos", f"{WP}/2022/09/DiveMasterw.webp",
      "Estructuras de arrecife artificial apiladas en la arena como templos hundidos, hoy repletas de peces cristal, peces le&oacute;n y alguna tortuga de paso. Una segunda inmersi&oacute;n brillante, un aula perfecta de navegaci&oacute;n, y la prueba de que con un poco de ayuda el mar se reconstruye r&aacute;pido.",
      [("5&ndash;22 m", "profundidad"), ("Todos los niveles", "gran segunda inmersi&oacute;n"), ("Tortugas", "visitantes habituales")]),
@@ -531,20 +531,23 @@ sites = [
      "Arena negra y tesoros diminutos. Seraya es el icono del muck diving de esta costa: peces sapo, gambas arlequ&iacute;n, peces pipa fantasma y nudibranquios por docenas. Trae un foco, baja el ritmo y deja que los ojos de bi&oacute;logo de Irman te encuentren cosas que pasar&iacute;as nadando de largo.",
      [("5&ndash;20 m", "profundidad"), ("Todos los niveles", "paciencia para el macro"), ("Muck", "capital del bicheo")]),
 ]
+SITE_SLUG = {"Pecio del USAT Liberty":"liberty","Bah&iacute;a de Jemeluk":"jemeluk","Pecio Japon&eacute;s":"japanese-wreck","Las Pir&aacute;mides":"pyramids","Coral Garden":"coral-garden","Drop-Off de Tulamben":"drop-off","Arrecife de Melasti":"melasti","Seraya Secrets":"seraya"}
 site_rows = ""
 for i, (name, kicker, img, desc, stats) in enumerate(sites):
     flip = " feature-row--flip" if i % 2 else ""
+    slug = SITE_SLUG[name]
     stat_html = "".join(f'<div class="feature-stat"><strong>{a}</strong><span>{b}</span></div>' for a, b in stats)
     site_rows += f"""
-    <div class="feature-row{flip}">
+    <a class="feature-row{flip}" href="site-{slug}-es.html">
       <div class="feature-img"><img src="{img}" alt="{name}" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">{kicker}</p>
-        <h2>{name}</h2>
+        <h2><span class="site-link">{name}</span></h2>
         <p>{desc}</p>
         <div class="feature-stats">{stat_html}</div>
+        <span class="feature-link">Leer la gu&iacute;a completa &rarr;</span>
       </div>
-    </div>"""
+    </a>"""
 
 pages["dive-sites-es.html"] = ("dive-sites.html",
     "Buceo en Tulamben y Amed, Bali · Pecio USAT Liberty y Más | Diving La Vida Loca",

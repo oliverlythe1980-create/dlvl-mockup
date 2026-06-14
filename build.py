@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=36">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=37">
 </head>
 <body>
 
@@ -514,8 +514,8 @@ sites = [
      "Calm, shallow, and absurdly generous, this is where every Open Water student takes their first reef breath, and where we keep coming back on days off. Coral gardens from three metres, a wall that drops away for the deeper dives, and the kind of macro life that turns a 45-minute dive into 70.",
      [("3&ndash;25 m", "depth"), ("All levels", "first dives welcome"), ("House reef", "our daily classroom")]),
     ("Japanese Wreck", "Banyuning &middot; 10 min by car", f"{WP}/2022/09/Open_water_padi.webp",
-     "A small patrol boat from WWII, sitting so shallow that snorkellers can see it, but its best secrets are for divers. The hull is completely overgrown with soft coral, and the surrounding slope hides pygmy seahorses for those with patient eyes and good buoyancy. An underrated favourite.",
-     [("2&ndash;12 m", "depth"), ("All levels", "snorkellers too"), ("Macro", "pygmy seahorses")]),
+     "A small, coral-encrusted wreck of debated origin, sitting so shallow that snorkellers can see it, but its best secrets are for divers. The hull is completely overgrown with soft coral, and the surrounding slope hides pygmy seahorses for those with patient eyes and good buoyancy. An underrated favourite.",
+     [("6&ndash;12 m", "depth"), ("All levels", "snorkellers too"), ("Macro", "pygmy seahorses")]),
     ("The Pyramids", "Amed &middot; 5 minutes away", f"{WP}/2022/09/DiveMasterw.webp",
      "Artificial reef structures stacked on the sand like sunken temples, now swarming with glassfish, lionfish and the occasional passing turtle. A brilliant second dive, a perfect navigation classroom, and proof that given a little help, the ocean rebuilds fast.",
      [("5&ndash;22 m", "depth"), ("All levels", "great second dive"), ("Turtles", "regular visitors")]),
@@ -532,20 +532,23 @@ sites = [
      "Black sand and tiny treasures. Seraya is the muck-diving icon of the coast: frogfish, harlequin shrimp, ghost pipefish, and nudibranchs by the dozen. Bring a torch, slow right down, and let Irman&rsquo;s biologist eyes find you things you&rsquo;d swim straight past.",
      [("5&ndash;20 m", "depth"), ("All levels", "macro patience helps"), ("Muck", "critter capital")]),
 ]
+SITE_SLUG = {"USAT Liberty Wreck":"liberty","Jemeluk Bay":"jemeluk","Japanese Wreck":"japanese-wreck","The Pyramids":"pyramids","Coral Garden":"coral-garden","Tulamben Drop-Off":"drop-off","Melasti Reef":"melasti","Seraya Secrets":"seraya"}
 site_rows = ""
 for i, (name, kicker, img, desc, stats) in enumerate(sites):
     flip = " feature-row--flip" if i % 2 else ""
+    slug = SITE_SLUG[name]
     stat_html = "".join(f'<div class="feature-stat"><strong>{a}</strong><span>{b}</span></div>' for a, b in stats)
     site_rows += f"""
-    <div class="feature-row{flip}">
+    <a class="feature-row{flip}" href="site-{slug}.html">
       <div class="feature-img"><img src="{img}" alt="{name}" loading="lazy"></div>
       <div class="feature-body">
         <p class="feature-kicker">{kicker}</p>
-        <h2>{name}</h2>
+        <h2><span class="site-link">{name}</span></h2>
         <p>{desc}</p>
         <div class="feature-stats">{stat_html}</div>
+        <span class="feature-link">Read the full guide &rarr;</span>
       </div>
-    </div>"""
+    </a>"""
 
 pages["dive-sites.html"] = (
     "Dive Sites in Amed & Tulamben · USAT Liberty, Jemeluk Bay & More | Diving La Vida Loca",
