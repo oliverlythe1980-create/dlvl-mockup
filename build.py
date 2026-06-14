@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=46">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=47">
 </head>
 <body>
 
@@ -72,7 +72,6 @@ HEAD = """<!DOCTYPE html>
     </nav>
     <div class="header-actions">
       <span class="lang-toggle"><strong>EN</strong> / <a class="lang-es" href="{{ES_URL}}">ES</a></span>
-      <a class="pill-btn header-trip" href="plan-your-trip.html">Tailor Your Trip</a>
       <a class="pill-btn pill-btn--whatsapp" href="WAURL">WhatsApp</a>
     </div>
   </div>
