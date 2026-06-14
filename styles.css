@@ -596,7 +596,7 @@ a:hover { color: var(--crimson); }
 }
 .hp-break-inner { position: relative; z-index: 2; padding: 0 2rem 3.6rem; }
 .hp-break-text {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.42em;
   text-transform: uppercase;
