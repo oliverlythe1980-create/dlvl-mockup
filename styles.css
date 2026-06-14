@@ -912,7 +912,7 @@ a:hover { color: var(--crimson); }
 /* ════════════════════ FINAL CTA ════════════════════ */
 .hp-final {
   position: relative;
-  padding: 6.5rem 2rem;
+  padding: 5.5rem 2rem;
   text-align: center;
   overflow: hidden;
   background: var(--ink);
@@ -922,18 +922,19 @@ a:hover { color: var(--crimson); }
   inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: brightness(0.38) saturate(1.05);
+  filter: brightness(0.6) saturate(1.05);
 }
 .hp-final::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(20, 9, 12, 0.7), transparent 65%);
+  background: linear-gradient(to top, rgba(20, 9, 12, 0.55) 0%, rgba(20, 9, 12, 0.12) 55%, rgba(20, 9, 12, 0.35) 100%);
 }
 .hp-final-inner { position: relative; z-index: 2; }
-.hp-final h2 { color: #faf5ee; font-size: clamp(2rem, 4.4vw, 3.4rem); margin-bottom: 1rem; }
-.hp-final p { color: rgba(250, 245, 238, 0.85); font-weight: 300; margin-bottom: 2.4rem; }
+.hp-final h2 { color: #faf5ee; font-size: clamp(1.5rem, 2.8vw, 2.2rem); margin-bottom: 0.7rem; text-shadow: 0 2px 16px rgba(10,5,8,0.6); }
+.hp-final p { color: rgba(250, 245, 238, 0.9); font-weight: 300; font-size: 0.9rem; margin-bottom: 1.8rem; text-shadow: 0 1px 10px rgba(10,5,8,0.6); }
 .hp-final .hero-ctas { justify-content: center; animation: none; }
+.hp-final .pill-btn { padding: 0.8rem 1.8rem; font-size: 0.58rem; }
 
 /* ════════════════════ FOOTER ════════════════════ */
 .site-footer {
