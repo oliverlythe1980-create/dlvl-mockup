@@ -561,9 +561,9 @@ a:hover { color: var(--crimson); }
 .course-title a { color: var(--text-on-dark); }
 .course-title a:hover { color: var(--gold-soft); }
 .course-meta { color: var(--gold-soft); }
-.course-desc { color: var(--text-on-dark-muted); }
+.course-desc { color: var(--sand); }
 .course-foot { border-top-color: var(--line-on-dark); }
-.course-price { color: var(--sand); }
+.course-price { color: var(--text-on-dark); }
 .course-price small { color: var(--gold-soft); }
 .course-link { color: var(--gold-soft); }
 @media (max-width: 980px) { .course-grid { grid-template-columns: repeat(2, 1fr); } }
