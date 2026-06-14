@@ -26,7 +26,7 @@
 
   --shadow-sm: 0 1px 3px rgba(35, 16, 22, 0.06);
   --shadow-md: 0 16px 40px rgba(35, 16, 22, 0.12);
-  --shadow-lg: 0 28px 70px rgba(35, 16, 22, 0.2);
+  --shadow-lg: 0 34px 80px rgba(35, 16, 22, 0.3);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --r-card: 6px;
   --r-btn: 2px;
@@ -467,7 +467,7 @@ a:hover { color: var(--crimson); }
   box-shadow: var(--shadow-sm);
   transition: transform 0.45s var(--ease-out), box-shadow 0.45s ease, border-color 0.45s ease;
 }
-.course-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(35,16,22,0.22); }
+.course-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: var(--shadow-lg); border-color: var(--gold); }
 .course-img { position: relative; aspect-ratio: 16/10; overflow: hidden; }
 .course-img::after {
   content: '';
@@ -756,7 +756,7 @@ a:hover { color: var(--crimson); }
   box-shadow: var(--shadow-sm);
   transition: transform 0.45s var(--ease-out), box-shadow 0.45s ease;
 }
-.eco-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.eco-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: var(--shadow-lg); }
 .eco-num {
   display: inline-block;
   font-family: var(--font-serif);
@@ -884,7 +884,7 @@ a:hover { color: var(--crimson); }
   filter: saturate(0.92);
   transition: transform 0.7s var(--ease-out), filter 0.5s ease;
 }
-.team-card:hover .team-photo img { transform: scale(1.04); filter: saturate(1); }
+.team-card:hover .team-photo img { transform: scale(1.07); filter: saturate(1); }
 .team-name { font-size: 1.35rem; margin-bottom: 0.25rem; }
 .team-role {
   font-size: 0.58rem;
@@ -1113,7 +1113,7 @@ a:hover { color: var(--crimson); }
   box-shadow: var(--shadow-sm);
   transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease;
 }
-.day:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+.day:hover { transform: translateX(8px); box-shadow: var(--shadow-lg); }
 .day h3 { font-size: 1.1rem; margin-bottom: 0.4rem; color: var(--crimson); }
 .day p { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
 
@@ -1305,7 +1305,7 @@ a:hover { color: var(--crimson); }
   border-radius: var(--r-card);
   transition: transform 0.5s var(--ease-out), box-shadow 0.5s ease;
 }
-.gallery-grid img:hover { transform: scale(1.02); box-shadow: var(--shadow-md); }
+.gallery-grid img:hover { transform: scale(1.05); box-shadow: var(--shadow-lg); }
 @media (max-width: 700px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
 
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: start; }
@@ -1515,7 +1515,7 @@ a:hover { color: var(--crimson); }
   opacity: 0;
   transition: opacity 0.25s ease, transform 0.3s var(--ease-out);
 }
-.wiz-opt:hover { border-color: var(--crimson); background: #fff; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.wiz-opt:hover { border-color: var(--crimson); background: #fff; transform: translateY(-6px) scale(1.02); box-shadow: var(--shadow-lg); }
 .wiz-opt:hover::after { opacity: 1; transform: translate(0, -50%); }
 .wiz-opt strong { display: block; font-family: var(--font-serif); font-size: 1.05rem; color: var(--text); }
 .wiz-opt span { display: block; font-size: 0.74rem; font-weight: 300; color: var(--text-muted); margin-top: 0.15rem; }
