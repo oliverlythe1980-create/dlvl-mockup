@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=39">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=40">
 </head>
 <body>
 
@@ -539,14 +539,16 @@ for i, (name, kicker, img, desc, stats) in enumerate(sites):
     slug = SITE_SLUG[name]
     stat_html = "".join(f'<div class="feature-stat"><strong>{a}</strong><span>{b}</span></div>' for a, b in stats)
     site_rows += f"""
-    <a class="feature-row{flip}" href="site-{slug}.html">
-      <div class="feature-img"><img src="{img}" alt="{name}" loading="lazy"></div>
-      <div class="feature-body">
-        <p class="feature-kicker">{kicker}</p>
-        <h2><span class="site-link">{name}</span></h2>
-        <p>{desc}</p>
-        <div class="feature-stats">{stat_html}</div>
-        <span class="feature-link">Read the full guide &rarr;</span>
+    <a class="feature-row{flip} site-band" href="site-{slug}.html">
+      <div class="container feature-row-grid">
+        <div class="feature-img"><img src="{img}" alt="{name}" loading="lazy"></div>
+        <div class="feature-body">
+          <p class="feature-kicker">{kicker}</p>
+          <h2><span class="site-link">{name}</span></h2>
+          <p>{desc}</p>
+          <div class="feature-stats">{stat_html}</div>
+          <span class="feature-link">Read the full guide &rarr;</span>
+        </div>
       </div>
     </a>"""
 
@@ -564,8 +566,10 @@ pages["dive-sites.html"] = (
 </section>
 """
     + f"""
+<section class="site-bands">{site_rows}
+</section>
 <section class="page-section">
-  <div class="container">{site_rows}
+  <div class="container">
     <div class="included-note">Every dive includes your guide, full equipment, transport in the Amed area, and coffee on the beach afterwards. Conditions briefing comes with every site, and if the reef is having a better day somewhere else, we&rsquo;ll tell you and go there instead. Want depths, seasons and history site by site? Read the full <a href="amed-diving-guide.html">Amed &amp; Tulamben diving guide</a>.</div>
     <div class="section-cta"><a class="section-cta-link" href="fun-dives.html">Fun dive prices &rarr;</a></div>
   </div>

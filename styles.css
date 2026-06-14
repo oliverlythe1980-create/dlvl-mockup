@@ -169,13 +169,14 @@ a:hover { color: var(--crimson); }
 
 
 /* ── Gold piping: every full-width red band, top and bottom ── */
-.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final {
+.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final, .site-band {
   border-top: 2px solid var(--gold);
   border-bottom: 2px solid var(--gold);
 }
 /* collapse doubled gold seams: where a piped band meets the footer or another
    piped band, drop the first band's bottom edge so only a single 2px line shows */
-:is(.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final):has(+ .site-footer),
+:is(.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final, .site-band):has(+ .site-footer),
+.site-band:has(+ .site-band),
 :is(.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final):has(+ :is(.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final)) {
   border-bottom: 0;
 }
@@ -1586,6 +1587,32 @@ a.feature-row .feature-link { display: inline-block; margin-top: 0.4rem; }
 a.feature-row:hover .site-link { background-size: 100% 2px; }
 a.feature-row.feature-row--flip:hover .site-link { color: var(--crimson); }
 a.feature-row:not(.feature-row--flip):hover .site-link { color: var(--gold-soft); }
+
+/* ── Dive-site full-width bands (dive-sites page) ── */
+.site-bands { display: block; }
+.site-band {
+  display: block;
+  width: 100%;
+  margin: 0 !important;
+  padding: 3.4rem 0 !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: filter 0.4s ease;
+}
+.site-band:hover { transform: none; box-shadow: none; filter: brightness(1.04); }
+.site-band .feature-row-grid {
+  max-width: 1220px; margin: 0 auto; padding: 0 2rem;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+.site-band .feature-img { transition: transform 0.6s var(--ease-out); }
+.site-band:hover .feature-img img { transform: scale(1.05); }
+@media (max-width: 860px) {
+  .site-band { padding: 2.2rem 0 !important; }
+  .site-band .feature-row-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+  .site-band.feature-row--flip .feature-img { order: 0; }
+}
 
 /* ── Linked dive-site headings in the guide ── */
 .site-link { color: inherit; text-decoration: none; background-image: linear-gradient(var(--gold), var(--gold)); background-size: 0% 2px; background-repeat: no-repeat; background-position: 0 100%; transition: background-size 0.35s var(--ease-out), color 0.25s ease; }

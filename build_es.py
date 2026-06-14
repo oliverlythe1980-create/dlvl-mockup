@@ -52,7 +52,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=39">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=40">
 </head>
 <body>
 
@@ -538,14 +538,16 @@ for i, (name, kicker, img, desc, stats) in enumerate(sites):
     slug = SITE_SLUG[name]
     stat_html = "".join(f'<div class="feature-stat"><strong>{a}</strong><span>{b}</span></div>' for a, b in stats)
     site_rows += f"""
-    <a class="feature-row{flip}" href="site-{slug}-es.html">
-      <div class="feature-img"><img src="{img}" alt="{name}" loading="lazy"></div>
-      <div class="feature-body">
-        <p class="feature-kicker">{kicker}</p>
-        <h2><span class="site-link">{name}</span></h2>
-        <p>{desc}</p>
-        <div class="feature-stats">{stat_html}</div>
-        <span class="feature-link">Leer la gu&iacute;a completa &rarr;</span>
+    <a class="feature-row{flip} site-band" href="site-{slug}-es.html">
+      <div class="container feature-row-grid">
+        <div class="feature-img"><img src="{img}" alt="{name}" loading="lazy"></div>
+        <div class="feature-body">
+          <p class="feature-kicker">{kicker}</p>
+          <h2><span class="site-link">{name}</span></h2>
+          <p>{desc}</p>
+          <div class="feature-stats">{stat_html}</div>
+          <span class="feature-link">Leer la gu&iacute;a completa &rarr;</span>
+        </div>
       </div>
     </a>"""
 
@@ -563,8 +565,10 @@ pages["dive-sites-es.html"] = ("dive-sites.html",
 </section>
 """
     + f"""
+<section class="site-bands">{site_rows}
+</section>
 <section class="page-section">
-  <div class="container">{site_rows}
+  <div class="container">
     <div class="included-note">Cada inmersi&oacute;n incluye gu&iacute;a, equipo completo, transporte por la zona de Amed y caf&eacute; en la playa al salir. Con cada sitio va su briefing de condiciones, y si ese d&iacute;a el arrecife est&aacute; mejor en otro punto, te lo decimos y vamos all&iacute;. &iquest;Quieres profundidades, temporadas e historia punto por punto? Lee la <a href="amed-diving-guide-es.html">gu&iacute;a completa de buceo en Amed y Tulamben</a>.</div>
     <div class="section-cta"><a class="section-cta-link" href="fun-dives-es.html">Precios de inmersiones &rarr;</a></div>
   </div>
