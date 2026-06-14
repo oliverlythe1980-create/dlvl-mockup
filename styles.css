@@ -235,12 +235,12 @@ a:hover { color: var(--crimson); }
 .is-scrolled .brand-name { color: var(--ink); }
 .is-scrolled .brand-name small { color: var(--text-muted); }
 
-.site-nav { display: flex; gap: 1.8rem; margin-left: auto; }
+.site-nav { display: flex; gap: 1.1rem; margin-left: auto; }
 .site-nav a {
   position: relative;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.85);
   padding: 0.3rem 0;
