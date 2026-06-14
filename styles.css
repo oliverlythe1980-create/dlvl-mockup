@@ -571,7 +571,7 @@ a:hover { color: var(--crimson); }
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center 60%;
-  filter: contrast(1.04) saturate(1.04) brightness(0.7);
+  filter: contrast(1.04) saturate(1.04) brightness(0.84);
 }
 .hp-break-inner { position: relative; z-index: 2; padding: 0 2rem 3.6rem; }
 .hp-break-text {
@@ -932,7 +932,7 @@ a:hover { color: var(--crimson); }
   inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  filter: brightness(0.6) saturate(1.05);
+  filter: brightness(0.72) saturate(1.05);
 }
 .hp-final::after {
   content: '';
