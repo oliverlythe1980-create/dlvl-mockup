@@ -920,9 +920,9 @@ a:hover { color: var(--crimson); }
   position: relative;
   min-height: 60vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 4rem 2rem 3.2rem;
   text-align: center;
   overflow: hidden;
   background: var(--ink);
