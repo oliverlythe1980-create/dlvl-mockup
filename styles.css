@@ -173,6 +173,12 @@ a:hover { color: var(--crimson); }
   border-top: 2px solid var(--gold);
   border-bottom: 2px solid var(--gold);
 }
+/* collapse doubled gold seams: where a piped band meets the footer or another
+   piped band, drop the first band's bottom edge so only a single 2px line shows */
+:is(.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final):has(+ .site-footer),
+:is(.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final):has(+ :is(.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final)) {
+  border-bottom: 0;
+}
 
 /* ── Stars ── */
 .stars { color: var(--gold); letter-spacing: 0.12em; font-size: 0.82rem; }
@@ -912,7 +918,11 @@ a:hover { color: var(--crimson); }
 /* ════════════════════ FINAL CTA ════════════════════ */
 .hp-final {
   position: relative;
-  padding: 5.5rem 2rem;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
   text-align: center;
   overflow: hidden;
   background: var(--ink);
