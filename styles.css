@@ -169,7 +169,7 @@ a:hover { color: var(--crimson); }
 
 
 /* ── Gold piping: every full-width red band, top and bottom ── */
-.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break {
+.trust-bar, .facts-bar, .hp-eco, .hp-quote, .hp-reviews, .more-sites, .hp-break, .hp-final {
   border-top: 2px solid var(--gold);
   border-bottom: 2px solid var(--gold);
 }
