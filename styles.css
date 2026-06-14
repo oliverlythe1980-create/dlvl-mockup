@@ -552,17 +552,20 @@ a:hover { color: var(--crimson); }
 }
 .course-card:hover .course-link { letter-spacing: 0.3em; }
 
-/* EXPERIMENT: inverted red course cards */
-.course-card {
-  background: radial-gradient(120% 140% at 50% -10%, #a4161f 0%, var(--crimson) 50%, #430a0e 100%);
-  border-color: var(--gold);
+/* Two-zone course card: sand content panel + separated red price block */
+.course-card { background: var(--sand); border-color: var(--gold); }
+.course-card:hover { border-color: var(--gold); }
+.course-title a { color: var(--text); }
+.course-title a:hover { color: var(--crimson); }
+.course-meta { color: var(--crimson); }
+.course-desc { color: var(--text-muted); }
+.course-body { padding-bottom: 0; }
+.course-foot {
+  background: radial-gradient(120% 200% at 50% -30%, #a4161f 0%, var(--crimson) 55%, #430a0e 100%);
+  margin: 1.5rem -1.7rem 0;
+  padding: 1.3rem 1.7rem 1.5rem;
+  border-top: 2px solid var(--gold);
 }
-.course-card:hover { border-color: var(--gold-soft); }
-.course-title a { color: var(--text-on-dark); }
-.course-title a:hover { color: var(--gold-soft); }
-.course-meta { color: var(--gold-soft); }
-.course-desc { color: #d9c19a; }
-.course-foot { border-top-color: var(--line-on-dark); }
 .course-price { color: var(--text-on-dark); }
 .course-price small { color: var(--gold-soft); }
 .course-link { color: var(--gold-soft); }
