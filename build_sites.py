@@ -35,9 +35,20 @@ def faq_block(faqs):
     return f'<div class="faq">{rows}\n    </div>'
 
 
-def body(lang, s):
+def body(lang, s, prev, nxt):
     en = lang == "en"
     d = s[lang]
+    sfx = "" if en else "-es"
+    nav_label = "More dive sites" if en else "Mas puntos"
+    all_sites = "All sites" if en else "Todos los puntos"
+    if prev:
+        prev_html = '<a class="sn-prev" href="site-' + prev["slug"] + sfx + '.html">&larr; ' + prev[lang]["name"] + '</a>'
+    else:
+        prev_html = '<span class="sn-prev"></span>'
+    if nxt:
+        next_html = '<a class="sn-next" href="site-' + nxt["slug"] + sfx + '.html">' + nxt[lang]["name"] + ' &rarr;</a>'
+    else:
+        next_html = '<span class="sn-next"></span>'
     guide = "amed-diving-guide.html" if en else "amed-diving-guide-es.html"
     crumb_home = "Home" if en else "Inicio"
     crumb_guide = "Diving Guide" if en else "Gu&iacute;a de Buceo"
@@ -77,7 +88,11 @@ def body(lang, s):
       <h2>{h_faq}</h2>
       {faq_block(d['faqs'])}
       <div class="section-cta"><a class="pill-btn pill-btn--whatsapp" href="{WA}?text={wa_text}">{cta}</a></div>
-      <p style="text-align:center; margin-top:1.6rem;"><a href="{guide}" style="font-size:0.7rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--cyan-deep);">{back}</a></p>
+      <nav class="site-nav-prevnext" aria-label="{nav_label}">
+        {prev_html}
+        <a class="sn-all" href="{guide}">{all_sites}</a>
+        {next_html}
+      </nav>
     </div>
   </div>
 </section>
@@ -764,7 +779,10 @@ for s in SITES:
         title = f"{clean(d['name'])} · Amed/Tulamben Dive Site | Diving La Vida Loca" if lang == "en" \
             else f"{clean(d['name'])} · Punto de Inmersión en Amed/Tulamben | Diving La Vida Loca"
         desc = clean(d["lede"])
-        html = (HEAD.replace("{{TITLE}}", title).replace("{{DESC}}", desc) + body(lang, s) + FOOT)
+        idx_in = SITES.index(s)
+        prev = SITES[idx_in - 1] if idx_in > 0 else None
+        nxt = SITES[idx_in + 1] if idx_in < len(SITES) - 1 else None
+        html = (HEAD.replace("{{TITLE}}", title).replace("{{DESC}}", desc) + body(lang, s, prev, nxt) + FOOT)
         html = (html
                 .replace("{{SELF}}", BASE + fname)
                 .replace("{{EN_ABS}}", BASE + en_file)
