@@ -138,7 +138,7 @@ a:hover { color: var(--crimson); }
   background: var(--crimson);
   padding: 1.05rem 2.6rem;
   border-radius: var(--r-btn);
-  border: none;
+  border: 1px solid var(--gold);
   cursor: pointer;
   transition: background 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s;
   white-space: nowrap;
@@ -161,7 +161,7 @@ a:hover { color: var(--crimson); }
 }
 .pill-btn:hover::before { animation: caustic-a 1.5s cubic-bezier(0.4,0,0.6,1) infinite; }
 
-.pill-btn--whatsapp { background: var(--whatsapp); }
+.pill-btn--whatsapp { background: var(--whatsapp); border-color: transparent; }
 .pill-btn--whatsapp:hover { background: #13793c; box-shadow: 0 12px 28px rgba(24, 147, 74, 0.3); }
 
 .pill-btn--ghost { background: transparent; border: 1px solid rgba(255,255,255,0.65); }
