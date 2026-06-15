@@ -958,6 +958,24 @@ pages["blog-es.html"] = ("blog.html",
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Lo &uacute;ltimo</h2></div>
     <div class="blog-grid">
       <article class="blog-card">
+        <a class="blog-card-img" href="blog-karangasem-mpa-es.html"><img src="{WP}/2022/09/Nitrox.webp" alt="Arrecife de coral en el &aacute;rea marina protegida de Karangasem, Amed" loading="lazy"></a>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Conservaci&oacute;n</p>
+          <h2><a href="blog-karangasem-mpa-es.html">Dentro del &Aacute;rea Marina Protegida de Karangasem</a></h2>
+          <p>La zona de conservaci&oacute;n que ahora cubre Amed, Seraya, Tulamben y el pecio del Liberty: sus zonas n&uacute;cleo sin extracci&oacute;n, qui&eacute;n la gestiona en 2026 y qu&eacute; cambia para bucear esta costa.</p>
+          <a class="blog-card-link" href="blog-karangasem-mpa-es.html">Lee el art&iacute;culo &rarr;</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <a class="blog-card-img" href="blog-reef-health-2026-es.html"><img src="{WP}/2022/09/Rescue_diver-1.webp" alt="Coral sano y peces de arrecife en aguas someras de Amed, Bali" loading="lazy"></a>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Conservaci&oacute;n</p>
+          <h2><a href="blog-reef-health-2026-es.html">C&oacute;mo Est&aacute;n los Arrecifes de Amed en 2026</a></h2>
+          <p>Una mirada honesta al estr&eacute;s por calor y la vigilancia de blanqueo en esta costa, el monitoreo de la NOAA en 2026, y el trabajo de restauraci&oacute;n y Green Fins que devuelve el coral, arrecife a arrecife.</p>
+          <a class="blog-card-link" href="blog-reef-health-2026-es.html">Lee el art&iacute;culo &rarr;</a>
+        </div>
+      </article>
+      <article class="blog-card">
         <a class="blog-card-img" href="amed-diving-guide-es.html"><img src="{WP}/2022/09/Advanced_open_water.webp" alt="Buceadora en el pecio USAT Liberty, Tulamben" loading="lazy"></a>
         <div class="blog-card-body">
           <p class="blog-card-cat">Gu&iacute;a de Buceo</p>
@@ -971,6 +989,96 @@ pages["blog-es.html"] = ("blog.html",
   </div>
 </section>
 """,
+)
+
+
+# ─────────────────────────── BLOG: AMP KARANGASEM ───────────────────────────
+pages["blog-karangasem-mpa-es.html"] = ("blog-karangasem-mpa.html",
+    "Dentro del &Aacute;rea Marina Protegida de Karangasem · Bucear Amed y Tulamben con Responsabilidad | Diving La Vida Loca",
+    "Qué significa el Área Marina Protegida de Karangasem para los buceadores de Amed y Tulamben, Bali: la zona de 5.478 hectáreas que cubre Amed, Seraya, Tulamben y el USAT Liberty, sus zonas núcleo sin extracción, quién la gestiona en 2026 y las reglas que sigue cada buceador.",
+    hero(f"{WP}/2022/09/Nitrox.webp",
+         '<a href="index-es.html">Inicio</a> / <a href="blog-es.html">Blog</a> / &Aacute;rea Marina Protegida de Karangasem',
+         "Dentro del &Aacute;rea Marina Protegida de Karangasem",
+         "La costa que buceamos cada d&iacute;a ahora est&aacute; protegida, sobre el papel y, cada vez m&aacute;s, en el agua. Esto es lo que eso significa de verdad cuando bajas al Liberty o derivas por la pared de Amed.")
+    + facts([("5.478 ha", "&aacute;rea protegida total"), ("Tulamben&ndash;Padangbai", "costa cubierta"), ("179 ha", "zona n&uacute;cleo sin extracci&oacute;n"), ("2023", "declarada"), ("2026", "ya gestiona la Provincia")])
+    + f"""
+<section class="page-section">
+  <div class="container">
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Una Costa Protegida, en el Papel y en el Agua</h2></div>
+    <p class="section-sub">En julio de 2023, el Ministerio de Asuntos Mar&iacute;timos y Pesca de Indonesia declar&oacute; formalmente el &Aacute;rea Marina Protegida de Karangasem, una zona de conservaci&oacute;n de m&aacute;s de 5.478 hect&aacute;reas que recorre la costa noreste de Bali desde Tulamben hasta Padangbai. En el mapa figura como <em>Taman di Perairan</em>, un parque marino, creado para proteger los arrecifes de coral, los peces de arrecife y la biodiversidad marina, dejando espacio para un turismo sostenible y la pesca tradicional de la que esta costa siempre ha vivido.</p>
+    <p class="section-sub">Para quienes buceamos aqu&iacute; a diario, la declaraci&oacute;n puso un marco legal a algo que ya sent&iacute;amos: este es un tramo de mar especial, y fr&aacute;gil. Cada punto que gu&iacute;amos, del pecio Boga en Kubu a Gili Selang en la punta este de Bali, est&aacute; dentro o al lado de esta zona.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Las Zonas, y Por Qu&eacute; te Importan</h2></div>
+    <p class="section-sub">El AMP no es una sola l&iacute;nea de boyas. Se divide en cuatro regiones principales, gestionadas de forma distinta. Tulamben abarca unas 1.308 hect&aacute;reas e incluye el USAT Liberty, el pecio de 120 metros que la mayor&iacute;a viene a Bali a bucear. El tramo de Amed y Seraya es el mayor, con m&aacute;s de 2.200 hect&aacute;reas, y contiene una zona n&uacute;cleo de conservaci&oacute;n de 179 hect&aacute;reas donde el buceo y la pesca est&aacute;n prohibidos, dejada en paz para que el coral y los peces se recuperen a su ritmo. Candidasa suma unas 1.755 hect&aacute;reas m&aacute;s al suroeste, y Padangbai aporta una peque&ntilde;a zona de rehabilitaci&oacute;n de 12 hect&aacute;reas.</p>
+    <p class="section-sub">En esas regiones, tres tipos de zona hacen el trabajo. Las &aacute;reas n&uacute;cleo de conservaci&oacute;n proh&iacute;ben toda actividad extractiva: ni pesca, ni recolecci&oacute;n, a menudo ni buceo. Las zonas de uso sostenible, que es donde sucede casi todo el buceo, permiten inmersiones guiadas y pesca tradicional bajo pautas respetuosas. Las zonas de rehabilitaci&oacute;n son laboratorios vivos, reservados para plantar coral y restaurar h&aacute;bitats. Saber en qu&eacute; zona est&aacute;s es parte de un buen briefing, y es la raz&oacute;n por la que a veces te diremos que un trozo de arrecife sencillamente no nos toca pisar.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Qui&eacute;n la Cuida en 2026</h2></div>
+    <p class="section-sub">La gesti&oacute;n del parque marino recae ahora en el Gobierno Provincial de Bali, que ha asumido la supervisi&oacute;n diaria del &aacute;rea. Como en casi todas las AMP j&oacute;venes, las protecciones sobre el papel van por delante de la vigilancia en el agua, y la verdad honesta es que una zona de este tama&ntilde;o solo est&aacute; tan protegida como decidan respetarla los operadores y pescadores. Ah&iacute; es justo donde entran los centros de buceo. Un barco que fondea sobre el coral, o un grupo de cuarenta buceadores levantando el arrecife, deshace mucho de lo que un decreto intenta lograr.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Qu&eacute; Significa para C&oacute;mo Buceamos</h2></div>
+    <p class="section-sub">Lo que el AMP pide a los buceadores no es complicado, y es lo mismo que el buen buceo siempre ha pedido: respeta las zonas designadas, controla tu flotabilidad, nunca toques ni te apoyes en el coral, usa protector solar respetuoso con el arrecife y ll&eacute;vate tu pl&aacute;stico de vuelta. Nada de eso es un sacrificio. Es simplemente bucear con atenci&oacute;n.</p>
+    <p class="section-sub">Tambi&eacute;n es, m&aacute;s o menos, todo nuestro modelo. Mantenemos los grupos en un m&aacute;ximo de cuatro buceadores por gu&iacute;a, as&iacute; ninguna aleta se queda sin vigilar y podemos apartar a la gente del contacto antes de que ocurra. Trabajamos la flotabilidad en la piscina antes de que nadie vea un arrecife. Entramos desde la orilla, as&iacute; que no hay anclas cayendo sobre el coral. Y como vivimos aqu&iacute;, la salud de estos arrecifes no es una abstracci&oacute;n: es nuestro lugar de trabajo, nuestra aula y nuestra casa. El AMP no cambi&oacute; c&oacute;mo buceamos. Solo le puso nombre a por qu&eacute; siempre hemos buceado as&iacute;.</p>
+
+    <h2 style="font-size:1.5rem; margin:2.5rem 0 1.2rem;">Preguntas frecuentes sobre el AMP</h2>
+    <div class="faq">
+      <details><summary>&iquest;Puedo seguir buceando el USAT Liberty dentro del AMP?</summary><p>S&iacute;. El Liberty est&aacute; en la regi&oacute;n de Tulamben del parque marino, en una zona que permite el buceo guiado. La protecci&oacute;n va de c&oacute;mo se usa el sitio, no de cerrarlo. Lo buceamos al amanecer con un m&aacute;ximo de cuatro buceadores, antes de que lleguen las excursiones del d&iacute;a.</p></details>
+      <details><summary>&iquest;Hay zonas donde no puedo bucear?</summary><p>S&iacute;. El tramo de Amed y Seraya contiene una zona n&uacute;cleo de 179 hect&aacute;reas sin extracci&oacute;n donde el buceo y la pesca est&aacute;n prohibidos para que el arrecife se recupere sin molestias. Tu gu&iacute;a conoce los l&iacute;mites y planifica en torno a ellos.</p></details>
+      <details><summary>&iquest;Hay una tasa de entrada al AMP?</summary><p>Las tasas del parque marino en esta costa a&uacute;n se est&aacute;n perfilando mientras el Gobierno Provincial asume la gesti&oacute;n. Si alg&uacute;n d&iacute;a aplica una tasa de conservaci&oacute;n o de sitio, te lo diremos siempre por adelantado, sin sorpresas.</p></details>
+      <details><summary>&iquest;Significa el AMP que los arrecifes ya est&aacute;n del todo protegidos?</summary><p>Es un buen comienzo, pero vigilar una zona de 5.478 hect&aacute;reas lleva tiempo y recursos. En la pr&aacute;ctica, los arrecifes los protegen las decisiones diarias de buceadores, gu&iacute;as y pescadores. Por eso el buceo de bajo impacto y en grupos peque&ntilde;os importa aqu&iacute; m&aacute;s, no menos.</p></details>
+    </div>
+
+    <div class="included-note">&iquest;Quieres el detalle punto por punto? Nuestra <a href="amed-diving-guide-es.html">gu&iacute;a de buceo de Amed y Tulamben</a> recorre toda la costa, profundidades y condiciones incluidas, y nuestra <a href="conservation-es.html">p&aacute;gina de conservaci&oacute;n</a> explica c&oacute;mo mantenemos peque&ntilde;a nuestra huella.</div>
+    <div class="section-cta"><a class="pill-btn pill-btn--whatsapp" href="{WA}?text=Hola!%20Quiero%20bucear%20Amed%20con%20un%20centro%20de%20bajo%20impacto.%20Mis%20fechas%3A">Bucea esta costa con nosotros</a></div>
+  </div>
+</section>
+"""
+    + quote("Al final solo conservaremos lo que amamos, solo amaremos lo que entendemos.", "Baba Dioum"),
+)
+
+
+# ─────────────────────────── BLOG: ARRECIFES 2026 ───────────────────────────
+pages["blog-reef-health-2026-es.html"] = ("blog-reef-health-2026.html",
+    "C&oacute;mo Est&aacute;n los Arrecifes de Amed en 2026 · Calor, Blanqueo y Restauraci&oacute;n | Diving La Vida Loca",
+    "Una actualización honesta de la salud de los arrecifes de Amed y Tulamben, Bali, en 2026: estrés por calor y vigilancia de blanqueo de la NOAA, qué es realmente el blanqueo, la historia de eventos de calor en esta costa, y el trabajo de restauración y Green Fins.",
+    hero(f"{WP}/2022/09/Rescue_diver-1.webp",
+         '<a href="index-es.html">Inicio</a> / <a href="blog-es.html">Blog</a> / Arrecifes de Amed 2026',
+         "C&oacute;mo Est&aacute;n los Arrecifes de Amed en 2026",
+         "Sin postureo ni catastrofismo. Una lectura honesta del estado de los arrecifes que buceamos, del riesgo por calor que vigilamos cada temporada seca, y de la gente que, en silencio, devuelve el coral a esta costa.")
+    + facts([("26&ndash;30&deg;C", "agua en esta costa"), ("NOAA", "vigila el estr&eacute;s por calor en Bali"), ("~55.000", "estructuras de restauraci&oacute;n cerca"), ("Green Fins", "el est&aacute;ndar con que buceamos")])
+    + f"""
+<section class="page-section">
+  <div class="container">
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">La Foto Honesta</h2></div>
+    <p class="section-sub">Amed y Tulamben est&aacute;n, para los est&aacute;ndares de Bali, en buena forma. Arrecifes con entrada desde la orilla, corrientes suaves y arena volc&aacute;nica que alimenta una cantidad extraordinaria de vida macro suman una costa que a&uacute;n recompensa much&iacute;simo al buceador. Pero sano no es lo mismo que a salvo, y lo que m&aacute;s vigilamos es el calor. El agua caliente es lo que estresa al coral, y una temporada seca calurosa y en calma es justo el tipo de clima que pone los arrecifes bajo presi&oacute;n.</p>
+    <p class="section-sub">No es una corazonada. El programa Coral Reef Watch de la NOAA realiza monitoreo satelital del estr&eacute;s por calor para la regi&oacute;n de Java Oriental y Bali, y a lo largo de 2026 sigue rastreando la temperatura del mar y el riesgo de blanqueo para nuestra parte del mundo. El agua en esta costa suele estar entre 26 y 30 grados, y es el extremo alto de ese rango, sostenido durante semanas, lo que nos preocupa.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Qu&eacute; es Realmente el Blanqueo</h2></div>
+    <p class="section-sub">El coral es un animal que vive en sociedad con unas algas diminutas que habitan en su tejido y le dan tanto su color como casi todo su alimento. Cuando el agua se mantiene demasiado caliente demasiado tiempo, el coral expulsa esas algas y se vuelve blanco hueso. Eso es el blanqueo. Un coral blanqueado todav&iacute;a no es un coral muerto: si el calor pasa lo bastante r&aacute;pido, las algas vuelven y la colonia se recupera en semanas o meses. Si el calor se alarga, el coral pasa hambre, se vuelve propenso a enfermedades y puede morir, tras lo cual el arrecife puede inclinarse hacia un estado dominado por algas que tarda a&ntilde;os, a veces d&eacute;cadas, en revertir. Por eso una sola mala temporada importa, y por eso cada grado y cada semana cuentan.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Historia de Esta Costa</h2></div>
+    <p class="section-sub">Esto no es nuevo para Bali. En 2009, un muestreo de Reef Check en la costa norte hall&oacute; que Amed fue la m&aacute;s golpeada en aquel evento, con cerca del 40 por ciento del coral duro blanqueado, mientras que Tulamben sali&oacute; mejor parada, con un 10 por ciento aproximadamente, con temperaturas del agua registradas entre 29 y 30 grados en ese momento. M&aacute;s atr&aacute;s, el evento global de 1997 a 1998 fue mucho peor, y partes de Bali perdieron enormes superficies de coral. Compartimos estas cifras no para alarmarte, sino porque el patr&oacute;n es lo importante: esta costa se ha blanqueado antes, tambi&eacute;n se ha recuperado antes, y hacia d&oacute;nde va una temporada depende mucho de cu&aacute;nto se caliente el agua y de cu&aacute;nto estr&eacute;s extra le sumemos los humanos.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Devolver el Coral</h2></div>
+    <p class="section-sub">La mitad esperanzadora de la historia es la restauraci&oacute;n, y el noreste de Bali se ha convertido en uno de los lugares m&aacute;s activos de Indonesia en esto. North Bali Reef Conservation, fundada en 2017, ha crecido hasta ser uno de los mayores esfuerzos de restauraci&oacute;n de arrecifes del pa&iacute;s, con unas 55.000 estructuras artificiales instaladas a comienzos de 2026 en sitios que incluyen la zona de Tulamben, cerca de nosotros. Los visitantes pueden unirse a sus cursos de coral de varios d&iacute;as, de unos pocos d&iacute;as a varias semanas, aprendiendo cultivo de coral, restauraci&oacute;n y ecolog&iacute;a de arrecifes con las manos. Es de las inmersiones m&aacute;s gratificantes que puedes hacer en esta costa, y es justo el tipo de trabajo para el que se dise&ntilde;aron las zonas de rehabilitaci&oacute;n del AMP.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Green Fins, y C&oacute;mo Buceamos</h2></div>
+    <p class="section-sub">El otro cambio silencioso est&aacute; en c&oacute;mo operan los propios centros de buceo. Green Fins es el est&aacute;ndar ambiental internacional para operadores de buceo y esn&oacute;rquel, gestionado con el Programa de la ONU para el Medio Ambiente, y a lo largo de 2026 m&aacute;s centros de Karangasem han ido pasando sus evaluaciones, y los mejores logran el estatus de miembro Oro. Mide las cosas poco glamurosas que de verdad protegen los arrecifes: briefings, est&aacute;ndares de flotabilidad, manejo de residuos y qu&iacute;micos, tama&ntilde;os de grupo, fondeo.</p>
+    <p class="section-sub">Esa lista te sonar&aacute; si has llegado hasta aqu&iacute;, porque es como ya funcionamos. Cuatro buceadores por gu&iacute;a. Flotabilidad trabajada en la piscina antes de que nadie vea coral. Entradas desde la orilla, sin anclas sobre el arrecife. Limpiezas cuando vemos basura, y un briefing honesto cada ma&ntilde;ana sobre lo que hace el mar ese d&iacute;a. Nada de eso da una foto dram&aacute;tica. Todo eso es lo que mantiene un arrecife digno de fotografiar.</p>
+
+    <h2 style="font-size:1.5rem; margin:2.5rem 0 1.2rem;">Preguntas frecuentes sobre la salud del arrecife aqu&iacute;</h2>
+    <div class="faq">
+      <details><summary>&iquest;Est&aacute;n blanqueados ahora mismo los arrecifes de Amed?</summary><p>El riesgo de blanqueo sube y baja con la temperatura del agua a lo largo de la temporada, por eso la NOAA lo vigila. Las condiciones var&iacute;an de un a&ntilde;o a otro e incluso de un sitio a otro. Damos un briefing honesto cada ma&ntilde;ana sobre lo que vemos de verdad bajo el agua, y si un arrecife pasa una mala racha, te llevamos a otro m&aacute;s sano.</p></details>
+      <details><summary>&iquest;Vale la pena bucear aqu&iacute; si los arrecifes est&aacute;n bajo estr&eacute;s?</summary><p>Por supuesto, y el buceo responsable es parte de la soluci&oacute;n, no del problema. Venir con un centro de bajo impacto sostiene una econom&iacute;a de arrecife que da valor real a estos sitios vivos. Solo elige a tu operador con cuidado.</p></details>
+      <details><summary>&iquest;Puedo bucear en un proyecto de restauraci&oacute;n de coral?</summary><p>S&iacute;. En esta costa hay cursos de restauraci&oacute;n, y son de las inmersiones m&aacute;s significativas que puedes hacer. Preg&uacute;ntanos y te orientamos.</p></details>
+      <details><summary>&iquest;Qu&eacute; es lo &uacute;nico que puedo hacer para ayudar?</summary><p>Domina tu flotabilidad y no toques nada. Un buceador que nunca toca el arrecife, nunca levanta sedimento y nunca persigue a la fauna ya est&aacute; haciendo lo m&aacute;s importante. El protector solar respetuoso y llevarte tu pl&aacute;stico a casa van justo detr&aacute;s.</p></details>
+    </div>
+
+    <div class="included-note">M&aacute;s sobre nuestro propio enfoque en la <a href="conservation-es.html">p&aacute;gina de conservaci&oacute;n</a>, y la foto completa punto por punto en la <a href="amed-diving-guide-es.html">gu&iacute;a de buceo de Amed y Tulamben</a>.</div>
+    <div class="section-cta"><a class="pill-btn pill-btn--whatsapp" href="{WA}?text=Hola!%20Me%20encantar%C3%ADa%20bucear%20Amed%20de%20forma%20responsable.%20Cu%C3%A9ntame%20m%C3%A1s%3A">Bucea Amed, con cuidado</a></div>
+  </div>
+</section>
+"""
+    + quote("El mar, una vez lanzado su hechizo, te atrapa para siempre en su red de asombro.", "Jacques-Yves Cousteau"),
 )
 
 

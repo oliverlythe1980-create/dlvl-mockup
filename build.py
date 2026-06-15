@@ -959,6 +959,24 @@ pages["blog.html"] = (
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Latest</h2></div>
     <div class="blog-grid">
       <article class="blog-card">
+        <a class="blog-card-img" href="blog-karangasem-mpa.html"><img src="{WP}/2022/09/Nitrox.webp" alt="Coral reef inside the Karangasem Marine Protected Area, Amed" loading="lazy"></a>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Conservation</p>
+          <h2><a href="blog-karangasem-mpa.html">Inside the Karangasem Marine Protected Area</a></h2>
+          <p>The conservation zone that now covers Amed, Seraya, Tulamben and the Liberty wreck: its no-take core zones, who looks after it in 2026, and what it changes about diving this coast.</p>
+          <a class="blog-card-link" href="blog-karangasem-mpa.html">Read the article &rarr;</a>
+        </div>
+      </article>
+      <article class="blog-card">
+        <a class="blog-card-img" href="blog-reef-health-2026.html"><img src="{WP}/2022/09/Rescue_diver-1.webp" alt="Healthy coral and reef fish on a shallow reef in Amed, Bali" loading="lazy"></a>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Conservation</p>
+          <h2><a href="blog-reef-health-2026.html">How Amed&rsquo;s Reefs Are Doing in 2026</a></h2>
+          <p>A straight look at warm-water stress and bleaching watch on this coast, NOAA&rsquo;s 2026 monitoring, and the restoration and Green Fins work putting coral back, reef by reef.</p>
+          <a class="blog-card-link" href="blog-reef-health-2026.html">Read the article &rarr;</a>
+        </div>
+      </article>
+      <article class="blog-card">
         <a class="blog-card-img" href="amed-diving-guide.html"><img src="{WP}/2022/09/Advanced_open_water.webp" alt="Diver on the USAT Liberty wreck, Tulamben" loading="lazy"></a>
         <div class="blog-card-body">
           <p class="blog-card-cat">Dive Guide</p>
@@ -972,6 +990,96 @@ pages["blog.html"] = (
   </div>
 </section>
 """,
+)
+
+
+# ─────────────────────────── BLOG POST: KARANGASEM MPA ───────────────────────────
+pages["blog-karangasem-mpa.html"] = (
+    "Inside the Karangasem Marine Protected Area · Diving Amed &amp; Tulamben Responsibly | Diving La Vida Loca",
+    "What the Karangasem Marine Protected Area means for divers in Amed and Tulamben, Bali: the 5,478-hectare zone covering Amed, Seraya, Tulamben and the USAT Liberty, its no-take core areas, who manages it in 2026, and the simple rules every diver follows.",
+    hero(f"{WP}/2022/09/Nitrox.webp",
+         '<a href="index.html">Home</a> / <a href="blog.html">Blog</a> / Karangasem Marine Protected Area',
+         "Inside the Karangasem Marine Protected Area",
+         "The coast we dive every day is now a protected one, on paper and, increasingly, in the water. Here is what that actually means when you descend on the Liberty or drift along the Amed wall.")
+    + facts([("5,478 ha", "total protected area"), ("Tulamben&ndash;Padangbai", "coastline covered"), ("179 ha", "core no-take zone"), ("2023", "declared"), ("2026", "now Province-managed")])
+    + f"""
+<section class="page-section">
+  <div class="container">
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">A Protected Coast, on Paper and in the Water</h2></div>
+    <p class="section-sub">In July 2023 the Indonesian Ministry of Marine Affairs and Fisheries formally declared the Karangasem Marine Protected Area, a conservation zone of more than 5,478 hectares running along Bali&rsquo;s northeast coastline from Tulamben down to Padangbai. On the map it is designated a <em>Taman di Perairan</em>, a marine park, created to protect coral reefs, reef fish and wider marine biodiversity while keeping space for sustainable tourism and the traditional fishing this coast has always depended on.</p>
+    <p class="section-sub">For those of us who dive here daily, the declaration put a legal frame around something we already felt: this is a special, and a fragile, stretch of sea. Every site we guide, from the Boga Wreck at Kubu to Gili Selang at Bali&rsquo;s eastern tip, sits inside or alongside this zone.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">The Zones, and Why They Matter to You</h2></div>
+    <p class="section-sub">The MPA is not a single rope-line. It is split into four main regions, each managed differently. Tulamben covers roughly 1,308 hectares and includes the USAT Liberty, the 120-metre wreck most visitors come to Bali to dive. The Amed and Seraya stretch is the largest at over 2,200 hectares and holds a 179-hectare core conservation zone where diving and fishing are both off-limits, left completely alone so coral and fish can recover on their own terms. Candidasa adds around 1,755 hectares further southwest, and Padangbai contributes a small 12-hectare rehabilitation zone.</p>
+    <p class="section-sub">Across those regions, three kinds of zone do the work. Core conservation areas prohibit all extractive activity, no fishing, no collecting, often no diving at all. Sustainable-use zones, which is where most diving happens, allow guided diving and traditional fishing under eco-friendly guidelines. Rehabilitation zones are living laboratories, set aside for coral planting and habitat restoration. Knowing which zone you are in is part of a good briefing, and it is why we will sometimes tell you a particular patch of reef is simply not ours to enter.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Who Looks After It in 2026</h2></div>
+    <p class="section-sub">Management of the marine park now sits with the Bali Provincial Government, which has taken over day-to-day oversight of the area. As with most young MPAs, the paper protections are ahead of enforcement on the water, and the honest truth is that a zone this size is only as protected as the operators and fishers who choose to respect it. That is exactly where dive centres come in. A boat that drops anchor on coral, or a group of forty divers kicking up a reef, undoes a lot of what a decree is trying to achieve.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">What It Means for How We Dive</h2></div>
+    <p class="section-sub">The rules the MPA asks of divers are not complicated, and they are the same things good diving has always asked for: respect the designated zones, keep your buoyancy under control, never touch or stand on coral, use reef-safe sunscreen, and carry your plastic back out with you. None of that is a hardship. It is just diving done with attention.</p>
+    <p class="section-sub">It is also, more or less, our whole model. We keep groups to a maximum of four divers per guide, which means nobody&rsquo;s fins go unwatched and we can actually steer people away from contact before it happens. We drill buoyancy in the pool before anyone meets a reef. We dive from the shore, so there are no anchors going down on coral. And because we live here, the health of these reefs is not an abstraction to us, it is our workplace, our classroom and our home. The MPA did not change how we dive. It just gave a name to why we have always dived this way.</p>
+
+    <h2 style="font-size:1.5rem; margin:2.5rem 0 1.2rem;">Questions divers ask about the MPA</h2>
+    <div class="faq">
+      <details><summary>Can I still dive the USAT Liberty inside the MPA?</summary><p>Yes. The Liberty sits in the Tulamben region of the marine park, in a zone that permits guided diving. The protection is about how the site is used, not about closing it. We dive it at first light with a maximum of four divers, before the day-trip crowds arrive.</p></details>
+      <details><summary>Are there areas I am not allowed to dive?</summary><p>Yes. The Amed and Seraya stretch contains a 179-hectare core no-take zone where diving and fishing are prohibited so the reef can recover undisturbed. Your guide will know the boundaries and plan around them.</p></details>
+      <details><summary>Is there an MPA entry fee?</summary><p>Arrangements for marine-park fees on this coast are still settling as the Provincial Government takes over management. If a conservation or site fee applies on the day, we will always tell you up front, with no surprises.</p></details>
+      <details><summary>Does the MPA mean the reefs are fully protected now?</summary><p>It is a strong start, but enforcement across a 5,478-hectare zone takes time and resources. In practice the reefs are protected by the everyday choices of divers, guides and fishers. That is why low-impact, small-group diving matters more here, not less.</p></details>
+    </div>
+
+    <div class="included-note">Want the site-by-site detail? Our <a href="amed-diving-guide.html">Amed and Tulamben diving guide</a> walks the whole coast, depths, conditions and all, and our <a href="conservation.html">conservation page</a> explains how we keep our own footprint small.</div>
+    <div class="section-cta"><a class="pill-btn pill-btn--whatsapp" href="{WA}?text=Hi!%20I%27d%20like%20to%20dive%20Amed%20with%20a%20low-impact%20centre.%20My%20dates%3A">Dive this coast with us</a></div>
+  </div>
+</section>
+"""
+    + quote("In the end we will conserve only what we love, we will love only what we understand.", "Baba Dioum"),
+)
+
+
+# ─────────────────────────── BLOG POST: REEF HEALTH 2026 ───────────────────────────
+pages["blog-reef-health-2026.html"] = (
+    "How Amed&rsquo;s Reefs Are Doing in 2026 · Heat, Bleaching Watch &amp; Restoration | Diving La Vida Loca",
+    "An honest 2026 update on reef health in Amed and Tulamben, Bali: warm-water stress and NOAA bleaching watch, what coral bleaching really is, the coast's history of heat events, and the restoration and Green Fins work putting coral back.",
+    hero(f"{WP}/2022/09/Rescue_diver-1.webp",
+         '<a href="index.html">Home</a> / <a href="blog.html">Blog</a> / Amed Reef Health 2026',
+         "How Amed&rsquo;s Reefs Are Doing in 2026",
+         "No spin, no doom. Here is a straight read on the state of the reefs we dive, the warm-water risk we watch every dry season, and the people quietly putting coral back on this coast.")
+    + facts([("26&ndash;30&deg;C", "water on this coast"), ("NOAA", "monitors Bali heat stress"), ("~55,000", "restoration structures nearby"), ("Green Fins", "the standard we dive to")])
+    + f"""
+<section class="page-section">
+  <div class="container">
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">The Honest Picture</h2></div>
+    <p class="section-sub">Amed and Tulamben are, by Bali standards, in good shape. Shore-entry reefs, gentle currents and volcanic sand that feeds an extraordinary amount of macro life all add up to a coast that still rewards a diver hugely. But healthy is not the same as safe, and the single biggest thing we keep an eye on is heat. Warm water is what stresses coral, and a hot, still dry season is exactly the kind of weather that puts reefs under pressure.</p>
+    <p class="section-sub">That is not guesswork. NOAA&rsquo;s Coral Reef Watch programme runs satellite heat-stress monitoring for the East Java and Bali region, and through 2026 it continues to track sea-surface temperatures and bleaching risk for our part of the world. Water on this coast usually sits between 26 and 30 degrees, and it is the upper end of that range, held for weeks, that we worry about.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">What Bleaching Actually Is</h2></div>
+    <p class="section-sub">Coral is an animal living in partnership with tiny algae that live inside its tissue and give it both its colour and most of its food. When water stays too warm for too long, the coral expels those algae and turns bone-white. That is bleaching. A bleached coral is not yet a dead coral: if the heat passes quickly enough, the algae return and the colony recovers over weeks or months. If the heat lingers, the coral starves, becomes prone to disease, and can die, after which the reef can tip toward an algae-dominated state that takes years, sometimes decades, to come back. This is why a single bad season matters, and why every degree and every week counts.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">History on This Coast</h2></div>
+    <p class="section-sub">This is not new for Bali. Back in 2009, a Reef Check survey along the north coast found Amed had been hit hardest in that event, with around 40 percent of hard coral bleached, while Tulamben came off lightest at roughly 10 percent, with water temperatures recorded between 29 and 30 degrees at the time. Go further back and the 1997 to 1998 global event was far worse, with parts of Bali losing enormous coral cover. We share these numbers not to alarm you but because the pattern is the point: this coast has bleached before, it has also recovered before, and which way a given season goes depends a lot on how warm the water gets and how much extra stress we humans pile on top.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Putting Coral Back</h2></div>
+    <p class="section-sub">The hopeful half of the story is restoration, and northeast Bali has become one of the busiest places in Indonesia for it. North Bali Reef Conservation, founded in 2017, has grown into one of the country&rsquo;s largest reef-restoration efforts, with roughly 55,000 artificial structures deployed by the start of 2026 across sites that include the Tulamben area near us. Visitors can join their multi-day coral courses, from a few days to several weeks, learning coral farming, restoration and reef ecology hands-on. It is some of the most rewarding diving you can do on this coast, and it is the kind of work the MPA&rsquo;s rehabilitation zones are designed for.</p>
+
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Green Fins, and How We Dive</h2></div>
+    <p class="section-sub">The other quiet shift is in how dive centres themselves operate. Green Fins is the international environmental standard for diving and snorkelling operators, run with the UN Environment Programme, and through 2026 more Karangasem centres have been passing its assessments, with the best earning Gold member status. It measures the unglamorous things that actually protect reefs: briefings, buoyancy standards, waste and chemical handling, group sizes, anchoring.</p>
+    <p class="section-sub">That list will sound familiar if you have read this far, because it is how we already run. Four divers per guide. Buoyancy drilled in the pool before anyone meets coral. Shore entries, so no anchors on the reef. Cleanups when we see rubbish, and an honest briefing every morning about what the sea is doing that day. None of it makes a dramatic photo. All of it is what keeps a reef worth photographing in the first place.</p>
+
+    <h2 style="font-size:1.5rem; margin:2.5rem 0 1.2rem;">Questions divers ask about reef health here</h2>
+    <div class="faq">
+      <details><summary>Are Amed&rsquo;s reefs bleached right now?</summary><p>Bleaching risk rises and falls with water temperature through the season, which is why NOAA monitors it. Conditions vary year to year and even site to site. We brief honestly every morning on what we are actually seeing underwater, and if one reef is having a bad spell we will take you to a healthier one.</p></details>
+      <details><summary>Is it still worth diving here if reefs are under stress?</summary><p>Absolutely, and responsible diving is part of the solution, not the problem. Visiting with a low-impact centre supports a reef economy that gives these sites real value alive. Just choose your operator with care.</p></details>
+      <details><summary>Can I dive on a coral restoration project?</summary><p>Yes. Restoration courses run on this coast, and they are some of the most meaningful dives you can do. Ask us and we will point you in the right direction.</p></details>
+      <details><summary>What is the one thing I can do to help?</summary><p>Master your buoyancy and keep your hands to yourself. A diver who never touches the reef, never kicks up sediment and never chases the wildlife is already doing the most important thing. Reef-safe sunscreen and taking your plastic home come a close second.</p></details>
+    </div>
+
+    <div class="included-note">More on our own approach is on the <a href="conservation.html">conservation page</a>, and the full site-by-site picture is in the <a href="amed-diving-guide.html">Amed and Tulamben diving guide</a>.</div>
+    <div class="section-cta"><a class="pill-btn pill-btn--whatsapp" href="{WA}?text=Hi!%20I%27d%20love%20to%20dive%20Amed%20responsibly.%20Tell%20me%20more%3A">Dive Amed, the careful way</a></div>
+  </div>
+</section>
+"""
+    + quote("The sea, once it casts its spell, holds one in its net of wonder forever.", "Jacques-Yves Cousteau"),
 )
 
 
