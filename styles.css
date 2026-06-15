@@ -1810,8 +1810,10 @@ a.feature-row:not(.feature-row--flip):hover .site-link { color: var(--gold-soft)
     text-transform: uppercase;
     padding: 1rem;
     box-shadow: 0 -6px 20px rgba(35, 16, 22, 0.18);
+    transition: transform 0.35s var(--ease-out);
   }
   .mobile-wa:hover { color: #fff; }
+  .mobile-wa.is-hidden { transform: translateY(130%); }
   .toast { bottom: 4.5rem; }
 }
 

@@ -49,6 +49,18 @@ function dlvlToast(msg) {
   bar.href = 'https://wa.me/6282145538716';
   bar.textContent = es ? 'Escríbenos por WhatsApp, respondemos rápido' : 'Chat on WhatsApp, we answer fast';
   document.body.appendChild(bar);
+
+  // Auto-hide the sticky bar whenever a real WhatsApp CTA or the footer is on
+  // screen, so it never stacks on top of an identical button.
+  const rivals = [...document.querySelectorAll('.pill-btn--whatsapp'), document.querySelector('.site-footer')].filter(Boolean);
+  if (rivals.length && 'IntersectionObserver' in window) {
+    const visible = new Set();
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => e.isIntersecting ? visible.add(e.target) : visible.delete(e.target));
+      bar.classList.toggle('is-hidden', visible.size > 0);
+    }, { rootMargin: '0px 0px -72px 0px' });
+    rivals.forEach((el) => io.observe(el));
+  }
 })();
 
 // ── WhatsApp glyph on every WhatsApp button ──
