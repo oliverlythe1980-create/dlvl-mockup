@@ -1370,6 +1370,7 @@ a:hover { color: var(--crimson); }
   font-size: 0.88rem;
   font-weight: 300;
   margin: 2.2rem 0;
+  text-align: center;
 }
 
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
