@@ -52,7 +52,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=53">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=54">
 </head>
 <body>
 
@@ -1002,7 +1002,7 @@ pages["blog-karangasem-mpa-es.html"] = ("blog-karangasem-mpa.html",
          "La costa que buceamos cada d&iacute;a ahora est&aacute; protegida, sobre el papel y, cada vez m&aacute;s, en el agua. Esto es lo que eso significa de verdad cuando bajas al Liberty o derivas por la pared de Amed.")
     + facts([("5.478 ha", "&aacute;rea protegida total"), ("Tulamben&ndash;Padangbai", "costa cubierta"), ("179 ha", "zona n&uacute;cleo sin extracci&oacute;n"), ("2023", "declarada"), ("2026", "ya gestiona la Provincia")])
     + f"""
-<section class="page-section">
+<section class="page-section article">
   <div class="container">
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Una Costa Protegida, en el Papel y en el Agua</h2></div>
     <p class="section-sub">En julio de 2023, el Ministerio de Asuntos Mar&iacute;timos y Pesca de Indonesia declar&oacute; formalmente el &Aacute;rea Marina Protegida de Karangasem, una zona de conservaci&oacute;n de m&aacute;s de 5.478 hect&aacute;reas que recorre la costa noreste de Bali desde Tulamben hasta Padangbai. En el mapa figura como <em>Taman di Perairan</em>, un parque marino, creado para proteger los arrecifes de coral, los peces de arrecife y la biodiversidad marina, dejando espacio para un turismo sostenible y la pesca tradicional de la que esta costa siempre ha vivido.</p>
@@ -1046,7 +1046,7 @@ pages["blog-reef-health-2026-es.html"] = ("blog-reef-health-2026.html",
          "Sin postureo ni catastrofismo. Una lectura honesta del estado de los arrecifes que buceamos, del riesgo por calor que vigilamos cada temporada seca, y de la gente que, en silencio, devuelve el coral a esta costa.")
     + facts([("26&ndash;30&deg;C", "agua en esta costa"), ("NOAA", "vigila el estr&eacute;s por calor en Bali"), ("~55.000", "estructuras de restauraci&oacute;n cerca"), ("Green Fins", "el est&aacute;ndar con que buceamos")])
     + f"""
-<section class="page-section">
+<section class="page-section article">
   <div class="container">
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">La Foto Honesta</h2></div>
     <p class="section-sub">Amed y Tulamben est&aacute;n, para los est&aacute;ndares de Bali, en buena forma. Arrecifes con entrada desde la orilla, corrientes suaves y arena volc&aacute;nica que alimenta una cantidad extraordinaria de vida macro suman una costa que a&uacute;n recompensa much&iacute;simo al buceador. Pero sano no es lo mismo que a salvo, y lo que m&aacute;s vigilamos es el calor. El agua caliente es lo que estresa al coral, y una temporada seca calurosa y en calma es justo el tipo de clima que pone los arrecifes bajo presi&oacute;n.</p>

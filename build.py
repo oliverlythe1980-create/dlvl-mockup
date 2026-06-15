@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=53">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=54">
 </head>
 <body>
 
@@ -1003,7 +1003,7 @@ pages["blog-karangasem-mpa.html"] = (
          "The coast we dive every day is now a protected one, on paper and, increasingly, in the water. Here is what that actually means when you descend on the Liberty or drift along the Amed wall.")
     + facts([("5,478 ha", "total protected area"), ("Tulamben&ndash;Padangbai", "coastline covered"), ("179 ha", "core no-take zone"), ("2023", "declared"), ("2026", "now Province-managed")])
     + f"""
-<section class="page-section">
+<section class="page-section article">
   <div class="container">
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">A Protected Coast, on Paper and in the Water</h2></div>
     <p class="section-sub">In July 2023 the Indonesian Ministry of Marine Affairs and Fisheries formally declared the Karangasem Marine Protected Area, a conservation zone of more than 5,478 hectares running along Bali&rsquo;s northeast coastline from Tulamben down to Padangbai. On the map it is designated a <em>Taman di Perairan</em>, a marine park, created to protect coral reefs, reef fish and wider marine biodiversity while keeping space for sustainable tourism and the traditional fishing this coast has always depended on.</p>
@@ -1047,7 +1047,7 @@ pages["blog-reef-health-2026.html"] = (
          "No spin, no doom. Here is a straight read on the state of the reefs we dive, the warm-water risk we watch every dry season, and the people quietly putting coral back on this coast.")
     + facts([("26&ndash;30&deg;C", "water on this coast"), ("NOAA", "monitors Bali heat stress"), ("~55,000", "restoration structures nearby"), ("Green Fins", "the standard we dive to")])
     + f"""
-<section class="page-section">
+<section class="page-section article">
   <div class="container">
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">The Honest Picture</h2></div>
     <p class="section-sub">Amed and Tulamben are, by Bali standards, in good shape. Shore-entry reefs, gentle currents and volcanic sand that feeds an extraordinary amount of macro life all add up to a coast that still rewards a diver hugely. But healthy is not the same as safe, and the single biggest thing we keep an eye on is heat. Warm water is what stresses coral, and a hot, still dry season is exactly the kind of weather that puts reefs under pressure.</p>
