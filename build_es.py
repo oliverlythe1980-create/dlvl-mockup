@@ -52,7 +52,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=49">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=50">
 </head>
 <body>
 
@@ -65,9 +65,9 @@ HEAD = """<!DOCTYPE html>
     <nav class="site-nav" aria-label="Principal">
       <a href="index-es.html#courses">Cursos</a>
       <a href="dive-sites-es.html">Puntos de Inmersi&oacute;n</a>
-      <a href="amed-diving-guide-es.html">Gu&iacute;a de Buceo</a>
       <a href="fun-dives-es.html">Inmersiones</a>
       <a href="stay-and-dive-es.html">Aloja y Bucea</a>
+      <a href="blog-es.html">Blog</a>
       <a href="about-es.html">Nosotros</a>
       <a href="contact-es.html">Contacto</a>
     </nav>
@@ -100,7 +100,7 @@ FOOT = """
           <li><a href="index-es.html#courses">Cursos PADI</a></li>
           <li><a href="dive-sites-es.html">Puntos de Inmersi&oacute;n</a></li>
           <li><a href="fun-dives-es.html">Inmersiones y Precios</a></li>
-          <li><a href="amed-diving-guide-es.html">Gu&iacute;a de Buceo</a></li>
+          <li><a href="blog-es.html">Blog</a></li>
           <li><a href="plan-your-trip-es.html">Crea tu Viaje</a></li>
           <li><a href="stay-and-dive-es.html">Aloja y Bucea</a></li>
         </ul>
@@ -890,7 +890,7 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
     "Guía de Buceo en Amed y Tulamben, Bali · Todos los Puntos, Sin Vender Humo | Diving La Vida Loca",
     "La guía completa para bucear en Amed y Tulamben, Bali: la historia y profundidades del pecio USAT Liberty, Jemeluk, el Pecio Japonés, el muck de Seraya y la mejor época, escrita en español por el centro que los bucea a diario.",
     hero(f"{WP}/2022/09/Advanced_open_water.webp",
-         '<a href="index-es.html">Inicio</a> / <a href="dive-sites-es.html">Puntos de Inmersi&oacute;n</a> / Gu&iacute;a de Buceo',
+         '<a href="index-es.html">Inicio</a> / <a href="blog-es.html">Blog</a> / Gu&iacute;a de Buceo',
          "Gu&iacute;a de Buceo de Amed y Tulamben",
          "Todo lo que sabemos de la costa que buceamos cada d&iacute;a: la historia del Liberty, profundidades reales, a qui&eacute;n le va cada punto, cu&aacute;ndo venir y los trucos locales que marcan la diferencia. Sin vender ning&uacute;n sitio m&aacute;s de lo que merece.")
     + facts([("13", "puntos en esta gu&iacute;a"), ("Desde la costa", "todas las inmersiones"), ("26&ndash;29&deg;C", "agua todo el a&ntilde;o"), ("15&ndash;30 m", "visibilidad en seca"), ("Abr&ndash;Nov", "temporada top")])
@@ -943,6 +943,35 @@ pages["amed-diving-guide-es.html"] = ("amed-diving-guide.html",
     + quote("El mar, una vez lanzado su hechizo, te atrapa para siempre en su red de asombro.", "Jacques-Yves Cousteau"),
 )
 
+
+# ─────────────────────────── BLOG ───────────────────────────
+pages["blog-es.html"] = ("blog.html",
+    "El Blog de Diving La Vida Loca · Guías e Historias de Amed, Bali",
+    "Guías de buceo, puntos de inmersión a fondo e historias de Amed y Tulamben, Bali, escritas por el equipo que bucea esta costa cada día.",
+    hero(f"{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp",
+         '<a href="index-es.html">Inicio</a> / Blog',
+         "El Blog",
+         "Gu&iacute;as, puntos de inmersi&oacute;n a fondo e historias de la costa que buceamos cada d&iacute;a. Escrito por nosotros, en lenguaje claro y sin vender nada m&aacute;s de lo que merece.")
+    + f"""
+<section class="page-section">
+  <div class="container">
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Lo &uacute;ltimo</h2></div>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <a class="blog-card-img" href="amed-diving-guide-es.html"><img src="{WP}/2022/09/Advanced_open_water.webp" alt="Buceadora en el pecio USAT Liberty, Tulamben" loading="lazy"></a>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Gu&iacute;a de Buceo</p>
+          <h2><a href="amed-diving-guide-es.html">Gu&iacute;a de Buceo de Amed y Tulamben</a></h2>
+          <p>Todos los puntos de nuestra costa, sin vender humo: la historia del Liberty y sus profundidades reales, a qui&eacute;n le va cada sitio, cu&aacute;ndo venir y los trucos locales que marcan la diferencia.</p>
+          <a class="blog-card-link" href="amed-diving-guide-es.html">Lee la gu&iacute;a &rarr;</a>
+        </div>
+      </article>
+    </div>
+    <p class="section-sub" style="margin-top:2.4rem;">Pronto, m&aacute;s gu&iacute;as e historias de la costa. S&iacute;guenos en <a href="https://www.instagram.com/diving.lavidaloca">Instagram</a> para lo &uacute;ltimo desde el agua.</p>
+  </div>
+</section>
+""",
+)
 
 
 # ─────────────────────────── CREA TU VIAJE ───────────────────────────

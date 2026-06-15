@@ -51,7 +51,7 @@ HEAD = """<!DOCTYPE html>
 <meta property="og:image" content="https://divinglavidaloca.com/wp-content/uploads/2022/09/Open_water_padi.webp">
 <meta property="og:site_name" content="Diving La Vida Loca">
 <meta name="twitter:card" content="summary_large_image">
-{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=49">
+{{SCHEMA}}<link rel="stylesheet" href="styles.css?v=50">
 </head>
 <body>
 
@@ -64,9 +64,9 @@ HEAD = """<!DOCTYPE html>
     <nav class="site-nav" aria-label="Main">
       <a href="index.html#courses">Courses</a>
       <a href="dive-sites.html">Dive Sites</a>
-      <a href="amed-diving-guide.html">Diving Guide</a>
       <a href="fun-dives.html">Fun Dives</a>
       <a href="stay-and-dive.html">Stay &amp; Dive</a>
+      <a href="blog.html">Blog</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -99,7 +99,7 @@ FOOT = """
           <li><a href="index.html#courses">PADI Courses</a></li>
           <li><a href="dive-sites.html">Dive Sites</a></li>
           <li><a href="fun-dives.html">Fun Dives &amp; Prices</a></li>
-          <li><a href="amed-diving-guide.html">Diving Guide</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="plan-your-trip.html">Tailor Your Trip</a></li>
           <li><a href="stay-and-dive.html">Stay &amp; Dive</a></li>
         </ul>
@@ -891,7 +891,7 @@ pages["amed-diving-guide.html"] = (
     "Amed & Tulamben Diving Guide · Every Dive Site, Honestly Rated | Diving La Vida Loca",
     "The complete guide to diving Amed and Tulamben, Bali: the USAT Liberty wreck's history and depths, Jemeluk, the Japanese Wreck, Seraya muck diving, conditions month by month, written by the dive center that dives them daily.",
     hero(f"{WP}/2022/09/Advanced_open_water.webp",
-         '<a href="index.html">Home</a> / <a href="dive-sites.html">Dive Sites</a> / Diving Guide',
+         '<a href="index.html">Home</a> / <a href="blog.html">Blog</a> / Diving Guide',
          "The Amed &amp; Tulamben Diving Guide",
          "Everything we know about the coast we dive every day: the Liberty&rsquo;s story, real depths, who each site suits, when to come, and the local tricks that make the difference. No site sold harder than it deserves.")
     + facts([("13", "sites in this guide"), ("Shore entry", "every single dive"), ("26&ndash;29&deg;C", "water all year"), ("15&ndash;30 m", "dry-season visibility"), ("Apr&ndash;Nov", "prime season")])
@@ -944,6 +944,35 @@ pages["amed-diving-guide.html"] = (
     + quote("The sea, once it casts its spell, holds one in its net of wonder forever.", "Jacques-Yves Cousteau"),
 )
 
+
+# ─────────────────────────── BLOG ───────────────────────────
+pages["blog.html"] = (
+    "The Diving La Vida Loca Blog · Guides &amp; Stories from Amed, Bali",
+    "Diving guides, dive-site deep-dives and stories from Amed and Tulamben, Bali, written by the team that dives this coast every day.",
+    hero(f"{WP}/2024/07/g390496193bc5ff85ec056dccfdff8a3ed9468489c1b0181b34acd7a160d79bb7ede477176a73be0aa3a047b7ccbe434b89c09aaee0cf6fa17ed85353bc4426ba_1280-1049477-1024x683.webp",
+         '<a href="index.html">Home</a> / Blog',
+         "The Blog",
+         "Guides, dive-site deep-dives and stories from the coast we dive every day. Written by us, in plain language, with nothing sold harder than it deserves.")
+    + f"""
+<section class="page-section">
+  <div class="container">
+    <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Latest</h2></div>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <a class="blog-card-img" href="amed-diving-guide.html"><img src="{WP}/2022/09/Advanced_open_water.webp" alt="Diver on the USAT Liberty wreck, Tulamben" loading="lazy"></a>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Dive Guide</p>
+          <h2><a href="amed-diving-guide.html">The Amed &amp; Tulamben Diving Guide</a></h2>
+          <p>Every dive site on our coast, honestly rated: the Liberty&rsquo;s story and real depths, who each site suits, when to come, and the local tricks that make the difference.</p>
+          <a class="blog-card-link" href="amed-diving-guide.html">Read the guide &rarr;</a>
+        </div>
+      </article>
+    </div>
+    <p class="section-sub" style="margin-top:2.4rem;">More guides and stories from the coast are on the way. Follow us on <a href="https://www.instagram.com/diving.lavidaloca">Instagram</a> for the latest from underwater.</p>
+  </div>
+</section>
+""",
+)
 
 
 # ─────────────────────────── TRIP BUILDER ───────────────────────────
