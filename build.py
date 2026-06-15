@@ -953,6 +953,7 @@ pages["blog.html"] = (
          '<a href="index.html">Home</a> / Blog',
          "The Blog",
          "Guides, dive-site deep-dives and stories from the coast we dive every day. Written by us, in plain language, with nothing sold harder than it deserves.")
+    + facts([("Local", "stories &amp; guides"), ("Written", "by our divers"), ("Conservation", "front and centre"), ("Updated", "through 2026"), ("Honest", "no fluff")])
     + f"""
 <section class="page-section">
   <div class="container">

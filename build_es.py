@@ -952,6 +952,7 @@ pages["blog-es.html"] = ("blog.html",
          '<a href="index-es.html">Inicio</a> / Blog',
          "El Blog",
          "Gu&iacute;as, puntos de inmersi&oacute;n a fondo e historias de la costa que buceamos cada d&iacute;a. Escrito por nosotros, en lenguaje claro y sin vender nada m&aacute;s de lo que merece.")
+    + facts([("Local", "historias y gu&iacute;as"), ("Escrito", "por nuestros buzos"), ("Conservaci&oacute;n", "en primer plano"), ("Actualizado", "en 2026"), ("Honesto", "sin humo")])
     + f"""
 <section class="page-section">
   <div class="container">
