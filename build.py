@@ -958,6 +958,7 @@ pages["blog.html"] = (
 <section class="page-section">
   <div class="container">
     <div class="section-hed"><span class="section-rule"></span><h2 class="section-title">Latest</h2></div>
+    <p class="section-sub">Our newest guides and stories from the Amed and Tulamben coast, written by the team that dives it every day. Freshest first.</p>
     <div class="blog-grid">
       <article class="blog-card">
         <a class="blog-card-img" href="blog-karangasem-mpa.html"><img src="{WP}/2022/09/Nitrox.webp" alt="Coral reef inside the Karangasem Marine Protected Area, Amed" loading="lazy"></a>
