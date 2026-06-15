@@ -273,8 +273,22 @@ a:hover { color: var(--crimson); }
 .is-scrolled .lang-toggle { color: var(--text-muted); }
 .is-scrolled .lang-toggle strong { color: var(--ink); }
 .header-actions .pill-btn { padding: 0.66rem 1.5rem; font-size: 0.56rem; }
-.header-trip { } 
-@media (max-width: 1100px) { .header-trip { display: none; } }
+
+.header-social { display: flex; align-items: center; gap: 0.7rem; }
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; height: 30px;
+  color: rgba(255,255,255,0.82);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.social-icon svg { width: 19px; height: 19px; }
+.social-icon:hover { color: #fff; transform: translateY(-1px); }
+.social-icon--whatsapp:hover { color: var(--whatsapp); }
+.is-scrolled .social-icon { color: var(--text-muted); }
+.is-scrolled .social-icon:hover { color: var(--crimson); }
+.is-scrolled .social-icon--whatsapp:hover { color: var(--whatsapp); }
 
 .lang-es {
   font: inherit;
